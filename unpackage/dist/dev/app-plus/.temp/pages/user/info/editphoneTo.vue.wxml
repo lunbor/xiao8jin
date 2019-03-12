@@ -1,0 +1,20 @@
+<template name="2f541652">
+  <view class="_view data-v-550c71ba">
+    <view class="_view data-v-550c71ba by-bg-title">验证码将发送至{{mobile}}</view>
+    <view class="_view data-v-550c71ba uni-padding-wrap">
+      <view class="_view data-v-550c71ba uni-card by-card">
+        <view class="_view data-v-550c71ba uni-card-content">
+          <view class="_view data-v-550c71ba uni-form-item uni-column">
+            <view class="_view data-v-550c71ba with-fun">
+              <input class="_input data-v-550c71ba uni-input" type="number" placeholder="请填入验证码" value="{{smsCode}}" bindinput="handleProxy" data-eventid="{{'x8y-0'}}" data-comkey="{{$k}}" />
+              <view class="_view data-v-550c71ba text by-dj-btn {{is_sms ? '' : 'active'}}" bindtap="handleProxy" data-eventid="{{'hY1-1'}}" data-comkey="{{$k}}">{{inputClearValue}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="_view data-v-550c71ba uni-common-mt">
+        <button type="warn" class="_button data-v-550c71ba by-button-submit" loading="{{loading}}" bindtap="handleProxy" data-eventid="{{'1cD-2'}}" data-comkey="{{$k}}">下一步</button>
+      </view>
+    </view>
+  </view>
+</template>

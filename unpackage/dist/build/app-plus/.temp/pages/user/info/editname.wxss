@@ -1,0 +1,2 @@
+@import "../../../common/vendor.wxss";
+page{height:auto;min-height:100%;background-color:#f7f8fa}.uni-card.by-card{border-radius:12rpx;box-shadow:4rpx 4rpx 20rpx 4rpx hsla(0,0%,48%,.3)}.by-button-submit{background-color:#fd5950;background:-webkit-linear-gradient(left,#ff7575,#fd5950);background:linear-gradient(left,#ff7575,#fd5950)}

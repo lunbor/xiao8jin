@@ -1,0 +1,1 @@
+<import src="/pages/card/credit/edit.vue.wxml" /><template is="b9584008" data="{{ ...$root['0'], $root }}"/>

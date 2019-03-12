@@ -1,0 +1,2 @@
+@import "../../../common/vendor.wxss";
+.article-content{padding:30rpx;overflow:hidden;font-size:30rpx;margin-bottom:30rpx;font-size:28rpx;color:#333}.news-info-bg{background-color:#f49e9e;height:120rpx;color:#fff;padding:60rpx 0rpx 20rpx 40rpx}.news-info-title{font-size:32rpx;font-weight:500}.news-info-time{font-size:24rpx}

@@ -1,0 +1,13 @@
+<template name="7cbe14d4">
+  <view class="_view data-v-7d97d9a2 footer">
+    <view class="_view data-v-7d97d9a2 footer-left">
+      <view class="_view data-v-7d97d9a2 uni-icon uni-icon-mic" bindtap="handleProxy" data-eventid="{{'a19-0'}}" data-comkey="{{$k}}"></view>
+    </view>
+    <view class="_view data-v-7d97d9a2 footer-center">
+      <input class="_input data-v-7d97d9a2 input-text" type="text" value="{{inputValue}}" bindinput="handleProxy" data-eventid="{{'2Fd-1'}}" data-comkey="{{$k}}" />
+    </view>
+    <view class="_view data-v-7d97d9a2 footer-right" bindtap="handleProxy" data-eventid="{{'rvu-2'}}" data-comkey="{{$k}}">
+      <view id="msg-type" class="_view data-v-7d97d9a2">发送</view>
+    </view>
+  </view>
+</template>

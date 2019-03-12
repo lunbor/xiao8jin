@@ -1,0 +1,37 @@
+<import src="/components/uni-popup.vue.wxml" />
+<template name="6d4dc1cb">
+  <view class="_view data-v-2c4b4cf9 uni-common-pb">
+    <view class="_view data-v-2c4b4cf9 uni-login-logo">
+      <image src="../../../static/login-logo.png" class="_image data-v-2c4b4cf9"></image>
+    </view>
+    <view class="_view data-v-2c4b4cf9 uni-padding-wrap">
+      <form bindsubmit="handleProxy" data-eventid="{{'fqD-6'}}" data-comkey="{{$k}}" class="_form data-v-2c4b4cf9">
+        <view class="_view data-v-2c4b4cf9 uni-form-item uni-column">
+          <view class="_view data-v-2c4b4cf9 with-fun by-login-input">
+            <input class="_input data-v-2c4b4cf9 uni-input" type="number" name="account" placeholder="请填写手机号" value="{{inputClearValue}}" bindinput="handleProxy" data-eventid="{{'bul-0'}}" data-comkey="{{$k}}" />
+            <view class="_view data-v-2c4b4cf9 uni-icon uni-icon-clear" wx:if="{{showClearIcon}}" bindtap="handleProxy" data-eventid="{{'K1w-1'}}" data-comkey="{{$k}}"></view>
+          </view>
+        </view>
+        <view class="_view data-v-2c4b4cf9 uni-form-item uni-column">
+          <view class="_view data-v-2c4b4cf9 with-fun by-login-input">
+            <input class="_input data-v-2c4b4cf9 uni-input" type="number" name="smsCode" placeholder="请填入验证码" value="{{smsCode}}" bindinput="handleProxy" data-eventid="{{'t29-2'}}" data-comkey="{{$k}}" />
+            <view class="_view data-v-2c4b4cf9 text by-dj-btn {{is_sms ? '' : 'active'}}" bindtap="handleProxy" data-eventid="{{'wid-3'}}" data-comkey="{{$k}}">{{fsbtn}}</view>
+          </view>
+        </view>
+        <view class="_view data-v-2c4b4cf9 uni-form-item uni-column">
+          <view class="_view data-v-2c4b4cf9 with-fun by-login-input">
+            <input class="_input data-v-2c4b4cf9 uni-input" placeholder="请填写6~18位字符密码" name="password" password="{{showPassword}}" />
+            <view class="_view data-v-2c4b4cf9 uni-icon uni-icon-eye {{[!showPassword ? 'uni-active' : '']}}" bindtap="handleProxy" data-eventid="{{'mtU-4'}}" data-comkey="{{$k}}"></view>
+          </view>
+        </view>
+        <view class="_view data-v-2c4b4cf9 uni-btn-v">
+          <button formType="submit" loading="{{loading}}" type="warn" class="_button data-v-2c4b4cf9">注 册</button>
+        </view>
+        <view class="_view data-v-2c4b4cf9 text clause"> 点击注册即表示您同意
+          <text bindtap="handleProxy" data-eventid="{{'hCR-5'}}" data-comkey="{{$k}}" class="_text data-v-2c4b4cf9">《隐私条例和服务条款》</text>
+        </view>
+      </form>
+    </view>
+    <template bindhidePopup="handleProxy" data-eventid="{{'Zv2-7'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'HkU-1'],$root, $slotdefault:'data-v-2c4b4cf9-default-HkU-1'}}" is="7c6850a8"></template>
+  </view>
+</template>

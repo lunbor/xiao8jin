@@ -1,0 +1,59 @@
+<import src="/components/uni-segmented-control.vue.wxml" />
+<template name="d33bb3f0">
+  <view class="_view data-v-3e39d576 content">
+    <view class="_view data-v-3e39d576 vip_bg" style="background: url(../../../static/vip_bg.png);background-size: 100% 100%;">
+      <view class="_view data-v-3e39d576 vip_nickname">{{vipInfo.nickname}}</view>
+      <view class="_view data-v-3e39d576 vip_time">{{vipInfo.viptime}}</view>
+    </view>
+    <view class="_view data-v-3e39d576 vip_title">VIP会员资费</view>
+    <view class="_view data-v-3e39d576 uni-flex uni-row pd10">
+      <view class="_view data-v-3e39d576 text vip-money {{vipMoney == index ? 'active' : ''}}" wx:key="index" key="{{index}}" bindtap="handleProxy" data-eventid="{{'rmK-0-'+index}}" data-comkey="{{$k}}" wx:for="{{vipInfo.vipmoney}}" wx:for-index="index"
+        wx:for-item="item">
+        <view class="_view data-v-3e39d576 vip-money-title">{{item.title}}</view>
+        <view class="_view data-v-3e39d576 vip-money-val">￥
+          <text class="_text data-v-3e39d576">{{item.val}}</text>
+        </view>
+        <view class="_view data-v-3e39d576 vip-money-gqval">￥{{item.gqval}}</view>
+      </view>
+    </view>
+    <view class="_view data-v-3e39d576 pd30">
+      <view class="_view data-v-3e39d576 uni-card by-card">
+        <view class="_view data-v-3e39d576 uni-card-content p15">
+          <view class="_view data-v-3e39d576 tq-title">会员的特权</view>
+          <view class="_view data-v-3e39d576 linebg"></view>
+          <view class="_view data-v-3e39d576 tq-center">
+            <rich-text nodes="{{vipInfo.viptq}}" class="_rich-text data-v-3e39d576"></rich-text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="_view data-v-3e39d576">
+      <template bindclickItem="handleProxy" data-eventid="{{'JXR-1'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'eP3-1'],$root}}" is="e2933cbc"></template>
+    </view>
+    <view class="_view data-v-3e39d576 content">
+      <view hidden="{{!(current === 1)}}" class="_view data-v-3e39d576 uni-padding-wrap">
+        <view class="_view data-v-3e39d576 alipay">
+          <image src="{{vipInfo.alipay}}" class="_image data-v-3e39d576"></image>
+        </view>
+      </view>
+      <view hidden="{{!(current === 0)}}" class="_view data-v-3e39d576 uni-padding-wrap">
+        <view class="_view data-v-3e39d576 weixin">
+          <image src="{{vipInfo.weixin}}" class="_image data-v-3e39d576"></image>
+        </view>
+      </view>
+    </view>
+    <view class="_view data-v-3e39d576 pd30">
+      <view class="_view data-v-3e39d576 uni-card by-card">
+        <view class="_view data-v-3e39d576 uni-card-content p15">
+          <view class="_view data-v-3e39d576 tq-title">支付方法</view>
+          <view class="_view data-v-3e39d576 linebg"></view>
+          <view class="_view data-v-3e39d576 tq-center font-sg">
+            <rich-text nodes="{{vipInfo.vippayff}}" class="_rich-text data-v-3e39d576"></rich-text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="_view data-v-3e39d576 tip_btn pd30">
+      <text class="_text data-v-3e39d576">*</text> 如有疑问可咨询客服人员。 </view>
+  </view>
+</template>

@@ -1,0 +1,32 @@
+<import src="/components/uni-segmented-control.vue.wxml" />
+<import src="/components/uni-popup.vue.wxml" />
+<import src="/components/qrcode/qrcode.vue.wxml" />
+<import src="/components/uni-popup.vue.wxml" />
+<import src="/components/uni-load-more.vue.wxml" />
+<import src="/components/im-chat/messageshow.vue.wxml" />
+<import src="/components/im-chat/chatinput.vue.wxml" />
+<import src="/components/mpvue-picker/mpvuePicker.vue.wxml" />
+<import src="/components/mpvue-citypicker/mpvueCityPicker.vue.wxml" />
+<import src="/components/mpvue-picker/mpvuePicker.vue.wxml" />
+<template name="data-v-3ffa520e-default-1qc-1">
+  <view class="_view data-v-3ffa520e uni-common-mt uni-helllo-text uni-center" style="text-align: left;">
+    <rich-text nodes="{{tipcontent}}" class="_rich-text data-v-3ffa520e"></rich-text>
+  </view>
+</template>
+<template name="data-v-2c4b4cf9-default-HkU-1">
+  <view class="_view data-v-2c4b4cf9 uni-common-mt uni-helllo-text uni-center" style="text-align: left;">
+    <rich-text nodes="{{tipcontent}}" class="_rich-text data-v-2c4b4cf9"></rich-text>
+  </view>
+</template>
+<template name="data-v-5f806eda-default-3gU-1">
+  <view class="_view data-v-5f806eda uni-center uni-padding-wrap">
+    <view class="_view data-v-5f806eda uni-btn-v uni-common-mt" wx:if="{{providerList.length > 0}}">
+      <block wx:key="index" key="{{index}}" wx:for="{{providerList}}" wx:for-index="index" wx:for-item="value">
+        <button type="primary" wx:if="{{value}}" disabled="{{shareType === 5 && value.name !== '分享到微信好友'}}" bindtap="handleProxy" data-eventid="{{'XWQ-0-'+index}}" data-comkey="{{$k}}" class="_button data-v-5f806eda">{{value.name}}</button>
+      </block>
+      <block>
+        <button type="primary" bindtap="handleProxy" data-eventid="{{'R1G-1'}}" data-comkey="{{$k}}" class="_button data-v-5f806eda">复制分享链接</button>
+      </block>
+    </view>
+  </view>
+</template>

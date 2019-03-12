@@ -1,0 +1,15 @@
+<template name="503d5566">
+  <view class="_view data-v-4f2d2901 m-item" id="{{'message'+id}}">
+    <view class="_view data-v-4f2d2901 m-left">
+      <image class="_image data-v-4f2d2901 head_icon" src="http://hszt.tw186.com/uploads/img/homeHL.png" wx:if="{{message.user=='home'}}"></image>
+    </view>
+    <view class="_view data-v-4f2d2901 m-content">
+      <view class="_view data-v-4f2d2901 m-content-head {{[message.user == 'customer' ? 'm-content-head-right' : '']}}">
+        <view class="_view data-v-4f2d2901 {{'m-content-head-' + message.user}}">{{message.content}} </view>
+      </view>
+    </view>
+    <view class="_view data-v-4f2d2901 m-right">
+      <image class="_image data-v-4f2d2901 head_icon" src="http://hszt.tw186.com/uploads/img/customerHL.png" wx:if="{{message.user=='customer'}}"></image>
+    </view>
+  </view>
+</template>

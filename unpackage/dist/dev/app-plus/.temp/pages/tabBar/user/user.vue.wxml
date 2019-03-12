@@ -1,0 +1,66 @@
+<template name="0fc24b4e">
+  <view class="_view data-v-7d217ee6">
+    <view class="_view data-v-7d217ee6 user-top-bg" style="background: url(../../../static/user_top_bg.png) no-repeat;background-size: 100% 100%;">
+      <view class="_view data-v-7d217ee6 uni-flex uni-row uni-padding-wrap" bindtap="handleProxy" data-eventid="{{'CNI-0'}}" data-comkey="{{$k}}">
+        <view class="_view data-v-7d217ee6 text head-left">
+          <view class="_view data-v-7d217ee6 head-pic">
+            <image src="{{userInfo.head_img?userInfo.head_img:'../../../static/head-no-pic.png'}}" class="_image data-v-7d217ee6"></image>
+          </view>
+        </view>
+        <view class="_view data-v-7d217ee6 text head-center">
+          <view class="_view data-v-7d217ee6 text head-nickname">{{userInfo.nickname}}</view>
+          <view class="_view data-v-7d217ee6 text head-phone">{{userInfo.phone}}</view>
+        </view>
+        <view class="_view data-v-7d217ee6 text head-bj-btn">
+          <image src="../../../static/head-bj-btn.png" class="_image data-v-7d217ee6"></image>
+        </view>
+      </view>
+      <view class="_view data-v-7d217ee6 uni-flex uni-row uni-padding-wrap head-bottom">
+        <view class="_view data-v-7d217ee6 text head-bottom-news" bindtap="handleProxy" data-eventid="{{'f1R-1'}}" data-comkey="{{$k}}">{{userInfo.message}}
+          <view class="_view data-v-7d217ee6 text">消息</view>
+        </view>
+        <view class="_view data-v-7d217ee6 text head-bottom-integral" bindtap="handleProxy" data-eventid="{{'xI8-2'}}" data-comkey="{{$k}}">{{userInfo.integral}}
+          <view class="_view data-v-7d217ee6 text">积分</view>
+        </view>
+        <view class="_view data-v-7d217ee6 text head-bottom-invite" bindtap="handleProxy" data-eventid="{{'WwJ-3'}}" data-comkey="{{$k}}">{{userInfo.invite}}
+          <view class="_view data-v-7d217ee6 text">邀请好友</view>
+        </view>
+      </view>
+    </view>
+    <view class="_view data-v-7d217ee6 uni-padding-wrap">
+      <view class="_view data-v-7d217ee6 user-center-icon">
+        <view class="_view data-v-7d217ee6 uni-flex uni-row">
+          <view class="_view data-v-7d217ee6 text uni-row-plan uni-triplex-row" bindtap="handleProxy" data-eventid="{{'oja-4'}}" data-comkey="{{$k}}">
+            <view class="_view data-v-7d217ee6 text plan-title uni-triplex-left">我的计划
+              <view class="_view data-v-7d217ee6 text plan-btn">查看</view>
+            </view>
+            <view class="_view data-v-7d217ee6 text plan-num uni-triplex-right">({{userInfo.repay_num}})</view>
+          </view>
+          <view class="_view data-v-7d217ee6 text uni-row-pd"></view>
+          <view class="_view data-v-7d217ee6 text uni-row-vip uni-triplex-row" bindtap="handleProxy" data-eventid="{{'7u5-5'}}" data-comkey="{{$k}}">
+            <view class="_view data-v-7d217ee6 text vip-title uni-triplex-left">会员专享
+              <view class="_view data-v-7d217ee6 text vip-btn">查看</view>
+            </view>
+            <view class="_view data-v-7d217ee6 text vip-num uni-triplex-right">
+              <image src="../../../static/user-vip.png" class="_image data-v-7d217ee6"></image>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="_view data-v-7d217ee6 uni-card by-card">
+        <view class="_view data-v-7d217ee6 uni-card-content">
+          <view class="_view data-v-7d217ee6 hg50" wx:key="index" key="{{index}}" wx:for="{{navlist}}" wx:for-index="index" wx:for-item="item">
+            <view bindtap="handleProxy" data-eventid="{{'1TP-6-'+index}}" data-comkey="{{$k}}" class="_view data-v-7d217ee6 {{index == searchIndex  ? 'uni-list-cell-navigate uni-navigate-right bb0'  : 'uni-list-cell-navigate uni-navigate-right'}}"> {{item.title}} </view>
+          </view>
+        </view>
+      </view>
+      <view class="_view data-v-7d217ee6 uni-card by-card by-mt-30">
+        <view class="_view data-v-7d217ee6 uni-card-content">
+          <view class="_view data-v-7d217ee6 hg50" wx:key="index" key="{{index}}" wx:for="{{setlist}}" wx:for-index="index" wx:for-item="item">
+            <view class="_view data-v-7d217ee6 uni-list-cell-navigate uni-navigate-right bb0" bindtap="handleProxy" data-eventid="{{'SOv-7-'+index}}" data-comkey="{{$k}}"> {{item.title}} </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

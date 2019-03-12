@@ -1,0 +1,39 @@
+@import "../../../common/vendor.wxss";
+
+page {
+  height: auto;
+  min-height: 100%;
+  background-color: #f7f8fa;
+}
+.hg50 {
+  height: 120rpx;
+  color: #576175;
+  font-size: 34rpx;
+  font-weight: 600;
+}
+.hg50 .uni-navigate-right:after {
+  font-size: 32rpx;
+}
+.hg50 .uni-navigate-right {
+  line-height: 80rpx;
+  border-bottom: 1rpx solid #ecedef;
+}
+.hg50 .uni-navigate-right.bb0 {
+  border-bottom: 0rpx;
+}
+.uni-card.by-card {
+  border-radius: 12rpx;
+  box-shadow: 4rpx 4rpx 20rpx 4rpx rgba(123, 123, 123, 0.3);
+}
+.by-mt-30 {
+  margin-top: 40rpx;
+}
+.by-sdh {
+  font-size: 26rpx;
+  font-weight: normal;
+}
+.by-button-submit {
+  background-color: #fd5950;
+  background: -webkit-linear-gradient(left, #ff7575, #fd5950);
+  background: linear-gradient(left, #ff7575, #fd5950);
+}

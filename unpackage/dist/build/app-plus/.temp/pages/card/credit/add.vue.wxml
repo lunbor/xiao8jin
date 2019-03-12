@@ -1,0 +1,106 @@
+<import src="/components/mpvue-picker/mpvuePicker.vue.wxml" />
+<template name="110fa9c2">
+  <view class="_view data-v-34c2b4aa uni-padding-wrap">
+    <form bindsubmit="handleProxy" data-eventid="{{'XTJ-11'}}" data-comkey="{{$k}}" class="_form data-v-34c2b4aa">
+      <view class="_view data-v-34c2b4aa uni-card by-card">
+        <view class="_view data-v-34c2b4aa uni-card-content p15">
+          <view class="_view data-v-34c2b4aa hg50">
+            <view class="_view data-v-34c2b4aa uni-list-cell-navigate">
+              <view class="_view data-v-34c2b4aa by-sdh">信用卡号
+                <text class="_text data-v-34c2b4aa"></text>
+              </view>
+              <input class="_input data-v-34c2b4aa uni-input font-max" placeholder-style="font-weight: normal;" type="number" name="credit_code" value="{{credit_card.credit_code}}" bindinput="handleProxy" placeholder="请输入信用卡号" data-eventid="{{'agM-0'}}"
+                data-comkey="{{$k}}" />
+            </view>
+          </view>
+          <view class="_view data-v-34c2b4aa hg50">
+            <view class="_view data-v-34c2b4aa uni-list-cell-navigate uni-navigate-right bb0">
+              <view class="_view data-v-34c2b4aa by-sdh">发卡银行
+                <text class="_text data-v-34c2b4aa"></text>
+              </view>
+              <input class="_input data-v-34c2b4aa uni-input" bindtap="handleProxy" disabled="disabled" name="bank_name" value="{{credit_card.bank_name}}" bindinput="handleProxy" placeholder="请选择银行" data-eventid="{{'Cxv-1'}}" data-comkey="{{$k}}" />
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="_view data-v-34c2b4aa uni-card by-card">
+        <view class="_view data-v-34c2b4aa uni-card-content p15">
+          <view class="_view data-v-34c2b4aa hg50">
+            <view class="_view data-v-34c2b4aa uni-list-cell-navigate">
+              <view class="_view data-v-34c2b4aa by-sdh">信用额度
+                <text class="_text data-v-34c2b4aa"></text>
+              </view>
+              <input class="_input data-v-34c2b4aa uni-input" maxlength="10" type="digit" name="line_credit" value="{{credit_card.line_credit}}" bindinput="handleProxy" placeholder="请输入信用卡额度" data-eventid="{{'iTc-2'}}" data-comkey="{{$k}}" />
+            </view>
+          </view>
+          <view class="_view data-v-34c2b4aa hg50">
+            <view class="_view data-v-34c2b4aa uni-list-cell-navigate">
+              <view class="_view data-v-34c2b4aa by-sdh">有效日期
+                <text class="_text data-v-34c2b4aa"></text>
+              </view>
+              <input class="_input data-v-34c2b4aa uni-input" maxlength="4" disabled="disabled" bindtap="handleProxy" name="credit_card.exp_date" value="{{credit_card.exp_date}}" bindinput="handleProxy" placeholder="格式:月年" data-eventid="{{'ryI-3'}}" data-comkey="{{$k}}"
+              />
+              <text class="_text data-v-34c2b4aa tip-text" bindtap="handleProxy" data-eventid="{{'uLm-4'}}" data-comkey="{{$k}}">查看示例</text>
+            </view>
+          </view>
+          <view class="_view data-v-34c2b4aa hg50">
+            <view class="_view data-v-34c2b4aa uni-list-cell-navigate bb0">
+              <view class="_view data-v-34c2b4aa by-sdh">CVV2码
+                <text class="_text data-v-34c2b4aa"></text>
+              </view>
+              <input class="_input data-v-34c2b4aa uni-input" maxlength="3" type="number" name="safe_code" value="{{credit_card.safe_code}}" bindinput="handleProxy" placeholder="请输入CVV2码" data-eventid="{{'w6z-5'}}" data-comkey="{{$k}}" />
+              <text class="_text data-v-34c2b4aa tip-text" bindtap="handleProxy" data-eventid="{{'PNZ-6'}}" data-comkey="{{$k}}">查看示例</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="_view data-v-34c2b4aa uni-card by-card">
+        <view class="_view data-v-34c2b4aa uni-card-content p15">
+          <view class="_view data-v-34c2b4aa hg50">
+            <view class="_view data-v-34c2b4aa uni-list-cell-navigate">
+              <view class="_view data-v-34c2b4aa by-sdh">账单日
+                <text class="_text data-v-34c2b4aa"></text>
+              </view>
+              <input class="_input data-v-34c2b4aa uni-input" maxlength="2" type="number" name="bill_time" value="{{credit_card.bill_time}}" bindinput="handleProxy" placeholder="请输入账单日(选填)" data-eventid="{{'S3c-7'}}" data-comkey="{{$k}}" />
+            </view>
+          </view>
+          <view class="_view data-v-34c2b4aa hg50">
+            <view class="_view data-v-34c2b4aa uni-list-cell-navigate bb0">
+              <view class="_view data-v-34c2b4aa by-sdh">还款日
+                <text class="_text data-v-34c2b4aa"></text>
+              </view>
+              <input class="_input data-v-34c2b4aa uni-input" maxlength="2" type="number" name="repay_time" value="{{credit_card.repay_time}}" bindinput="handleProxy" placeholder="请输入还款日(选填)" data-eventid="{{'tRW-8'}}" data-comkey="{{$k}}" />
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="_view data-v-34c2b4aa uni-card by-card">
+        <view class="_view data-v-34c2b4aa uni-card-content p15">
+          <view class="_view data-v-34c2b4aa hg50">
+            <view class="_view data-v-34c2b4aa uni-list-cell-navigate bb0">
+              <view class="_view data-v-34c2b4aa by-sdh">手机号
+                <text class="_text data-v-34c2b4aa"></text>
+              </view>
+              <input class="_input data-v-34c2b4aa uni-input" type="number" name="phone" value="{{credit_card.phone}}" bindinput="handleProxy" placeholder="请输入银行预留手机号" data-eventid="{{'v2E-9'}}" data-comkey="{{$k}}" />
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="_view data-v-34c2b4aa uni-common-mt">
+        <button type="warn" class="_button data-v-34c2b4aa by-button-submit" loading="{{loading}}" bindtap="handleProxy" data-eventid="{{'sgw-10'}}" data-comkey="{{$k}}">提交保存</button>
+      </view>
+      <view class="_view data-v-34c2b4aa uni-common-mt tip_btn">
+        <text class="_text data-v-34c2b4aa">*</text> 为保护账户资金安全，请仔细核实信用卡信息。 </view>
+    </form>
+    <template ref="mpvuePicker" bindonConfirm="handleProxy" bindonCancel="handleProxy" data-eventid="{{'zdh-12'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'WjU-0'],$root}}" is="7cc124a0"></template>
+    <view class="_view data-v-34c2b4aa uni-banner" wx:if="{{bannerShow}}">
+      <view class="_view data-v-34c2b4aa">
+        <image src="{{tip_img}}" style="width:100%;" mode="widthFix" class="_image data-v-34c2b4aa"></image>
+      </view>
+      <view class="_view data-v-34c2b4aa tip_cancel" bindtap="handleProxy" data-eventid="{{'ht5-13'}}" data-comkey="{{$k}}">
+        <image src="../../../static/wk_tip_cancel.png" class="_image data-v-34c2b4aa"></image>
+      </view>
+    </view>
+    <view class="_view data-v-34c2b4aa uni-mask" wx:if="{{bannerShow}}"></view>
+  </view>
+</template>

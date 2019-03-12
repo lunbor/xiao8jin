@@ -1,0 +1,36 @@
+<import src="/components/uni-load-more.vue.wxml" />
+<template name="ba5960b0">
+  <view class="_view data-v-4d5d9f96">
+    <view class="_view data-v-4d5d9f96 uni-padding-wrap">
+      <view class="_view data-v-4d5d9f96">
+        <view class="_view data-v-4d5d9f96 no-list" wx:if="{{no_list==0}}">
+          <image src="../../../static/no-list.png" class="_image data-v-4d5d9f96"></image>
+        </view>
+        <view class="_view data-v-4d5d9f96 list-view" wx:if="{{no_list==1}}">
+          <view class="_view data-v-4d5d9f96 list-item" wx:key="index" key="{{index}}" wx:for="{{list}}" wx:for-index="index" wx:for-item="item">
+            <view class="_view data-v-4d5d9f96 uni-flex uni-row justify" bindtap="handleProxy" data-eventid="{{'b0r-0-'+index}}" data-comkey="{{$k}}">
+              <view class="_view data-v-4d5d9f96 text left-text">
+                <view class="_view data-v-4d5d9f96 text log-title">{{item.title}}</view>
+                <view class="_view data-v-4d5d9f96 text log-tail">尾号({{item.tail}})</view>
+                <view class="_view data-v-4d5d9f96 text log-time">{{item.time}}</view>
+              </view>
+              <view class="_view data-v-4d5d9f96 text right-text">
+                <view class="_view data-v-4d5d9f96 text log-money">{{item.money}}</view>
+                <view class="_view data-v-4d5d9f96 text log-balance">余额：￥{{item.balance}}</view>
+                <view class="_view data-v-4d5d9f96 text log-status" wx:if="{{item.status=='4'}}">
+                  <view class="_view data-v-4d5d9f96 uni-icon uni-icon-checkbox-filled log-icon"></view> {{item.dsc}} </view>
+                <view class="_view data-v-4d5d9f96 text log-status red" wx:elif="{{item.status=='1' || item.status=='5'}}">
+                  <view class="_view data-v-4d5d9f96 uni-icon uni-icon-clear log-icon"></view> {{item.dsc}} </view>
+                <view class="_view data-v-4d5d9f96 text log-status blue" wx:elif="{{item.status=='0' || item.status=='3' || item.status=='2'}}">
+                  <view class="_view data-v-4d5d9f96 uni-icon uni-icon-refresh-filled log-icon"></view> {{item.dsc}} </view>
+                <view class="_view data-v-4d5d9f96 text log-status blue" wx:else>
+                  <view class="_view data-v-4d5d9f96 uni-icon uni-icon-refresh-filled log-icon"></view> {{item.dsc}} </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <template wx:if="{{is_load==1}}" data="{{...$root['0'], ...$root[$kk+'D4t-0'],$root}}" is="625a92dc"></template>
+      </view>
+    </view>
+  </view>
+</template>

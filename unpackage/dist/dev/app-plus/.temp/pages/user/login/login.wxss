@@ -1,0 +1,47 @@
+@import "../../../common/vendor.wxss";
+
+page {
+  height: auto;
+  min-height: 100%;
+  background-color: #FFFFFF;
+  color: #989898;
+}
+.uni-login-logo {
+  text-align: center;
+  height: 390rpx;
+  vertical-align: middle;
+}
+.uni-login-logo image {
+  width: 350rpx;
+  height: 225rpx;
+  margin: 0 auto;
+  margin-top: 87rpx;
+}
+.uni-btn-v  ._button {
+  background-color: #ff4444;
+}
+.with-fun.by-login-input {
+  border-bottom: 2rpx #dddddd solid;
+  height: 110rpx;
+  line-height: 110rpx;
+  font-size: 32rpx;
+}
+.by-login-input .uni-input {
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 32rpx;
+}
+.by-login-input ._input {
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 32rpx;
+}
+.clause {
+  margin-top: 127rpx;
+  text-align: center;
+  color: #999999;
+  font-weight: 500;
+}
+.clause text {
+  color: #fe5950;
+}

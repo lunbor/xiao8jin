@@ -1,0 +1,17 @@
+<template name="0f78012d">
+  <view class="_view data-v-1e723261 uni-padding-wrap">
+    <view class="_view data-v-1e723261 uni-card by-card">
+      <view class="_view data-v-1e723261 uni-card-content">
+        <view class="_view data-v-1e723261 uni-form-item uni-column">
+          <view class="_view data-v-1e723261 with-fun">
+            <input class="_input data-v-1e723261 uni-input" placeholder="请填入昵称" value="{{inputClearValue}}" bindinput="handleProxy" data-eventid="{{'nhI-0'}}" data-comkey="{{$k}}" />
+            <view class="_view data-v-1e723261 uni-icon uni-icon-clear" wx:if="{{showClearIcon}}" bindtap="handleProxy" data-eventid="{{'5SW-1'}}" data-comkey="{{$k}}"></view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="_view data-v-1e723261 uni-common-mt">
+      <button type="warn" class="_button data-v-1e723261 by-button-submit" loading="{{loading}}" bindtap="handleProxy" data-eventid="{{'MLC-2'}}" data-comkey="{{$k}}">提交保存</button>
+    </view>
+  </view>
+</template>

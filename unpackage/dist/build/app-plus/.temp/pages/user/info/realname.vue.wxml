@@ -1,0 +1,80 @@
+<template name="7819ce7e">
+  <view class="_view data-v-5a256c16">
+    <view class="_view data-v-5a256c16 top-jd" hidden="{{!(progress>0)}}">
+      <progress percent="{{progress}}" class="_progress data-v-5a256c16" />
+    </view>
+    <view style="overflow: scroll; height: 0rpx; width: 100%;" class="_view data-v-5a256c16">
+      <canvas class="_canvas data-v-5a256c16 canvas-element" canvas-id="canvas" style=" {{('width:' + cwidth + ';' + 'height:' + cheight + ';')}}"></canvas>
+    </view>
+    <view hidden="{{!(cardInfo.is_validate===1)}}" class="_view data-v-5a256c16">
+      <view class="_view data-v-5a256c16 realname-yes">
+        <view class="_view data-v-5a256c16 yes-img">
+          <image src="../../../static/realname-yes.png" class="_image data-v-5a256c16"></image>
+        </view>
+        <view class="_view data-v-5a256c16 uni-list-cell-navigate bt-color"> 姓名
+          <text class="_text data-v-5a256c16 uni-list-cell-left by-sdh">{{cardInfo.realname}}</text>
+        </view>
+        <view class="_view data-v-5a256c16 uni-list-cell-navigate bt-color"> 身份证号
+          <text class="_text data-v-5a256c16 uni-list-cell-left by-sdh">{{cardInfo.card}}</text>
+        </view>
+      </view>
+    </view>
+    <view hidden="{{!(cardInfo.is_validate===0)}}" class="_view data-v-5a256c16">
+      <view class="_view data-v-5a256c16 card_img_bg">
+        <view class="_view data-v-5a256c16 card_tip">请上传本人有效期内的身份证照片，享受更多权益</view>
+        <view class="_view data-v-5a256c16 uni-flex uni-row" style="justify-content: center;">
+          <view class="_view data-v-5a256c16 text card_img">
+            <image src="../../../static/card_a_sl.png" class="_image data-v-5a256c16"></image>
+          </view>
+          <view class="_view data-v-5a256c16 text flex-w20"></view>
+          <view class="_view data-v-5a256c16 text card_img" bindtap="handleProxy" data-eventid="{{'eq8-0'}}" data-comkey="{{$k}}">
+            <image src="{{cardInfo.card_img_a?cardInfo.card_img_a:'../../../static/card_a.png'}}" class="_image data-v-5a256c16"></image>
+          </view>
+        </view>
+        <view class="_view data-v-5a256c16 uni-flex uni-row" style="justify-content: center;">
+          <view class="_view data-v-5a256c16 text card_img">
+            <image src="../../../static/card_b_sl.png" class="_image data-v-5a256c16"></image>
+          </view>
+          <view class="_view data-v-5a256c16 text flex-w20"></view>
+          <view class="_view data-v-5a256c16 text card_img" bindtap="handleProxy" data-eventid="{{'oH3-1'}}" data-comkey="{{$k}}">
+            <image src="{{cardInfo.card_img_b?cardInfo.card_img_b:'../../../static/card_b.png'}}" class="_image data-v-5a256c16"></image>
+          </view>
+        </view>
+      </view>
+      <view class="_view data-v-5a256c16 uni-padding-wrap">
+        <view class="_view data-v-5a256c16 upload-tip">
+          <view class="_view data-v-5a256c16 upload-tip-title">身份证照片要求:</view>
+          <view class="_view data-v-5a256c16 upload-tip-center">
+            <view class="_view data-v-5a256c16">必须本人的有效身份证，与基本信息一致</view>
+            <view class="_view data-v-5a256c16">照片确保身份证边框完整，字体清晰，亮度均匀</view>
+            <view class="_view data-v-5a256c16">照片要求4M以内，支持jpg/jpeg/png格式</view>
+            <view class="_view data-v-5a256c16">若识别信息有误，可手动修改身份信息</view>
+          </view>
+        </view>
+        <view class="_view data-v-5a256c16 uni-card by-card">
+          <view class="_view data-v-5a256c16 uni-card-content">
+            <view class="_view data-v-5a256c16 uni-form-item uni-column by-border-bottom">
+              <view class="_view data-v-5a256c16 with-fun">
+                <view class="_view data-v-5a256c16 by-sdhf">真实姓名
+                  <text class="_text data-v-5a256c16"></text>
+                </view>
+                <input class="_input data-v-5a256c16 uni-input" maxlength="20" placeholder value="{{cardInfo.realname}}" bindinput="handleProxy" data-eventid="{{'zop-2'}}" data-comkey="{{$k}}" />
+              </view>
+            </view>
+            <view class="_view data-v-5a256c16 uni-form-item uni-column">
+              <view class="_view data-v-5a256c16 with-fun">
+                <view class="_view data-v-5a256c16 by-sdhf">身份证号
+                  <text class="_text data-v-5a256c16"></text>
+                </view>
+                <input class="_input data-v-5a256c16 uni-input" type="idcard" placeholder value="{{cardInfo.card}}" bindinput="handleProxy" data-eventid="{{'seE-3'}}" data-comkey="{{$k}}" />
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="_view data-v-5a256c16 by-mt-30 by-mb-30">
+          <button type="warn" disabled="{{cardInfo.is_validate===1?true:false}}" class="_button data-v-5a256c16 by-button-submit" loading="{{loading}}" bindtap="handleProxy" data-eventid="{{'f0C-4'}}" data-comkey="{{$k}}">提交认证</button>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

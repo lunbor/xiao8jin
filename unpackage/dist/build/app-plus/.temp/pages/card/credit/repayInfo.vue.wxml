@@ -1,0 +1,83 @@
+<import src="/components/uni-tab-nav.vue.wxml" />
+<template name="f102163e">
+  <view class="_view data-v-674a566d">
+    <view class="_view data-v-674a566d uni-card uni-card-red md15" style=" {{('background:' + card.color + ';')}}">
+      <view class="_view data-v-674a566d uni-triplex-row pd15">
+        <view class="_view data-v-674a566d uni-triplex-left lf7">{{card.bank_name}}
+          <text class="_text data-v-674a566d">{{card.credit_code}}</text>
+        </view>
+        <view class="_view data-v-674a566d uni-triplex-right rg3">
+          <button class="_button data-v-674a566d mini-btn" type="primary" size="mini">信用卡</button>
+        </view>
+      </view>
+      <view class="_view data-v-674a566d uni-triplex-row linebg"></view>
+      <view class="_view data-v-674a566d uni-flex uni-row">
+        <view class="_view data-v-674a566d flex-item ls3">
+          <view class="_view data-v-674a566d ls3-row">￥
+            <text class="_text data-v-674a566d">{{card.line_credit}}</text>
+          </view>
+          <view class="_view data-v-674a566d">额度</view>
+        </view>
+        <view class="_view data-v-674a566d flex-item ls3">
+          <view class="_view data-v-674a566d ls3-row">
+            <text class="_text data-v-674a566d">{{card.bill_time}}</text>日</view>
+          <view class="_view data-v-674a566d">账单日</view>
+        </view>
+        <view class="_view data-v-674a566d flex-item ls3">
+          <view class="_view data-v-674a566d ls3-row">
+            <text class="_text data-v-674a566d">{{card.repay_time}}</text>日</view>
+          <view class="_view data-v-674a566d">还款日</view>
+        </view>
+      </view>
+    </view>
+    <view class="_view data-v-674a566d contentbg">
+      <view class="_view data-v-674a566d">
+        <template bindclickItem="handleProxy" data-eventid="{{'01J-0'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'Zui-0'],$root}}" is="0fcb406b"></template>
+      </view>
+      <view class="_view data-v-674a566d content">
+        <view class="_view data-v-674a566d no-list" wx:if="{{list.length==0}}">
+          <image src="../../../static/no-list.png" class="_image data-v-674a566d"></image>
+        </view>
+        <view class="_view data-v-674a566d list contentbg by-mb-30" wx:key="index" key="{{index}}" wx:if="{{(current===0 && item.status===0) || (current===0 && item.status===1) || (current===1 && item.status===5) || (current===2 && item.status===4)  || (current===3 && item.status===3) || (current===4)}}"
+          wx:for="{{list}}" wx:for-index="index" wx:for-item="item">
+          <view class="_view data-v-674a566d list-item pd20">
+            <view class="_view data-v-674a566d list-time font-sg">提交时间:
+              <text class="_text data-v-674a566d">{{item.ctime}}</text>
+            </view>
+            <view class="_view data-v-674a566d list-order font-sg">计划单号:
+              <text class="_text data-v-674a566d">{{item.order_no}}</text>
+            </view>
+            <view class="_view data-v-674a566d list-repay-time uni-flex uni-row">
+              <view class="_view data-v-674a566d font-sg" style="flex: 1;">开始时间:
+                <text class="_text data-v-674a566d">{{item.start_time}}</text>
+              </view>
+              <view class="_view data-v-674a566d font-sg" style="flex: 1;">结束时间:
+                <text class="_text data-v-674a566d">{{item.end_time}}</text>
+              </view>
+            </view>
+            <view class="_view data-v-674a566d list-repay-money uni-flex uni-row">
+              <view class="_view data-v-674a566d font-sg" style="flex: 1;">还款金额:
+                <text class="_text data-v-674a566d red-text">￥{{item.total_money/100}}</text>
+              </view>
+              <view class="_view data-v-674a566d font-sg" style="flex: 1;">还款形式:
+                <text wx:if="{{item.repay_num ===0}}" class="_text data-v-674a566d">随机</text>
+                <text wx:else class="_text data-v-674a566d">每天还款{{item.repay_num}}次</text>
+              </view>
+            </view>
+            <view class="_view data-v-674a566d list-repay-money">
+              <view class="_view data-v-674a566d font-sg">当前状态:
+                <text class="_text data-v-674a566d blue-text" wx:if="{{item.status ===1}}">执行中</text>
+                <text class="_text data-v-674a566d blue-text" wx:elif="{{item.status ===2}}">执行中</text>
+                <text class="_text data-v-674a566d hex-text" wx:elif="{{item.status ===3}}">已完成</text>
+                <text class="_text data-v-674a566d huise-text" wx:elif="{{item.status ===4}}">已取消</text>
+                <text class="_text data-v-674a566d red-text" wx:elif="{{item.status ===5}}">已失败</text>
+                <text class="_text data-v-674a566d huise-text" wx:else>未知</text>
+              </view>
+            </view>
+            <view class="_view data-v-674a566d uni-list-cell-navigate uni-navigate-right repay-btn" bindtap="handleProxy" data-eventid="{{'gDS-1-'+index}}" data-comkey="{{$k}}"> 查看计划详情 </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

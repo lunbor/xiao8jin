@@ -1,0 +1,32 @@
+@import "../../../common/vendor.wxss";
+
+page {
+  height: auto;
+  min-height: 100%;
+  background-color: #f7f8fa;
+}
+.uni-card.by-card {
+  border-radius: 12rpx;
+  box-shadow: 4rpx 4rpx 20rpx 4rpx rgba(123, 123, 123, 0.3);
+}
+.by-dj-btn {
+  color: #666666;
+  border: 2rpx #d7d5d5 solid;
+  padding: 14rpx 20rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  border-radius: 12rpx;
+  margin-top: 10rpx;
+  margin-right: 15rpx;
+}
+.by-dj-btn.active {
+  -webkit-box-ordinal-group: 3;
+  -webkit-order: 2rpx #f7f8fa solid;
+  order: 2rpx #f7f8fa solid;
+  color: #d7d5d5;
+}
+.by-button-submit {
+  background-color: #fd5950;
+  background: -webkit-linear-gradient(left, #ff7575, #fd5950);
+  background: linear-gradient(left, #ff7575, #fd5950);
+}
