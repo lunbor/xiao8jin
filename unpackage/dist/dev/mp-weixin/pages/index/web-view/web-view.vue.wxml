@@ -1,0 +1,1 @@
+<template name="cfc87ada"><view class="_view cfc87ada"><web-view src="{{url}}" class="_web-view cfc87ada"></web-view></view></template>

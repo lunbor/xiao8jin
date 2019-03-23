@@ -1,0 +1,2 @@
+<import src="./tdph.vue.wxml" />
+    <template is="6762fa97" data="{{ ...$root['0'], $root }}"/>

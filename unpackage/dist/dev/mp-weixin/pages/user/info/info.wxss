@@ -1,0 +1,61 @@
+
+page {
+	height: auto;
+	min-height: 100%;
+	background-color: #f7f8fa;
+}
+.info-top-bg {
+	width: 100%;
+	height: 213rpx;
+	padding-top: 50rpx;
+}
+.info-head-pic {
+	margin: 0 auto;
+	border-radius: 50%;
+	height: 107rpx;
+	width: 107rpx;
+	/*background: #fecccc; opacity: 0.8;*/
+	overflow: hidden;
+}
+.info-head-pic image {
+	height: 107rpx;
+	width: 107rpx;
+}
+.info-head-bj-btn {
+	width: 120rpx;
+	margin: 0 auto;
+}
+.info-head-bj-btn image {
+	height: 42rpx;
+	width: 122rpx;
+	margin-top: 20rpx;
+}
+.hg50 {
+	height: 120rpx;
+	color: #576175;
+	font-size: 34rpx;
+	font-weight: 600;
+}
+.hg50 .uni-navigate-right:after {
+	font-size: 32rpx;
+}
+.hg50 .uni-navigate-right {
+	line-height: 80rpx;
+	border-bottom: 1rpx solid #ecedef;
+}
+.hg50 .uni-navigate-right.bb0 {
+	border-bottom: 0rpx;
+}
+.uni-card.by-card {
+	border-radius: 12rpx;
+	-webkit-box-shadow: 4rpx 4rpx 20rpx 4rpx rgba(123, 123, 123, 0.3);
+	box-shadow: 4rpx 4rpx 20rpx 4rpx rgba(123, 123, 123, 0.3);
+}
+.by-mt-30 {
+	margin-top: 40rpx;
+}
+.by-sdh {
+	font-size: 26rpx;
+	font-weight: normal;
+}
+

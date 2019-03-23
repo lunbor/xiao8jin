@@ -26,7 +26,7 @@
 			<uni-segmented-control :current="current" :values="items" v-on:clickItem="onClickItem" :styleType="styleType"
 			 :activeColor="activeColor"></uni-segmented-control>
 		</view>
-		<view class="content pd15" v-if="current === 1">
+		<!--<view class="content pd15" v-if="current === 1">
 			<view class="repay-list">
 				<view class="uni-form-item uni-column">
 					<view class="title">还款金额</view>
@@ -60,7 +60,7 @@
 					</view>
 				</view>
 			</view>
-		</view>
+		</view>-->
 		<view class="content pd15" v-if="current === 0">
 			<view class="repay-list">
 				<view class="uni-form-item uni-column">
@@ -111,7 +111,13 @@
 			</view>
 		</view>
 		
-		<view class="content pd15" v-if="current === 2">
+		<view class="content pd15" v-if="current === 1">
+			<view class="repay-list">
+				<view class="uni-form-item uni-column">
+					<view class="title">还款金额</view>
+					<input class="uni-input" v-model="repay_money" type="digit" style="font-weight: 600;" placeholder-style="font-weight: normal; color:#d0d0d7;" placeholder="请输入要还款的金额,不低于1000元" />
+				</view>
+			</view>
 			<view class="repay-list">
 				<view class="uni-input-row">
 					<label>周期消费笔数</label>
@@ -212,7 +218,7 @@
 			return {
 				items: [
 					'本金还款',
-					'空卡垫资',
+					//'空卡垫资',
 					'精养卡',
 				],
 				current: 0,

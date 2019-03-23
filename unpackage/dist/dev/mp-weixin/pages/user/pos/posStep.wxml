@@ -1,0 +1,2 @@
+<import src="./posStep.vue.wxml" />
+    <template is="0589d9c0" data="{{ ...$root['0'], $root }}"/>

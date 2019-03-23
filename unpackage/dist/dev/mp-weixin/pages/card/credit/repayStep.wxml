@@ -1,0 +1,2 @@
+<import src="./repayStep.vue.wxml" />
+    <template is="bd4c092a" data="{{ ...$root['0'], $root }}"/>

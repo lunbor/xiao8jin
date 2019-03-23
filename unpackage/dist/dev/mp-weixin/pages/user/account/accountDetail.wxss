@@ -1,0 +1,24 @@
+
+page {
+	height: auto;
+	min-height: 100%;
+	background-color: #f7f8fa;
+}
+.pt30{ padding-top: 30rpx;}
+.pd20 {
+		padding: 28rpx 30rpx 0rpx 30rpx;
+}
+.by-mb-30{ margin-bottom: 30rpx;}
+.content{ background-color: #f7f8fa;}
+.contentbg{ background-color: #FFFFFF;}
+.list-item .font-sg{ line-height: 80rpx; font-weight: 500;font-size: 28rpx;}
+.red-text{ color:#fd5950;}
+.repay-fee{ height: 100rpx; line-height: 100rpx; color: #576175;font-weight: 600;border-bottom: 2rpx solid #ecedef;}
+.repay-fee .uni-list-cell-left{ height: 100rpx; line-height: 100rpx;}
+.by-button-submit{
+		background-color:#fd5950;
+		background: -webkit-gradient(linear, left top, right top, from(#ff7575), to(#fd5950));
+		background: -o-linear-gradient(left, #ff7575, #fd5950);
+		background: linear-gradient(left, #ff7575, #fd5950);
+}
+

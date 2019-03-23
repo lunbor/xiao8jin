@@ -1,0 +1,80 @@
+
+page {
+	height: auto;
+	min-height: 100%;
+	background-color: #f7f8fa;
+}
+.uni-card.by-card {
+	border-radius: 12rpx;
+	-webkit-box-shadow: 4rpx 4rpx 20rpx 4rpx rgba(123, 123, 123, 0.3);
+	box-shadow: 4rpx 4rpx 20rpx 4rpx rgba(123, 123, 123, 0.3);
+}
+.uni-card.by-card .p15 {
+	padding: 0rpx 16rpx;
+}
+.by-sdh {
+	width: 120rpx;
+	height: 52rpx;
+	color: #576175;
+	font-weight: 600;
+	margin-right: 30rpx;
+	text-align: justify;
+}
+.by-sdh text {
+	display: inline-block;
+	height: 0rpx;
+	width: 100%;
+}
+.hg50 .uni-navigate-right:after {
+	font-size: 32rpx;
+}
+.hg50 .uni-list-cell-navigate {
+	line-height: 80rpx;
+	border-bottom: 2rpx solid #ecedef;
+}
+.hg50 .uni-list-cell-navigate.bb0 {
+	border-bottom: 0rpx;
+}
+.by-button-submit {
+	background-color: #fd5950;
+	background: -webkit-gradient(linear, left top, right top, from(#ff7575), to(#fd5950));
+	background: -o-linear-gradient(left, #ff7575, #fd5950);
+	background: linear-gradient(left, #ff7575, #fd5950);
+}
+.tip-text {
+	color: #fd5950;
+}
+
+/* 遮罩层 */
+.uni-mask {
+	background: rgba(0, 0, 0, 0.6);
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	z-index: 1;
+}
+.tip_cancel {
+	text-align: center;
+}
+.tip_cancel image {
+	width: 70rpx;
+	height: 123rpx;
+}
+
+/* 弹出层形式的广告 */
+.uni-banner {
+	width: 80%;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	z-index: 99;
+	-webkit-transform: translate(-50%, -50%);
+	    -ms-transform: translate(-50%, -50%);
+	        transform: translate(-50%, -50%);
+}
+.tip_btn{color: #cdd1dd;}
+.tip_btn text{color: #fd5950;}
+.font-max{font-size: 28rpx; font-weight: 700;}
+

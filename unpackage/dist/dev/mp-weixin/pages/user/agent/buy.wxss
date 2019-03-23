@@ -1,0 +1,90 @@
+
+page {
+		height: auto;
+		min-height: 100%;
+		background-color: #f7f8fa;
+}
+.vip_bg{ height: 176rpx; padding-top: 54rpx;}
+.vip_nickname{color: #d0be9a; margin-left: 180rpx;  font-size: 38rpx;}
+.vip_time{color: #b3a696; margin-left: 184rpx; font-size: 24rpx;}
+.vip_title{  padding: 20rpx; font-size: 34rpx;font-weight: 800;
+}
+.pd10{ padding: 0rpx 10rpx;}
+.vip-money{
+		border: 4rpx solid #ebebeb;
+		border-radius: 12rpx;
+		margin: 0rpx 10rpx;
+		-webkit-box-flex: 1;
+		-webkit-flex: 1;
+		    -ms-flex: 1;
+		        flex: 1;height: 140rpx;
+		padding: 20rpx 0rpx 20rpx 50rpx;
+}
+.vip-money.active{
+		border: 4rpx solid #3e3e3e;
+		background-color: #3e3e3e;
+}
+.vip-money-title{color: #7b7b7b;font-size: 32rpx; font-weight: 800;
+}
+.vip-money-val{color: #6c6c6c;font-size: 28rpx; font-weight: 500;}
+.vip-money-val text{color: #6c6c6c;font-size: 44rpx; font-weight: 800;}
+.vip-money-gqval{color: #c0c0c0;font-size: 28rpx; font-weight: normal;text-decoration:line-through;}
+.vip-money.active .vip-money-title{color: #d2ba8c;}
+.vip-money.active .vip-money-val{color: #d6b580;}
+.vip-money.active .vip-money-val text{color: #d6b580;}
+.vip-money.active .vip-money-gqval{color: #969696;}
+.uni-card.by-card {
+		border-radius: 12rpx;
+		-webkit-box-shadow: 4rpx 4rpx 20rpx 4rpx rgba(123, 123, 123, 0.3);
+		box-shadow: 4rpx 4rpx 20rpx 4rpx rgba(123, 123, 123, 0.3);
+}
+.uni-card.by-card .p15 {
+		padding: 0rpx 16rpx;
+}
+.pd300{ padding: 0rpx 20rpx;}
+.pd30{ padding: 30rpx 20rpx;}
+.tq-title{ text-align: center; line-height: 120rpx;  font-size: 36rpx;   color: #d78603;}
+.linebg{ margin: 30rpx 0rpx; height: 4rpx; background-color: #ebebeb; width: 90%; margin: 0rpx auto;}
+.tq-center{ padding: 30rpx 50rpx;}
+.alipay{ text-align: center; padding: 40rpx;height: 619rpx;}
+.alipay image{ width: 444rpx; height: 619rpx;}
+.alipay ._img{ width: 444rpx; height: 619rpx;}
+.weixin{ text-align: center; padding: 40rpx;height: 619rpx;}
+.weixin image{ width: 444rpx; height: 537rpx;}
+.weixin ._img{ width: 444rpx; height: 537rpx;}
+.font-sg{ font-weight: normal; font-family: pingfangxi;}
+.red-text{ color: #fe5950;}
+.tip_btn{color: #cdd1dd; text-align: center;}
+.tip_btn text{color: #fd5950;}
+	/* 遮罩层 */
+.uni-mask {
+		background: rgba(0, 0, 0, 0.6);
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		left: 0;
+		top: 0;
+		z-index: 1;
+}
+.tip_cancel {
+		text-align: center;
+}
+.tip_cancel image {
+		width: 70rpx;
+		height: 123rpx;
+}
+.add-card-btn {
+		font-size: 28rpx;
+		font-weight: 500;
+		line-height: 100rpx;
+		height: 100rpx;
+}
+.add-card-btn .add-title {
+		line-height: 96rpx;
+		font-size: 28rpx;
+}
+.uni-icon-plusempty {
+		font-size: 68rpx;
+		line-height: 100rpx;
+}
+

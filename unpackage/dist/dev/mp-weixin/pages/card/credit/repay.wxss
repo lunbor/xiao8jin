@@ -1,0 +1,214 @@
+
+.uni-numbox {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-webkit-box-pack: start;
+	-webkit-justify-content: flex-start;
+	    -ms-flex-pack: start;
+	        justify-content: flex-start;
+	height: 70rpx;
+}
+.uni-numbox-minus,
+.uni-numbox-plus {
+	margin: 0;
+	background-color: #f9f9f9;
+	width: 80rpx;
+	height: 100%;
+	line-height: 70rpx;
+	text-align: center;
+	color: #555555;
+}
+.uni-numbox-minus {
+	border: 2rpx solid #cccccc;
+	border-right: none;
+	border-top-left-radius: 6rpx;
+	border-bottom-left-radius: 6rpx;
+}
+.uni-numbox-plus {
+	border: 2rpx solid #cccccc;
+	border-left: none;
+	border-top-right-radius: 6rpx;
+	border-bottom-right-radius: 6rpx;
+}
+.uni-numbox-value {
+	border: 2rpx solid #cccccc;
+	background-color: #ffffff;
+	width: 80rpx;
+	height: 100%;
+	text-align: center;
+}
+.uni-numbox-disabled {
+	color: #c0c0c0;
+}
+
+
+page {
+	height: auto;
+	min-height: 100%;
+	background-color: #f7f8fa;
+}
+.content {
+	background-color: #FFFFFF;
+}
+.uni-card-red {
+	background: -webkit-gradient(linear, left top, right top, from(#ff7575), to(#fe5950));
+	background: -o-linear-gradient(left, #ff7575, #fe5950);
+	background: linear-gradient(to right, #ff7575, #fe5950);
+	border-radius: 15rpx;
+	color: #fff;
+	min-height: 260rpx;
+	margin-top: 30rpx;
+	overflow: hidden;
+	position: relative;
+}
+.uni-card .lf7 {
+	width: 74%;
+	font-weight: 500;
+	font-size: 32rpx;
+	text-align: left;
+	-webkit-flex-direction: inherit;
+	-ms-flex-direction: inherit;
+	-webkit-box-orient: inherit;
+	-webkit-box-direction: inherit;
+	        flex-direction: inherit;
+	line-height: 60rpx;
+}
+.uni-card .lf7 text {
+	font-size: 28rpx;
+	font-weight: normal;
+	line-height: 60rpx;
+	margin-left: 10rpx;
+}
+.uni-card .rg3 {
+	width: 26%;
+}
+.uni-card .lf {
+	font-weight: 500;
+	font-size: 32rpx;
+	text-align: left;
+	line-height: 60rpx;
+}
+.uni-card .lf text {
+	font-size: 28rpx;
+	line-height: 40rpx;
+	display: block;
+}
+.uni-card .rg {
+	margin-left: 20rpx;
+}
+.uni-card .code-fj {
+	line-height: 90rpx;
+	height: 90rpx;
+	font-size: 38rpx;
+	width: 100%;
+	text-align: right;
+	-webkit-box-pack: end;
+	-webkit-justify-content: flex-end;
+	    -ms-flex-pack: end;
+	        justify-content: flex-end;
+}
+.uni-card .code-fj .text {
+	margin-right: 50rpx;
+	text-align: right;
+	line-height: 105rpx;
+	font-size: 38rpx;
+}
+.uni-card .code-fj .text.lhg50 {
+	line-height: 90rpx;
+}
+.mini-btn {
+	line-height: 55rpx;
+	width: 160rpx;
+	height: 55rpx;
+	background-color: #fe5950 !important;
+	background: transparent !important;
+}
+.mini-btn:after {
+	border: 5rpx solid #FFFFFF;
+}
+.linebg {
+	background: #EEEEEE;
+	height: 2rpx;
+	line-height: 2rpx;
+	padding: 0rpx;
+	width: 90%;
+	margin: 0 auto;
+	opacity: 0.5;
+}
+.pd15 {
+	padding: 28rpx 30rpx;
+}
+.pd10 {
+	padding: 0rpx 30rpx;
+}
+.ls3 {
+	width: 33.33%;
+	height: 140rpx;
+	text-align: center;
+	margin-top: 15rpx;
+}
+.md15 {
+	margin: 30rpx;
+}
+.repay-list {
+	border-bottom: 2rpx solid #ecedef;
+	padding: 10rpx 0rpx;
+	color: #576175;
+	font-weight: 500;
+}
+.text_center {
+	text-align: center;
+}
+.red-text{color:#fd5950;}
+.by-button-submit{
+	background-color:#fd5950;
+	background: -webkit-gradient(linear, left top, right top, from(#ff7575), to(#fd5950));
+	background: -o-linear-gradient(left, #ff7575, #fd5950);
+	background: linear-gradient(left, #ff7575, #fd5950);
+}
+.tip-text-h{ font-size: 26rpx; color: #d0d0d7; line-height: 50rpx;}
+.repay_num{ display: inline-block; margin-right: 24rpx; width: 80rpx; height: 80rpx;line-height: 80rpx; border-radius: 50%; border: 2rpx solid #e3e4e6; text-align: center; color: #576175; font-size: 32rpx; font-weight: 500;}
+.repay_num.active{background-color: #fe5950;color: #FFFFFF;border: 2rpx solid #fe5950;}
+.pay_date{ margin-bottom: 14rpx; display: inline-block; margin-right: 14rpx; width: 60rpx; height: 60rpx;line-height: 60rpx; border-radius: 50%; border: 2rpx solid #e3e4e6; text-align: center; color: #576175; font-size: 32rpx; font-weight: 500;}
+.pay_date.active{background-color: #fe5950;color: #FFFFFF;border: 2rpx solid #fe5950;}
+.help-filled{color: #fd5950; font-size: 32rpx;}
+
+/* 遮罩层 */
+.uni-mask {
+	background: rgba(0, 0, 0, 0.6);
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	z-index: 1;
+}
+.tip_cancel {
+	text-align: center;
+}
+.tip_cancel image {
+	width: 70rpx;
+	height: 123rpx;
+}
+
+/* 弹出层形式的广告 */
+.uni-banner {
+	width: 80%;
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	z-index: 99;
+	-webkit-transform: translate(-50%, -50%);
+	    -ms-transform: translate(-50%, -50%);
+	        transform: translate(-50%, -50%);
+}
+.tip_btn text{color: #fd5950;}
+.queren-btn{background:#fe5950; width: 200rpx; height: 80rpx; line-height: 80rpx; font-size: 28rpx; margin: 30rpx auto; margin-bottom: 0rpx;}
+

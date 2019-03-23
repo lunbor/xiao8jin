@@ -1,0 +1,52 @@
+
+page {
+	height: auto;
+	min-height: 100%;
+	background-color: #d8263c;
+}
+.page-bg {
+	min-height: 100%;
+	height: 1214rpx;
+	background-color: #d8263c;
+	/* background: url('http://hszt.tw186.com/uploads/img/intive_bg_1.png') no-repeat; */
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+.qscode {
+	padding-top: 440rpx; height: 200rpx;
+}
+.share-btn-sh{ padding-top: 30rpx; width: 260rpx; margin: 0 auto;}
+.share-btn-sh ._button{ background-color: #fe5950; color: #FFFFFF; height: 80rpx; line-height: 80rpx;}
+.tishipj{ height: 50rpx; line-height: 50rpx; text-align: left; color: #a1a1a1;}
+.tishitextarea{ height: 100rpx; line-height: 50rpx;}
+
+/* 遮罩层 */
+.uni-mask {
+	background: rgba(0, 0, 0, 0.6);
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	z-index: 1;
+}
+.tip_cancel {
+	text-align: center;
+}
+.tip_cancel image {
+	width: 70rpx;
+	height: 123rpx;
+}
+
+/* 弹出层形式的广告 */
+.uni-banner {
+	width: 80%;
+	position: fixed;
+	left: 55%;
+	top: 30%;
+	z-index: 99;
+	-webkit-transform: translate(-50%, -50%);
+	    -ms-transform: translate(-50%, -50%);
+	        transform: translate(-50%, -50%);
+}
+
