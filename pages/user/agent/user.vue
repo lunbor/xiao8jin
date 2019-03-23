@@ -1,40 +1,45 @@
 <template>
 	<view>
-		<view class="agent_user_bg">
-			<view class="agent_total_user">共<text>{{agentUserCount}}</text>人</view>
+		<view class="my_team" v-if="no_list==1">
+			<view class="my_team_info">
+				<view class="uni-flex uni-row">
+					<view class="flex-item name">团队总人数：<text>{{agentUserCount}}人</text></view>
+					<view class="flex-item name">直推：<text>12人</text></view>
+				</view>
+				<view class="uni-flex uni-row">
+					<view class="flex-item name">间推：<text>8人</text></view>
+					<view class="flex-item name">当月活跃人数：<text>20人</text></view>
+				</view>
+			</view>
+			
+			<view class="my_team_lists">
+				<view class="my_team_list uni-list-cell-navigate uni-navigate-right" v-for="(item,index) in list" :key="index" >
+					<view class="uni-flex uni-row" style="width: 100%;">
+						<view class="flex-item" style="width: 80upx;">
+							<view class="head-pic">
+								<image :src="item.head_img?item.head_img:'../../../static/head-no-pic.png'"></image>
+							</view>
+						</view>
+						<view class="flex-item my_team_listInfo" >
+							<view class="uni-flex uni-row">
+								<view class="flex-item w40">用户名：巴啦啦</view>
+								<view class="flex-item w30">等级：vip</view>
+								<view class="flex-item w30">关系：直推</view>
+							</view>
+							<view class="uni-flex uni-row">
+								<view class="flex-item w40">电话:{{item.nickname}}</view>
+								<view class="flex-item w60">TA的团队：68人</view>
+							</view>
+						</view>
+					</view>
+				</view>
+			</view>
 		</view>
 		
-		<view class="uni-flex uni-row user-list bgff">
-			<view class="by-flex text-c user-row">
-				用户头像
-			</view>
-			<view class="by-flex text-c user-row">
-				用户昵称
-			</view>
-			<view class="by-flex text-c user-row">
-				注册日期
-			</view>
-		</view>
+	
 		
 		<view class="no-list" v-if="no_list==0">
 			<image src="../../../static/no-list.png"></image>
-		</view>
-		<view class="list-view" v-if="no_list==1">
-			
-			<view class="uni-flex uni-row user-list" v-for="(item,index) in list" :key="index" v-bind:class="(index+1)%2==0 ? 'bgff' : ''">
-				<view class="by-flex text-c user-row">
-					<view class="head-pic">
-						<image :src="item.head_img?item.head_img:'../../../static/head-no-pic.png'"></image>
-					</view>
-				</view>
-				<view class="by-flex text-c user-row">
-					{{item.nickname}}
-				</view>
-				<view class="by-flex text-c user-row">
-					{{item.create_time}}
-				</view>
-			</view>
-			
 		</view>
 		<uni-load-more v-if="is_load==1" :loadingType="loadingType" :contentText="contentText"></uni-load-more>
 	</view>
@@ -126,38 +131,23 @@
 	page {
 		height: auto;
 		min-height: 100%;
-		background-color: #f7f8fa;
+		background-color: #F2F2F2;
 	}
-	
-	.agent_user_bg{
-		background-color: #fd5950;
-		background: linear-gradient(top, #fd5950, #ff7575);
-		height: 120upx;
-		color: #FFFFFF;
-		 padding: 30upx 50upx;
-	}
-	.agent_total_user {text-align: center;}
-	.agent_total_user text{font-size: 60upx; margin: 0 14upx;}
-	
-	.by-flex{
-		flex: 1;
-	}
-	
-	.text-r{
-		text-align: right;
-	}
-	
-	.text-c{
-		text-align:center;
-	}
-	
-	
-	.user-list{ background-color: #eeeeee; color: #7d7d7d;}
-	.bgff{background-color: #FFFFFF;}
-	.user-row{ line-height: 100upx; height: 100upx;}	
-	.head-pic{ border-radius:50%; height: 60upx; width: 60upx; overflow: hidden;margin: 0 auto;margin-top: 20upx;}
+	.my_team{margin: 30upx;background-color: #fff;padding: 30upx 0;border-radius: 12upx;-webkit-box-shadow: 4upx 4upx 20upx 4upx rgba(0, 37, 174, 0.2);
+		box-shadow: 4upx 4upx 20upx 4upx rgba(0, 37, 174, 0.2);}
+	.my_team_info{background-color: #5a91fe;padding: 20upx;border-radius: 12upx;color: #fff;margin: 0 30upx;}
+	.my_team_info .flex-item{flex: 1;}
+	.my_team_info .name{font-size: 24upx;}
+	.my_team_info .name uni-text{font-size: 30upx;}
+	.my_team_lists{padding-left: 30upx;}
+	.my_team_list{padding: 30upx 0 0upx 0;}
+	.my_team_listInfo{border-bottom: 1px solid #ECECEC;flex:1 ;padding-bottom: 10upx;color: #666;}
+	.my_team_listInfo .flex-item{font-size: 22upx;line-height: 2;}
+	.my_team_listInfo .w40{width: 40%;}
+	.my_team_listInfo .w30{width: 30%;}
+	.my_team_list .uni-list-cell-navigate.uni-navigate-right:after{right: 10upx;}
+	.head-pic{ border-radius:50%; height: 60upx; width: 60upx; overflow: hidden;;margin-top: 12upx;}
 	.head-pic image{ width: 60upx; height: 60upx;}
-	
 	.no-list{ text-align: center; height: 260upx; padding-top: 50%;}
 	.no-list image{width: 185upx; height: 60upx;}
 </style>

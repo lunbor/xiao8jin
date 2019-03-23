@@ -4,13 +4,15 @@
 			"style": {
 				"navigationBarTitleText": "首页",
 				"enablePullDownRefresh": true,
+				"navigationStyle":"custom",
 				"app-plus": {
 					"titleNView": {
+						"titleView":false,
 						"buttons": [{
 							"text": "\ue263",
 							"fontSrc": "/static/uni.ttf",
 							"fontSize": "22px",
-							"color": "#ffffff"
+							"color": "#FFFFFF"
 						}]
 					}
 				}
@@ -19,10 +21,12 @@
 		{
 			"path": "pages/tabBar/card/card",
 			"style": {
-				"navigationBarTitleText": "卡包",
+				"navigationBarTitleText": "还款",
 				"enablePullDownRefresh": true,
+				"navigationStyle":"custom",
 				"app-plus": {
 					"titleNView": {
+						"titleView":false,
 						"buttons": [{
 							"text": "\ue468",
 							"fontSrc": "/static/uni.ttf",
@@ -37,7 +41,33 @@
 			"path": "pages/tabBar/user/user",
 			"style": {
 				"navigationBarTitleText": "",
-				"enablePullDownRefresh": true
+				"enablePullDownRefresh": true,
+				"navigationStyle":"custom",
+				"app-plus":{
+				"titleView":false
+				}
+			}
+		},
+		{
+			"path": "pages/tabBar/extension/extension",
+			"style": {
+				"navigationBarTitleText": "推广",
+				"enablePullDownRefresh": false,
+				"navigationStyle":"custom",
+				"app-plus":{
+				"titleView":false
+				}
+			}
+		},
+		{
+			"path": "pages/tabBar/ranking/ranking",
+			"style": {
+				"navigationBarTitleText": "排行榜",
+				"enablePullDownRefresh": false,
+				"navigationStyle":"custom",
+				"app-plus":{
+				"titleView":false
+				}
 			}
 		},
 		{
@@ -66,7 +96,12 @@
 		{
 			"path": "pages/user/login/login",
 			"style": {
-				"navigationBarTitleText": "登录"
+				"navigationBarTitleText": "登录",
+				"navigationStyle":"custom",
+				"app-plus":{
+				"titleView":false
+				}
+				
 			}
 		},
 		{
@@ -122,6 +157,7 @@
 			"style": {
 				"navigationBarTitleText": "交易明细",
 				"enablePullDownRefresh": true
+				
 			}
 		},
 		{
@@ -163,7 +199,11 @@
 			"path": "pages/user/login/reg",
 			"style": {
 				"navigationBarTitleText": "注册",
-				"enablePullDownRefresh": false
+				"enablePullDownRefresh": false,
+				"navigationStyle":"custom",
+				"app-plus":{
+				"titleView":false
+				}
 			}
 		},
 		{
@@ -225,6 +265,13 @@
 			}
 		},
 		{
+			"path": "pages/card/credit/repayment",
+			"style": {
+				"navigationBarTitleText": "还款",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
 			"path": "pages/card/credit/repayStep",
 			"style": {
 				"navigationBarTitleText": "还款计划",
@@ -256,7 +303,10 @@
 			"path": "pages/user/plan/plan",
 			"style": {
 				"navigationBarTitleText": "我的计划",
-				"enablePullDownRefresh": false
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor":"#2f7bfe",
+				"navigationBarTextStyle":"white"
+				
 			}
 		},
 		{
@@ -306,25 +356,31 @@
 		{
 			"path": "pages/user/agent/buy",
 			"style": {
-				"navigationBarTitleText": "推广等级",
-				"enablePullDownRefresh": false
+				"navigationBarTitleText": "升级会员",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor":"#3c3f4c",
+				"navigationBarTextStyle":"white"
 			}
 		},
 		{
 			"path": "pages/user/agent/user",
 			"style": {
-				"navigationBarTitleText": "我的用户",
+				"navigationBarTitleText": "我的团队",
 				"enablePullDownRefresh": false
 			}
-		},
-		{
-			"path": "pages/user/agent/share",
+		},{
+			"path": "pages/user/agent/service",
 			"style": {
-				"navigationBarTitleText": "我的代理",
+				"navigationBarTitleText": "联系客服",
 				"enablePullDownRefresh": false
 			}
-		},
-		{
+		},{
+			"path": "pages/user/agent/cooperation",
+			"style": {
+				"navigationBarTitleText": "商务合作",
+				"enablePullDownRefresh": false
+			}
+		},{
 			"path": "pages/user/agent/money",
 			"style": {
 				"navigationBarTitleText": "收益明细",
@@ -348,8 +404,10 @@
 		{
 			"path": "pages/user/agent/invite",
 			"style": {
-				"navigationBarTitleText": "推广二维码",
-				"enablePullDownRefresh": false
+				"navigationBarTitleText": "分享二维码",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#ffd09d",
+				"navigationBarTextStyle": "white"
 			}
 		},
 		{
@@ -357,6 +415,8 @@
 			"style": {
 				"navigationBarTitleText": "收益排行",
 				"enablePullDownRefresh": false
+				
+				
 			}
 		},
 		{
@@ -375,16 +435,19 @@
 		}
 	],
 	"globalStyle": {
-		"navigationBarTextStyle": "white",
-		"navigationBarTitleText": "红豆管家",
-		"navigationBarBackgroundColor": "#fe5950",
-		"backgroundColor": "#fe5950"
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "海豚",
+		"navigationBarBackgroundColor": "#ffffff",
+		"backgroundColor": "#ffffff",
+		"titleSize": "20px"
+		
 	},
 	"tabBar": {
-		"color": "#9097a9",
-		"selectedColor": "#fe5950",
+		"color": "#999999",
+		"selectedColor": "#75a3fc",
 		"borderStyle": "black",
 		"backgroundColor": "#ffffff",
+		
 		"list": [{
 				"pagePath": "pages/tabBar/index/index",
 				"iconPath": "static/index.png",
@@ -395,23 +458,25 @@
 				"pagePath": "pages/tabBar/card/card",
 				"iconPath": "static/card.png",
 				"selectedIconPath": "static/cardHL.png",
-				"text": "卡包"
+				"text": "还款"
+			},
+			{
+				"pagePath": "pages/tabBar/extension/extension",
+				"iconPath": "static/tg.png",
+				"selectedIconPath": "static/tg.png"
+				// "text": "推广"
+			},
+			{
+				"pagePath": "pages/tabBar/ranking/ranking",
+				"iconPath": "static/rank.png",
+				"selectedIconPath": "static/rankHL.png",
+				"text": "排行榜"
 			},
 			{
 				"pagePath": "pages/tabBar/user/user",
 				"iconPath": "static/user.png",
 				"selectedIconPath": "static/userHL.png",
 				"text": "我的"
-			}
-		]
-	},
-	"condition" : { //模式配置，仅开发期间生效
-		"current": 0, //当前激活的模式(list 的索引项)
-		"list": [
-			{
-				"name": "", //模式名称
-				"path": "", //启动页面，必选
-				"query": "" //启动参数，在页面的onLoad函数里面得到
 			}
 		]
 	}

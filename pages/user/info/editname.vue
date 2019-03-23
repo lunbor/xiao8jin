@@ -103,13 +103,17 @@
 		min-height: 100%;
 		background-color: #f7f8fa;
 	}
-	.uni-card.by-card {
+.uni-card.by-card {
 		border-radius: 12upx;
-		-webkit-box-shadow: 4upx 4upx 20upx 4upx rgba(123, 123, 123, 0.3);
-		box-shadow: 4upx 4upx 20upx 4upx rgba(123, 123, 123, 0.3);
+		-webkit-box-shadow: 4upx 4upx 20upx 4upx rgba(0, 37, 174, 0.2);
+		box-shadow: 4upx 4upx 20upx 4upx rgba(0, 37, 174, 0.2);
 	}
-	.by-button-submit{
-		background-color:#fd5950;
-		background: linear-gradient(left, #ff7575, #fd5950);
+	.by-button-submit {
+		background-color: #32b0fd;
+		background: linear-gradient(left, #32b0fd, #097ede);
+		border-radius: 500px;
+		-webkit-box-shadow: 4upx 4upx 20upx 4upx rgba(50, 176, 253, 0.4);
+		box-shadow: 4upx 4upx 20upx 4upx rgba(50, 176, 253, 0.4);
 	}
 </style>
+

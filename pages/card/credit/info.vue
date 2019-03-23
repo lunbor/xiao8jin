@@ -1,26 +1,31 @@
 <template>
 	<view class="uni-padding-wrap">
-        	<view class="uni-card uni-card-red" v-bind:style="{ background: card.color}">
-        		<view class="uni-triplex-row pd15">
-        			<view class="uni-triplex-left lf7">{{card.bank_name}}<text>{{card.credit_code}}</text></view>
-        			<view class="uni-triplex-right rg3"><button class="mini-btn" type="primary" size="mini">信用卡</button></view>
-        		</view>
-        		<view class="uni-triplex-row linebg"></view>
-        		<view class="uni-flex uni-row">
-        			<view class="flex-item ls3">
-        				<view class="ls3-row">￥<text>{{card.line_credit}}</text></view>
-        				<view>额度</view>
-        			</view>
-        			<view class="flex-item ls3">
-        				<view class="ls3-row"><text>{{card.bill_time}}</text>日</view>
-        				<view>账单日</view>
-        			</view>
-        			<view class="flex-item ls3">
-        				<view class="ls3-row"><text>{{card.repay_time}}</text>日</view>
-        				<view>还款日</view>
-        			</view>
-        		</view>
-        	</view>
+        	
+			<view class="uni-card card_style">
+				<view class="card_bank">
+					
+					<text>{{card.bank_name}}</text>
+					<text class="card_num">{{card.credit_code}}</text>
+					<text class="bank_type">信用卡</text>
+				</view>
+				
+				<view class="uni-flex uni-row card_main">
+					<view class="flex-item ls3">
+						<view class="ls3-row">¥<text>{{card.line_credit}}</text></view>
+						<view class="name">额度</view>
+					</view>
+					<view class="flex-item ls3">
+						<view class="ls3-row"><text>{{card.bill_time}}</text>日</view>
+						<view class="name">账单日</view>
+					</view>
+					<view class="flex-item ls3">
+						<view class="ls3-row"><text>{{card.repay_time}}</text>日</view>
+						<view class="name">还款日</view>
+					</view>
+				</view>
+			</view>
+		
+		
 		
 		<view class="uni-card by-card by-mt-30">
 			<view class="uni-card-content p15">
@@ -155,7 +160,7 @@
 	page {
 		height: auto;
 		min-height: 100%;
-		background-color: #f7f8fa;
+		background-color: #f2f2f2;
 	}
 	.uni-card-red{
 		background: linear-gradient(to right, #ff7575, #fe5950);
@@ -166,6 +171,7 @@
 		overflow: hidden;
 		position: relative;
 	}
+	
 	
 	.uni-card .lf7{width: 74%; font-weight: 500;font-size: 32upx; text-align: left;    -webkit-flex-direction: inherit;
     -ms-flex-direction: inherit;
@@ -182,7 +188,11 @@
 	.uni-card .code-fj .text{ margin-right: 50upx; text-align: right;line-height: 105upx;font-size: 38upx; }
 	.uni-card .code-fj .text.lhg50{ line-height: 90upx; }
 	
-	.mini-btn{ line-height: 55upx ; width: 160upx; height: 55upx;background-color: #fe5950 !important; background: transparent !important; 
+	.mini-btn{ /* line-height: 55upx ; */ width: 120upx; height: 40upx;/* background-color: #fe5950 !important; */ background: transparent !important;
+	padding: 0;
+    text-align: center;
+    line-height:42upx;
+	margin: 10upx 20upx;
 	
 	}
 	.mini-btn:after{border: 5upx solid #FFFFFF;}
@@ -191,17 +201,18 @@
 	
 	.ls3{
 		width: 33.33%;
-		height: 140upx;
+		/* height: 140upx; */
 		text-align: center;
-		margin-top: 15upx;
+		/* margin-top: 15upx; */
+		padding: 24upx 0;
 	}
 	
 	
 		.hg50 {
-			height: 120upx;
-			color: #576175;
-			font-size: 34upx;
-			font-weight: 600;
+			/* height: 120upx; */
+			color: #333;
+			font-size: 28upx;
+			/* font-weight: 600; */
 		}
 	
 		.hg50 .uni-navigate-right:after {
@@ -217,24 +228,33 @@
 		.hg50 .uni-navigate-right.bb0 {
 			border-bottom: 0upx;
 		}
-		
+		.hg50 .uni-list-cell-navigate {
+			/* line-height: 80upx; */
+			border-bottom: 2upx solid #ecedef;
+			padding:10upx 20upx;
+		}
 		
 		
 	
 		.uni-card.by-card {
 			border-radius: 12upx;
-			-webkit-box-shadow: 4upx 4upx 20upx 4upx rgba(123, 123, 123, 0.3);
-			box-shadow: 4upx 4upx 20upx 4upx rgba(123, 123, 123, 0.3);
+			-webkit-box-shadow: 4upx 4upx 20upx 4upx rgba(0, 37, 174, 0.2);
+			box-shadow: 4upx 4upx 20upx 4upx rgba(0, 37, 174, 0.2);
+			margin-top: 40upx;
 		}
 		
 		.by-mt-30 {
 				margin-top: 40upx;
 		}
 		
-		.by-button-submit{
-			background-color:#fd5950;
-			background: linear-gradient(left, #ff7575, #fd5950);
-		}
+	.by-button-submit {
+		background-color: #ffa13c;
+		background: linear-gradient(left, #ffa13c, #fe8401);
+		border-radius: 500px;
+		-webkit-box-shadow: 4upx 4upx 20upx 4upx rgba(254, 132, 1, 0.4);
+		box-shadow: 4upx 4upx 20upx 4upx rgba(254, 132, 1, 0.4);
+		margin-top: 40upx;
+	}
 		
 		.card_info_img image{ width: 31upx; height: 31upx;    margin-top: 16upx;}
 		
@@ -243,6 +263,30 @@
 		}
 		
 		.hg50 .uni-navigate-right .title{
-			padding-left: 20upx;
+			padding-left: 30upx;
 		}
+		.card_info_img uni-image{width: 36upx;height: 36upx;}
+		.card_style{
+			background: #FFFFFF;
+			border-radius: 14upx;
+			color: #333;
+			margin-top: 30upx;
+			position: relative;
+			border-radius: 12upx;
+			-webkit-box-shadow: 4upx 4upx 20upx 4upx rgba(0, 37, 174, 0.2);
+			box-shadow: 4upx 4upx 20upx 4upx rgba(0, 37, 174, 0.2);
+			text-align: left;
+			padding:4px 30upx;
+			}
+			.bank_type{font-size: 22upx;border: 1px solid #EEEEEE;color: #999999;border-radius: 6upx;line-height: 1;padding: 0 10upx;height: 30upx;line-height: 30upx;
+			margin-left: 12upx;margin-top: 8upx;}
+			.card_bank{padding: 10upx 0;border-bottom: 1px solid #ECECEC;overflow: hidden;width: 100%;}
+			.card_bank text{float: left;}
+			.card_bank_icon{width:32upx;height:32upx;margin-right: 10upx;float: left;margin-top: 8upx;}
+			.card_bank_info{padding: 20upx 0;color: #333;}
+			.card_bank_info .name{color: #999999;}
+			.card_bank_info .text{margin-right: 30upx;}
+			.card_num{font-size: 24upx;color: #666666;margin-top: 4upx;}
+			.card_main{font-size: 32upx;font-weight: 500;padding-top: 20upx;}
+			.card_main .name{font-size: 24upx;color: #999;margin-top: 10upx;}
 </style>

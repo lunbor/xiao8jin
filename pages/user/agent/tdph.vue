@@ -3,7 +3,7 @@
 		<view class="agent_syph_bg" style="background-image: url(../../../static/agent_syph_bg.png); background-repeat: no-repeat; background-size: 100% 100%;">
 			<view class="syph-top">
 				<view class="uni-flex uni-row">
-					<view class="by-flex text-c" v-for="(item,index) in list" :key="index" v-if="index<3" :class="'top-'+(index+1)">
+					<view class="by-flex text-c" v-for="(item,index) in listTeam" :key="index" v-if="index<3" :class="'top-'+(index+1)">
 							<view class="head-pic">
 								<image :src="item.head_img?item.head_img:'../../../static/head-no-pic.png'"></image>
 							</view>
@@ -17,7 +17,7 @@
 		</view>
 
 		
-		<view class="syph-list-bg" v-for="(item,index) in list" :key="index" v-if="index>2" style="background-image: url(../../../static/agent_syph_list_bg.png); background-repeat: no-repeat; background-size: 100% 100%;">
+		<view class="syph-list-bg" v-for="(item,index) in listTeam" :key="index" v-if="index>2" style="background-image: url(../../../static/agent_syph_list_bg.png); background-repeat: no-repeat; background-size: 100% 100%;">
 			<view class="syph-list" style="padding: 0 30upx;">
 				<view class="uni-flex uni-row">
 					<view class="text-c xuhao">
@@ -57,7 +57,7 @@
 	export default {
 		data() {
 			return {
-				list:[],
+				listTeam:[],
 			}
 		},
 		onLoad() {
@@ -68,12 +68,12 @@
 		methods: {
 			getAgentTdph(){
 				try {
-					this.$http.post(this.websiteUrl+'/api/agent/getAgentTdph',{},(res) => {
-						if(res.data.code==1){
-							this.list = res.data.result;
+					this.$http.post(this.websiteUrl+'/api/agent/getAgentTdph',{},(resTeam) => {
+						if(resTeam.data.code==1){
+							this.listTeam = resTeam.data.result;
 						}else{
 							uni.showModal({
-								content:res.data.msg,
+								content:resTeam.data.msg,
 								showCancel:false
 							})
 						}

@@ -1,68 +1,99 @@
 <template>
 	<view>
-		<view>
-			<uni-segmented-control :current="current" :values="items" v-on:clickItem="onClickItem" :styleType="styleType"
-			 :activeColor="activeColor"></uni-segmented-control>
-		</view>
-		<view class="content">
-			<view v-show="current === 0" class="uni-padding-wrap">
-				<view class="card-no-add" v-if="creditCard.length==0">
-					<image src="../../../static/card-no-add.png"></image>
-					<view class="add-card-btn uni-flex uni-row" style="justify-content: center;" @click="onAddCredit('/pages/card/credit/add')">
-						<view class="flex-item uni-icon uni-icon-plusempty"></view>
-						<view class="flex-item add-title">添加新的信用卡</view>
-					</view>
-				</view>
-
-				<view class="uni-card uni-card-red" v-for="(item, index) in creditCard" :key="index" v-bind:style="{ background: item.color}">
-					<view class="uni-triplex-row pd15">
-						<view class="uni-triplex-left lf7">{{item.bank_name}}<text>{{item.credit_code}}</text></view>
-						<view class="uni-triplex-right rg3"><button class="mini-btn" type="primary" size="mini" v-if="item.is_repay === 1" @click="goTorepay(item.credit_id)">去还款</button><button class="mini-btn" type="primary" size="mini" v-else>查看</button></view>
-					</view>
-					<view class="uni-triplex-row linebg"></view>
-					<view class="uni-flex uni-row">
-						<view class="flex-item ls3">
-							<view class="ls3-row">￥<text>{{item.line_credit}}</text></view>
-							<view>额度</view>
-						</view>
-						<view class="flex-item ls3">
-							<view class="ls3-row"><text>{{item.bill_time}}</text>日</view>
-							<view>账单日</view>
-						</view>
-						<view class="flex-item ls3">
-							<view class="ls3-row"><text>{{item.repay_time}}</text>日</view>
-							<view>还款日</view>
-						</view>
-					</view>
-					<view v-show="item.is_repay === 1" @click="goTorepay(item.credit_id)">
-						<view class="uni-flex uni-row btn-repay-bg"></view>
-						<view class="uni-flex uni-row btn-repay">立即还款</view>
-					</view>	
-				</view>
+		<view class="card_title">
+			<view class="card_title_name">还款</view>
+			<view>
+				<uni-segmented-control :current="current" :values="items" v-on:clickItem="onClickItem" :styleType="styleType"
+				 :activeColor="activeColor"></uni-segmented-control>
 			</view>
-			<view v-show="current === 1" class="uni-padding-wrap">
-				<view class="card-no-add" v-if="bankCard.length==0">
-					<image src="../../../static/card-no-add.png"></image>
-					<view class="add-card-btn uni-flex uni-row" style="justify-content: center;" @click="goDetailPage('/pages/card/bank/add')">
-						<view class="flex-item uni-icon uni-icon-plusempty"></view>
-						<view class="flex-item add-title">添加新的储蓄卡</view>
+		</view>
+	
+		<view class="content">
+			<view v-show="current === 0" class="uni-padding-wrap" style="width: 100%;">
+				<view class="card_addCase">
+					 <view class="uni-flex uni-row">
+				        <view class="flex-item" style="width: 80%;padding-left: 30upx;">
+							<img class="card_icon" src="../../../static/card_icon.png">
+							<text class="card_name">信用卡管理</text>
+						</view>
+				        <view class="flex-item" style="width: 20%; padding-right: 30upx;" @click="onAddCredit('/pages/card/credit/add')"><img style="float: right;" class="card_icon" src="../../../static/add_btn.png"></view>
+				    </view>
+				</view>
+				<view class="uni-padding-wrap" style="margin-top: 110upx;">
+					<view class="card-no-add" v-if="creditCard.length==0">
+						<image src="../../../static/card-no-add.png"></image>
+						<view  class="add_card">你现在什么都不绑定，一般情况下是不能还款的，<br>二般情况下你获得了大红包我们也不能咔嚓一下打到你的账户</view>
+						<view class="add-card-btn uni-flex uni-row" style="justify-content: center;" @click="onAddCredit('/pages/card/credit/add')">
+							<view class="flex-item "></view>
+							<view class="flex-item add-title">添加新的信用卡</view>
+						</view>
+					</view>
+					
+				
+					<view class="uni-card card_style" v-for="(item, index) in creditCard" :key="index">
+						<view class="card_bank"><text>{{item.bank_name}}</text><text class="card_num">{{item.credit_code}}</text></view>
+						<view class="uni-flex uni-row card_main">
+							<view class="flex-item ls3">
+								<view class="ls3-row">¥<text>{{item.line_credit}}</text></view>
+								<view class="name">额度</view>
+							</view>
+							<view class="flex-item ls3">
+								<view class="ls3-row"><text>{{item.bill_time}}</text>日</view>
+								<view class="name">账单日</view>
+							</view>
+							<view class="flex-item ls3">
+								<view class="ls3-row"><text>{{item.repay_time}}</text>日</view>
+								<view class="name">还款日</view>
+							</view>
+						</view>
+						<view v-show="item.is_repay === 1" @click="goTorepay(item.credit_id)">
+							<view class="btn-repay">立即还款</view>
+						</view>	
 					</view>
 				</view>
 				
-				<view class="uni-card uni-card-red" v-for="(item, index) in bankCard" :key="index" v-bind:style="{ background: item.color}">
-					<view class="uni-triplex-row pd15">
-						<view class="text lf">{{item.bank_name}}<text>{{item.name}}</text></view>
-						<view class="text rg"><button class="mini-btn" type="primary" size="mini">储蓄卡</button></view>
-						<view class="text rg" style="flex: 1; text-align: right;"><button class="mini-btn" type="primary" size="mini" @click="delBank(item.bankcard_id)">解绑</button></view>
+			</view>
+			<view v-show="current === 1" class="uni-padding-wrap" style="width: 100%;">
+				<view class="card_addCase">
+					 <view class="uni-flex uni-row">
+				        <view class="flex-item" style="width: 80%;padding-left: 30upx;">
+							<img class="card_icon" src="../../../static/card_icon.png">
+							<text class="card_name">储蓄卡管理</text>
+						</view>
+				        <view class="flex-item" style="width: 20%; padding-right: 30upx;" @click="goDetailPage('/pages/card/bank/add')"><img style="float: right;" class="card_icon" src="../../../static/add_btn.png"></view>
+				    </view>
+				</view>
+				<view class="uni-padding-wrap" style="margin-top: 110upx;">
+					<view class="card-no-add" v-if="bankCard.length==0">
+						<image src="../../../static/card-no-add.png"></image>
+						<view  class="add_card">你现在什么都不绑定，一般情况下是不能还款的，<br>二般情况下你获得了大红包我们也不能咔嚓一下打到你的账户</view>
+						<view class="add-card-btn uni-flex uni-row" style="justify-content: center;" @click="goDetailPage('/pages/card/bank/add')">
+							<view class="flex-item"></view>
+							<view class="flex-item add-title">添加新的储蓄卡</view>
+						</view>
 					</view>
-					<view class="uni-triplex-row linebg"></view>
-					<view class="uni-flex uni-row  code-fj">
-						<view class="text">***</view>
-						<view class="text">****</view>
-						<view class="text">****</view>
-						<view class="text lhg50">{{item.bank_code}}</view>
+				
+					<view class="uni-card card_style" v-for="(item, index) in bankCard" :key="index">
+						<view class="card_bank"><text>{{item.bank_name}}</text><text class="bank_type">储蓄卡</text></view>
+						
+						<!-- <view class="uni-triplex-row linebg"></view> -->
+						<view class="card_bank_info">
+							<view class="card_bank_main ">
+								<view style="margin-bottom: 20upx;"><text class="name">持卡人：</text>{{item.name}}</view>
+								<view class="uni-flex uni-row">
+									<text class="name">卡号：</text>
+									<view class="text">***</view>
+									<view class="text">****</view>
+									<view class="text">****</view>
+									<view class="text lhg50">{{item.bank_code}}</view>
+								</view>
+							</view>
+						
+							<view class="untying_btn"  @click="delBank(item.bankcard_id)"><text>解除绑定</text></view>
+						</view>
 					</view>
 				</view>
+				
 			</view>
 		</view>
 		
@@ -85,7 +116,7 @@
 					'储蓄卡',
 				],
 				current: 0,
-				activeColor: '#fe5950',
+				activeColor:'#5a91fe',
 				styleType: 'text',
 				creditCard: [],
 				bankCard: [],
@@ -352,17 +383,17 @@
 </script>
 
 <style>
+	page{background-color: #f2f2f2;}
 	.content {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		text-align: center;
+		text-align: center;	
+		margin-top: 190upx;
 	}
-
 	.content .card-no-add {
 		margin-top: 140upx;
 	}
-
 	.content .card-no-add image {
 		width: 260upx;
 		height: 260upx;
@@ -374,20 +405,19 @@
 	}
 
 	.add-card-btn {
-		color: #b2b6c2;
-		font-size: 32upx;
-		font-weight: 500;
-		margin-top: 86upx;
-		line-height: 100upx;
-		height: 100upx;
-		background-color: #fafafa;
-		border: 2upx #999999 solid;
-		border-radius: 10upx;
+		background-color: #32b0fd;
+		background: linear-gradient(left, #32b0fd, #097ede);
+		border-radius: 500px;
+		-webkit-box-shadow: 4upx 4upx 20upx 4upx rgba(50, 176, 253, 0.4);
+		box-shadow: 4upx 4upx 20upx 4upx rgba(50, 176, 253, 0.4);
+		height: 88upx;
+		margin-top: 50upx;
 	}
 	
 	.add-card-btn .add-title {
-		line-height: 96upx;
+		line-height: 88upx;
 		font-size: 32upx;
+		color: #fff;
 	}
 
 	.uni-icon-plusempty {
@@ -396,14 +426,12 @@
 		line-height: 100upx;
 		
 	}
-	
-	
 	.uni-card-red{
 		background: linear-gradient(to right, #ff7575, #fe5950);
 		border-radius: 15upx;
 		color: #fff;
-		min-height: 260upx;
-		margin-top: 50upx;
+		/* min-height: 260upx; */
+		margin-top: 30upx;
 		overflow: hidden;
 		position: relative;
 	}
@@ -413,32 +441,59 @@
     flex-direction: inherit;line-height: 60upx;}
 	.uni-card .lf7 text{font-size: 28upx;font-weight:normal; line-height: 60upx; margin-left: 10upx;}
 	.uni-card .rg3{width: 26%;}
-	
-	
-	
 	.uni-card .lf{ font-weight: 500;font-size: 32upx; text-align: left; line-height: 60upx;}
 	.uni-card .lf text{font-size: 28upx;line-height: 40upx;display: block;}
 	.uni-card .rg{ margin-left: 20upx;}
 	.uni-card .code-fj{line-height: 90upx; height: 90upx; font-size: 38upx; width: 100%;text-align: right;justify-content: flex-end;}
 	.uni-card .code-fj .text{ margin-right: 50upx; text-align: right;line-height: 105upx;font-size: 38upx; }
 	.uni-card .code-fj .text.lhg50{ line-height: 90upx; }
-	
-	.mini-btn{ line-height: 55upx ; width: 160upx; height: 55upx;background-color: #fe5950 !important; background: transparent !important; 
-	
-	}
+	.mini-btn{ line-height: 55upx ; width: 160upx; height: 55upx;/* background-color: #fe5950 !important; background: transparent !importa */}
 	.mini-btn:after{border: 5upx solid #FFFFFF;}
-	.linebg{background: #EEEEEE; height: 2upx; line-height: 2upx;padding:0upx; width: 90%; margin: 0 auto;opacity:0.5;}
+	/* .linebg{background: #EEEEEE; height: 2upx; line-height: 2upx;padding:0upx; width: 90%; margin: 0 auto;opacity:0.5;} */
 	.pd15{ padding: 28upx 30upx;}
-	
 	.ls3{
 		width: 33.33%;
-		height: 140upx;
+		/* height: 140upx; */
 		text-align: center;
-		margin-top: 15upx;
+		/* margin-top: 15upx; */
+		padding: 24upx 0;
 	}
-	
-	.ls3-row text{ font-size: 36upx; font-weight: 500;}
-	
-	.btn-repay-bg{ text-align: center; width: 100%;opacity:0.5; background-color: #666666; color: #fff; height: 80upx; line-height: 80upx; margin: 0 auto; }
-	.btn-repay{margin: 0 auto;color: #fff; position: absolute;left: 42%;bottom: 18upx;}
+	/* .ls3-row text{ font-size: 36upx; font-weight: 500;} */
+	/* .btn-repay-bg{ text-align: center; width: 100%;opacity:0.5; background-color: #666666; color: #fff; height: 80upx; line-height: 80upx; margin: 0 auto; } */
+	.btn-repay{color: #5a91fe;font-weight: 600;text-align: center;border-top: 1px solid #ececec;padding: 8upx 0;}
+	.content .card-no-add uni-image{width: 360upx;height: 310upx;}
+	.add_card{font-size: 22upx;color: #999;text-align: center;line-height: 50upx;margin-top: 30upx;}
+	.card_title{background-color: #fff;padding-bottom: 30upx;position: fixed;top: 0;left: 0;width: 100%;z-index: 2000;}
+	.card_title_name{padding: 20upx 30upx 0;font-size: 40upx;color: #333;font-weight: 900;}
+	.card_addCase{background-color: #fff;/* margin-top: 20upx; */padding: 10upx 0upx;line-height:68upx ;width: 100%;position: fixed;left: 0;z-index: 2000;
+	border-top: 1px solid #f2f2f2;-webkit-box-shadow: 0upx 10upx 10upx rgba(0, 37, 174, 0.1);
+		box-shadow: 0upx 10upx 10upx rgba(0, 37, 174, 0.1);}
+	.card_icon{width: 40upx;height: 40upx;float: left;margin-top: 4upx;}
+	.card_name{font-size: 28upx;line-height: 48upx;margin-left: 20upx;float: left;}
+	.card_style{
+		background: #FFFFFF;
+		border-radius: 14upx;
+		color: #333;
+		margin-top: 30upx;
+		position: relative;
+		border-radius: 12upx;
+		-webkit-box-shadow: 4upx 4upx 20upx 4upx rgba(0, 37, 174, 0.2);
+		box-shadow: 4upx 4upx 20upx 4upx rgba(0, 37, 174, 0.2);
+		text-align: left;
+		padding:4px 30upx;
+		}
+		.bank_type{font-size: 22upx;border: 1px solid #ececec;color: #999999;border-radius: 6upx;line-height: 1;padding: 0 10upx;height: 30upx;line-height: 30upx;margin-left: 12upx;
+		margin-top: 10upx;}
+		.card_bank{padding: 10upx 0;border-bottom: 1px solid #ECECEC;overflow: hidden;}
+		.card_bank text{float: left;}
+		.card_bank_icon{width:32upx;height:32upx;margin-right: 10upx;float: left;margin-top: 8upx;}
+		.card_bank_info{color: #333;}
+		.card_bank_info .name{color: #999999;}
+		.card_bank_info .text{margin-right: 30upx;}
+		.untying_btn{border-top:1px solid #ECECEC;color: #ff8f0b;text-align: center;font-weight: 600;padding: 8upx 0;}
+		.card_bank_main{padding: 12upx;}
+		/* .untying_btn text{width: 100upx;height:100upx;background-color: rgba(255,161,60,1);border-radius: 500px;display: inline-block;} */
+		.card_num{font-size: 24upx;color: #666666;margin-top: 4upx;}
+		.card_main{font-size: 32upx;font-weight: 500;padding-top: 20upx;}
+		.card_main .name{font-size: 24upx;color: #999;margin-top: 10upx;}
 </style>

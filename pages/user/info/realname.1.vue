@@ -15,7 +15,7 @@
 				</view>
 				
 				<view  class="uni-list-cell-navigate bt-color">
-					身份证号
+					身份证号11111
 					<text class="uni-list-cell-left by-sdh">{{cardInfo.card}}</text>
 				</view>
 		    </view>

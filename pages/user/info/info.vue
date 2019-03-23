@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<view class="info-top-bg" style="background: url(../../../static/info-top-bg.png) no-repeat;background-size: 100% 100%;">
+		<!-- <view class="info-top-bg">
 			<view class="uni-padding-wrap">
 				<view class="info-head-pic">
 					<image :src="userInfo.head_img?userInfo.head_img:'../../../static/head-no-pic.png'" :data-src="userInfo.head_img?userInfo.head_img:'../../../static/head-no-pic.png'"  @click="previewImage"></image>
@@ -9,19 +9,31 @@
 					<image src="../../../static/info-head-bj-btn.png"></image>
 				</view>
 			</view>
-		</view>
+		</view> -->
+		
 		<view class="uni-padding-wrap">
-
+<view class="uni-card by-card by-mt-30">
+			<view class="uni-card-content">
+				<view class="my_head" @click="chooseImage">
+					<view  class="uni-list-cell-navigate uni-navigate-right bb0 uni-flex uni-row" >
+						<text class="flex-item" style="width: 70%;">我的头像</text>
+						<view class="info-head-pic flex-item">
+							<image :src="userInfo.head_img?userInfo.head_img:'../../../static/head-no-pic.png'" :data-src="userInfo.head_img?userInfo.head_img:'../../../static/head-no-pic.png'"  @click="previewImage"></image>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
 			<view class="uni-card by-card">
 				<view class="uni-card-content">
 					<view class="hg50">
-						<view @click="goDetailPage('/pages/user/info/editname?nickname='+userInfo.nickname)" class="uni-list-cell-navigate uni-navigate-right">
+						<view  @click="goDetailPage('/pages/user/info/editname?nickname='+userInfo.nickname)" class="uni-list-cell-navigate uni-navigate-right">
 							昵称
 							<text class="uni-list-cell-left by-sdh">{{userInfo.nickname?userInfo.nickname:'未设置'}}</text>
 						</view>
 					</view>
 					<view class="hg50">
-						<view @click="goDetailPage('/pages/user/info/editphone?mobile='+userInfo.mobile)" class="uni-list-cell-navigate uni-navigate-right">
+						<view  @click="goDetailPage('/pages/user/info/editphone?mobile='+userInfo.mobile)" class="uni-list-cell-navigate uni-navigate-right" style="border-bottom: none;">
 							手机号
 							<text class="uni-list-cell-left by-sdh">{{userInfo.mobile}}</text>
 						</view>
@@ -32,19 +44,19 @@
 							<text class="uni-list-cell-left by-sdh">{{userInfo.vip_name}}</text>
 						</view>
 					</view>-->
-					<view class="hg50">
-						<view @click="goDetailPage('/pages/user/agent/agent')" class="uni-list-cell-navigate uni-navigate-right bb0">
+					<!-- <view class="hg50">
+						<view  @click="goDetailPage('/pages/user/agent/agent')" class="uni-list-cell-navigate uni-navigate-right bb0">
 							推广等级
 							<text class="uni-list-cell-left by-sdh">{{userInfo.group_name}}</text>
 						</view>
-					</view>
+					</view> -->
 				</view>
 			</view>
 
 			<view class="uni-card by-card by-mt-30">
 				<view class="uni-card-content">
 					<view class="hg50">
-						<view @click="goDetailPage('/pages/user/info/realname')" class="uni-list-cell-navigate uni-navigate-right bb0">
+						<view @click="goDetailPage('/pages/user/info/realname')" class="uni-list-cell-navigate uni-navigate-right bb0" style="border-bottom: none;">
 							实名认证
 							<text class="uni-list-cell-left by-sdh" v-if="userInfo.is_validate===0">去认证</text>
 							<text class="uni-list-cell-left by-sdh" v-if="userInfo.is_validate===1">{{userInfo.realname}}</text>
@@ -189,7 +201,7 @@
 	page {
 		height: auto;
 		min-height: 100%;
-		background-color: #f7f8fa;
+		background-color: #F2F2F2;
 	}
 
 	.info-top-bg {
@@ -202,15 +214,16 @@
 	.info-head-pic {
 		margin: 0 auto;
 		border-radius: 50%;
-		height: 107upx;
-		width: 107upx;
+		/* height: 107upx;
+		width: 107upx; */
 		/*background: #fecccc; opacity: 0.8;*/
 		overflow: hidden;
 	}
 
 	.info-head-pic image {
-		height: 107upx;
-		width: 107upx;
+		height: 100upx;
+		width: 100upx;
+		float: right;
 	}
 
 
@@ -226,29 +239,31 @@
 	}
 
 	.hg50 {
-		height: 120upx;
+		height: 98upx;
 		color: #576175;
-		font-size: 34upx;
-		font-weight: 600;
+		font-size: 28upx;
+		/* font-weight: 600; */
+		color: #999;
+		padding: 0 20upx;
 	}
-
+	.hg50 text{color: #333;}
 	.hg50 .uni-navigate-right:after {
-		font-size: 32upx;
+		font-size: 28upx;
 	}
 
 	.hg50 .uni-navigate-right {
-		line-height: 80upx;
-		border-bottom: 1upx solid #ecedef;
+		/* line-height: 80upx; */
+		border-bottom: 1px solid #ecedef;
 	}
 
-	.hg50 .uni-navigate-right.bb0 {
+	/* .hg50 .uni-navigate-right.bb0 {
 		border-bottom: 0upx;
-	}
+	} */
 
-	.uni-card.by-card {
+		.uni-card.by-card {
 		border-radius: 12upx;
-		-webkit-box-shadow: 4upx 4upx 20upx 4upx rgba(123, 123, 123, 0.3);
-		box-shadow: 4upx 4upx 20upx 4upx rgba(123, 123, 123, 0.3);
+		-webkit-box-shadow: 4upx 4upx 20upx 4upx rgba(0, 37, 174, 0.2);
+		box-shadow: 4upx 4upx 20upx 4upx rgba(0, 37, 174, 0.2);
 	}
 
 	.by-mt-30 {
@@ -259,4 +274,6 @@
 		font-size: 26upx;
 		font-weight: normal;
 	}
+	.name_info{color: #999;font-size: 24upx;}
+	.my_head{color: #999;}
 </style>

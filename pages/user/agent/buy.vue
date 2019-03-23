@@ -1,49 +1,82 @@
 <template>
 	<view class="content">
-		<view class="vip_bg" style="background: url(../../../static/vip_bg.png);background-size: 100% 100%;">
-			<view class="vip_nickname">{{vipInfo.nickname}}</view>
-			<view class="vip_time">{{vipInfo.viptime}}</view>
-		</view>
-		<view class="vip_title">等级资费</view>
-		<view class="uni-flex uni-row pd10">
-			<view class="text vip-money" v-for="(item, index) in vipInfo.vipmoney" :key="index" :class="vipMoney==index?'active':''" @click="onClickNum(index,item.id)">
-				<view class="vip-money-title">{{item.title}}</view>
-				<view class="vip-money-val" v-if="item.val>0">￥<text>{{item.val}}</text></view>
-				<view class="vip-money-val" v-else>免费</view>
+		<view class="vip_bg">
+			<view class="head-pic">
+				<!-- <image :src="vipInfo.head_img?vipInfo.head_img:'../../../static/head-no-pic.png'"></image> -->
+				<img src="../../../static/head-no-pic.png">
+			</view>
+			<view class="vip_user">
+				<view class="vip_nickname">{{vipInfo.nickname}}</view>
+				<view class="vip_time">{{vipInfo.viptime}}</view>
 			</view>
 		</view>
-		<view class="pd30">
-			<view class="uni-card by-card">
-				<view class="uni-card-content p15">
-					<view class="tq-title">推广等级收益</view>
-					<view class="linebg"></view>
-					<view class="tq-center">
-						<rich-text :nodes="vipInfo.agenttq"></rich-text>
+		<view class="postage">
+			<view class="vip_title">特权资费</view>
+			<view class="uni-flex uni-row">
+				<view class="text vip-money" v-for="(item, index) in vipInfo.vipmoney" :key="index" :class="vipMoney==index?'active':''" @click="onClickNum(index,item.id)">
+					<view class="vip-money-title">{{item.title}}</view>
+					<view class="vip-money-val">¥<text>{{item.val}}</text></view>
+					<view class="vip-money-yj"><s>¥10000</s></view>
+					<view class="vip_icon"  v-if="index==0">限时特惠</view>
+					<view class="vip_icon" v-if="index==1">推荐</view>
+					<view class="vip_icon" v-if="index==2">尊享</view>
+				</view>
+			</view>
+		</view>	
+
+		<view class="vip_info">
+			<view class="tq-title"></view>
+			<view class="tq-center">
+				<!-- <rich-text :nodes="vipInfo.agenttq"></rich-text> -->
+				<view class="uni-flex uni-row vip_info_case">
+					<view class="flex-item vip_info_name">免费</view>
+					<view class="flex-item vip_info_main">
+						<view>还款手续费:本金：<text>0.78%</text>、空卡：<text>1.05%</text></view>
+						<view>直推分润:本金还款万5，空卡还款万13</view>
+					</view>
+				</view>
+				<view class="uni-flex uni-row vip_info_case">
+					<view class="flex-item vip_info_name" style="padding-top: 50upx;">vip</view>
+					<view class="flex-item vip_info_main">
+						<view>还款手续费:本金：<text>0.63%</text>、空卡：<text>0.8%</text></view>
+						<view>直推分润:本金还款万5，空卡还款万13, 刷卡分润万4</view>
+						<view>间推分润:本金还款5万，空卡还款万12</view>
+					</view>
+				</view>
+				<view class="uni-flex uni-row vip_info_case">
+					<view class="flex-item vip_info_name" style="padding-top: 50upx;">小咖</view>
+					<view class="flex-item vip_info_main">
+						<view>还款手续费:本金：<text>0.58%</text>、空卡：<text>0.65%</text></view>
+						<view>直推分润:本金还款15万，空卡还款万30，刷卡分润万4</view>
+						<view>间推分润:本金还款万5-10，空卡还款万10-17</view>
+					</view>
+				</view>
+				<view class="uni-flex uni-row vip_info_case" style="border-bottom: none;">
+					<view class="flex-item vip_info_name" style="padding-top: 50upx;">大咖</view>
+					<view class="flex-item vip_info_main">
+						<view>还款手续费:本金：<text>0.58%</text>、空卡：<text>0.65%</text></view>
+						<view>直推分润:本金还款15万，空卡还款万30，刷卡分润万4</view>
+						<view>间推分润:本金还款万5-10，空卡还款万10-17</view>
 					</view>
 				</view>
 			</view>
 		</view>
+
 		
 		
-		<view class="uni-common-mt pd300" v-show="vipInfo.payWay === 1">
+		<view class="uni-common-mt" v-show="vipInfo.payWay === 1" style="margin: 30upx;">
 			
-			<view class="uni-card by-card">
-				<view class="uni-card-content">
-					<view class="hg50">
-						<view class="uni-list-cell-navigate uni-navigate-right bb0">
-							<view class="by-sdh">付款账户<text></text></view>
-							<input class="uni-input" @click="showBottomPopup" disabled="disabled"  v-model="credit_name"  placeholder="请选择付款账户" />
-						</view>
-					</view>
-				</view>
+			<view class="uni-list-cell-navigate uni-navigate-right pay_case" >
+				<view class="by-sdh">付款账户<text></text></view>
+				<input class="uni-input" @click="showBottomPopup" disabled="disabled"  v-model="credit_name"  placeholder="请选择付款账户" />
 			</view>
 			
 			
 			<button type="warn" class="by-button-submit" :loading="loading" @click="payAgentFee">立即升级</button>
 		</view>
 		
-		<view v-show="vipInfo.payWay === 0">
-			<view>
+		<view v-show="vipInfo.payWay === 0" >
+			<view >
 				<uni-segmented-control :current="current" :values="items" v-on:clickItem="onClickItem" :styleType="styleType"
 				 :activeColor="activeColor"></uni-segmented-control>
 			</view>
@@ -340,52 +373,57 @@
      page {
 		height: auto;
 		min-height: 100%;
-		background-color: #f7f8fa;
+		background-color: #FFFFFF;
 	}
-	.vip_bg{ height: 176upx; padding-top: 54upx;}
-	.vip_nickname{color: #d0be9a; margin-left: 180upx;  font-size: 38upx;}
-	.vip_time{color: #b3a696; margin-left: 184upx; font-size: 24upx;}
-	
-	.vip_title{  padding: 20upx; font-size: 34upx;font-weight: 800; }
-	.pd10{ padding: 0upx 10upx;}
+	.vip_bg{ height: 100upx; background-color: #3c3f4c;padding:  30upx;}
+	.vip_user{color: #d0be9a; margin-left: 30upx;  font-size: 28upx;color: #fff;float: left;font-weight: 500;}
+	.vip_time{color: #f4e4bc; font-size: 24upx;}
+	.head-pic{width: 80upx;height: 80upx;border-radius: 500px;float: left;margin-top: 10upx;}
+	.head-pic image{width: 80upx;height: 80upx;border-radius: 500px;}
+	.head-pic img{width: 80upx;height: 80upx;border-radius: 500px;}
+	.postage{margin: 30upx;margin-top: 20upx;}
+	.vip_title{font-size: 32upx;font-weight: 800;color: #333;padding-bottom: 30upx; }
 	.vip-money{
-		border: 4upx solid #ebebeb;
+		border: 2upx solid #DDDDDD;
 		border-radius: 12upx;
-		margin: 0upx 10upx;
-		flex: 1;height: 140upx;
-		padding: 20upx 0upx 20upx 50upx;
+		height: 180upx;
+		padding: 30upx 0 20upx;
+		text-align: center;
+		background-color: #FFFFFF;
+		width: 31%;
+		position: relative;
 	}
-	
+	.vip-money:nth-child(2){margin: 0 3.5%;}
 	.vip-money.active{
-		border: 4upx solid #3e3e3e;
-		background-color: #3e3e3e;
+		border: 2upx solid #ebc58c;
+		background-color: #fffaf2;
 	}
-	
-	.vip-money-title{color: #7b7b7b;font-size: 32upx; font-weight: 800; }
-	.vip-money-val{color: #6c6c6c;font-size: 28upx; font-weight: 500;}
-	.vip-money-val text{color: #6c6c6c;font-size: 44upx; font-weight: 800;}
+	.vip_icon{width: 120upx;height: 34upx;background: url(../../../static/vip_icon.png) no-repeat;background-size: 100% 100%;position: absolute;top: -20upx;left: 0;color: #eacc9b;
+	font-size: 22upx;text-align: center;line-height: 34upx;}
+	.vip-money-title{color: #8d8c8a;font-size: 32upx; font-weight:900; }
+	.vip-money-val{color: #a57459;font-size: 32upx; font-weight: 900;}
+	.vip-money-val text{font-size: 48upx;}
 	.vip-money-gqval{color: #c0c0c0;font-size: 28upx; font-weight: normal;text-decoration:line-through;}
-	
-	.vip-money.active .vip-money-title{color: #d2ba8c;}
-	.vip-money.active .vip-money-val{color: #d6b580;}
-	.vip-money.active .vip-money-val text{color: #d6b580;}
+	.vip-money.active .vip-money-title{color: #8d8c8a; }
 	.vip-money.active .vip-money-gqval{color: #969696;}
-	
-	.uni-card.by-card {
-		border-radius: 12upx;
-		-webkit-box-shadow: 4upx 4upx 20upx 4upx rgba(123, 123, 123, 0.3);
-		box-shadow: 4upx 4upx 20upx 4upx rgba(123, 123, 123, 0.3);
-	}
-	
-	.uni-card.by-card .p15 {
-		padding: 0upx 16upx;
-	}
-	.pd300{ padding: 0upx 20upx;}
-	.pd30{ padding: 30upx 20upx;}
-	
-	.tq-title{ text-align: center; line-height: 120upx;  font-size: 36upx;   color: #d78603;}
+	.vip-money-yj{font-size: 400;font-size: 24upx;color: #ababab;}
+	.vip_title img{height: 136upx;width: 100%;}	
+	.tq-title{background: url(../../../static/vip_info.png) no-repeat;background-size: 100% 100%;height: 136upx;}
+	.vip_info{margin:0 30upx}
 	.linebg{ margin: 30upx 0upx; height: 4upx; background-color: #ebebeb; width: 90%; margin: 0upx auto;}
-	.tq-center{ padding: 30upx 50upx;}
+	.tq-center{border:1px solid #ececec;border-top:none}
+	.vip_info_case{border-bottom: 1px solid #ECECEC;}
+	.vip_info_name{width: 18%;text-align: center;font-size: 26upx;border-right: 1px solid #ECECEC;padding-top: 20upx;}
+	.vip_info_main{flex: 1;padding:10upx 30upx;}
+	.vip_info_main uni-view{font-size: 24upx;color: #666;}
+	.vip_info_main uni-view text{color: #ffa13c;}
+	.by-button-submit{background-color: #efdcb2;
+			background: linear-gradient(left, #efdcb2, #d5b683);
+			border-radius: 500px;
+			-webkit-box-shadow: 4upx 4upx 20upx 4upx rgba(215, 185, 135, 0.4);
+			box-shadow: 4upx 4upx 20upx 4upx rgba(215, 185, 135, 0.4);margin: 50upx 0;} 
+	.pay_case{border: 1px solid #ECECEC;border-radius: 12upx;padding: 0 30upx;}
+	
 	
 	.alipay{ text-align: center; padding: 40upx;height: 619upx;}
 	.alipay image{ width: 444upx; height: 619upx;}

@@ -54,7 +54,7 @@
 						</label>
 					</radio-group>
 					<view class="add-card-btn uni-flex uni-row" style="justify-content: center;" @click="goDetailPage('/pages/card/bank/add')">
-						<view class="flex-item uni-icon uni-icon-plusempty"></view>
+						<!-- <view class="flex-item uni-icon uni-icon-plusempty"></view> -->
 						<view class="flex-item add-title">添加新的储蓄卡</view>
 					</view>
 			</view>
@@ -76,7 +76,7 @@
 						</label>
 					</radio-group>
 					<view class="add-card-btn uni-flex uni-row" style="justify-content: center;">
-						<view class="flex-item uni-icon uni-icon-plusempty"></view>
+						<!-- <view class="flex-item uni-icon uni-icon-plusempty"></view> -->
 						<view class="flex-item add-title">更多支付通道,敬请期待</view>
 					</view>
 			</view>
@@ -308,8 +308,9 @@
 	
 	.uni-card.by-card {
 		border-radius: 12upx;
-		-webkit-box-shadow: 4upx 4upx 20upx 4upx rgba(123, 123, 123, 0.3);
-		box-shadow: 4upx 4upx 20upx 4upx rgba(123, 123, 123, 0.3);
+		-webkit-box-shadow: 4upx 4upx 20upx 4upx rgba(0, 37, 174, 0.2);
+		box-shadow: 4upx 4upx 20upx 4upx rgba(0, 37, 174, 0.2);
+		padding: 0 20upx;
 	}
 	
 	.uni-card.by-card .p15 {
@@ -317,12 +318,14 @@
 	}
 	
 	.by-sdh {
-		width: 120upx;
-		height: 52upx;
-		color: #576175;
-		font-weight: 600;
-		margin-right: 30upx;
-		text-align: justify;
+		    width: 60px;
+    height: 26px;
+    color: #576175;
+    font-weight: 600;
+    margin-right: 15px;
+    text-align: justify;
+    font-size: 26upx;
+    line-height: 26px;
 	}
 	
 	.by-sdh text {
@@ -332,11 +335,11 @@
 	}
 	
 	.hg50 .uni-navigate-right:after {
-		font-size: 32upx;
+		font-size: 28upx;
 	}
 	
 	.hg50 .uni-list-cell-navigate {
-		line-height: 80upx;
+		/* line-height: 80upx; */
 		border-bottom: 2upx solid #ecedef;
 	}
 	
@@ -345,9 +348,12 @@
 	}
 	
 	
-	.by-button-submit {
-		background-color: #fd5950;
-		background: linear-gradient(left, #ff7575, #fd5950);
+.by-button-submit {
+		background-color: #32b0fd;
+		background: linear-gradient(left, #32b0fd, #097ede);
+		border-radius: 500px;
+		-webkit-box-shadow: 4upx 4upx 20upx 4upx rgba(50, 176, 253, 0.4);
+		box-shadow: 4upx 4upx 20upx 4upx rgba(50, 176, 253, 0.4);
 	}
 	
 	.tip-text {
@@ -384,8 +390,6 @@
 		transform: translate(-50%, -50%);
 	}
 	
-	.tip_btn{color: #cdd1dd;}
-	.tip_btn text{color: #fd5950;}
 	.font-max{font-size: 28upx; font-weight: 700;}
 	
 	.uni-list-cell:after{ left: 0upx;}
@@ -400,7 +404,8 @@
 	
 	.add-card-btn .add-title {
 		line-height: 100upx;
-		font-size: 28upx;
+		font-size: 24upx;
+		color: #999;
 	}
 	
 	.uni-icon-plusempty {
@@ -408,5 +413,10 @@
 		line-height: 100upx;
 		
 	}
+	.tip_btn{color: #a6a6a6;font-size: 24upx;line-height: 50upx;}
+	.tip_btn text{color: #fd5950;}
+	.uni-card{margin: 35upx 0;}
+	.uni-input{padding: 0 8upx;}
+	.uni-common-mt{margin-top: 16upx;}
 	
 </style>

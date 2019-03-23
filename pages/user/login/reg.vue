@@ -1,5 +1,5 @@
 <template>
-	<view class="uni-common-pb">
+	<view class="uni-common-pb bg_img_case" style="background: url(../../../static/bg_img.png) no-repeat;background-size: 100% 100%;">
 		<view class="uni-login-logo">
 			<image src="../../../static/login-logo.png"></image>
 		</view>
@@ -7,6 +7,7 @@
 			<form @submit="formSubmit">
 				<view class="uni-form-item uni-column">
 					<view class="with-fun by-login-input">
+						<image src="../../../static/phone.png" style="width: 29upx;height: 39upx;margin-top: 24upx;"></image>
 						<input class="uni-input" type="number" name="account"  placeholder="请填写手机号" :value="inputClearValue" @input="bindClearInput" />
 						<view class="uni-icon uni-icon-clear" v-if="showClearIcon" @click="clearIcon"></view>
 					</view>
@@ -14,6 +15,7 @@
 				
 				<view class="uni-form-item uni-column">
 					<view class="with-fun by-login-input">
+						<image src="../../../static/code.png" class="icon_size"></image>
 						<input class="uni-input" type="number" name="smsCode" placeholder="请填入验证码"  v-model="smsCode"/>
 						<view class="text by-dj-btn" :class="is_sms?'':'active'" @click="sendSMS">{{fsbtn}}</view>
 					</view>
@@ -21,12 +23,19 @@
 				
 				<view class="uni-form-item uni-column">
 					<view class="with-fun by-login-input">
+						<image src="../../../static/password.png" class="icon_size"></image>
 						<input class="uni-input" placeholder="请填写6~18位字符密码" name="password" :password="showPassword" />
 						<view class="uni-icon uni-icon-eye" :class="[!showPassword ? 'uni-active' : '']" @click="changePassword"></view>
 					</view>
 				</view>
+					<view class="uni-form-item uni-column">
+					<view class="with-fun by-login-input">
+						<image src="../../../static/tell.png" class="icon_size"></image>
+						<input class="uni-input" placeholder="请输邀请人手机号" />
+					</view>
+				</view>
 				<view class="uni-btn-v">
-					<button formType="submit" :loading="loading" type="warn">注 册</button>
+					<button class="login_btn" formType="submit" :loading="loading" type="warn">注 册</button>
 				</view>
 				
 				<view class="text clause">
@@ -276,16 +285,27 @@
 		color: #989898;
 	}
 	
-	.by-dj-btn{ color: #666666; border: 2upx #d7d5d5 solid; padding: 14upx 20upx;height: 30upx; line-height: 30upx; border-radius: 12upx; margin-top: 10upx; margin-right: 15upx;}
+	.by-dj-btn{ color: #666666; border: 2upx #d7d5d5 solid; padding: 14upx 20upx;height: 30upx; line-height: 30upx; border-radius: 500px; margin-top: 10upx; 
+	margin-right: 15upx;font-size: 26upx;}
 	.by-dj-btn.active{order: 2upx #f7f8fa solid;color:#d7d5d5;}
 	
 	.uni-login-logo{ text-align: center; height: 390upx; vertical-align: middle; }
-	.uni-login-logo image{ width: 350upx; height: 225upx; margin: 0 auto; margin-top: 87upx;}
+	.uni-login-logo image{ width: 320upx; height: 320upx; margin: 0 auto; margin-top: 87upx;}
 	.uni-btn-v  button{ background-color: #ff4444;}
 	
-	.with-fun.by-login-input{ border-bottom: 2upx #dddddd solid; height: 110upx; line-height: 110upx; font-size: 32upx;}
-	.by-login-input .uni-input{height: 60upx; line-height: 60upx;font-size: 32upx;}
-	.by-login-input input{height: 60upx; line-height: 60upx;font-size: 32upx;}
-	.clause{ margin-top: 127upx; text-align: center; color: #999999; font-weight: 500;}
+	.with-fun.by-login-input{ border-bottom: 2upx #ececec solid; height: 98upx; line-height: 98upx; font-size: 28upx;}
+	.by-login-input .uni-input{height: 60upx; line-height: 60upx;font-size: 28upx;}
+	.by-login-input input{height: 60upx; line-height: 60upx;font-size: 28upx;}
+	.clause{ margin-top: 40upx; text-align: center; color: #999999; font-weight: 500;font-size: 24upx;}
 	.clause text{ color: #fe5950;}
+	.login_btn {
+		background-color: #32b0fd;
+		background: linear-gradient(left, #32b0fd, #097ede);
+		border-radius: 500px;
+		-webkit-box-shadow: 4upx 4upx 20upx 4upx rgba(50, 176, 253, 0.4);
+		box-shadow: 4upx 4upx 20upx 4upx rgba(50, 176, 253, 0.4);
+	}
+	.icon_size{width: 36upx;height: 36upx;margin-top: 30upx;}
+	.bg_img{width: 100%;height: 264upx;position: absolute;bottom: 0;left: 0;}
+	.bg_img_case{position: fixed;top:0;left: 0;height: 100%;width: 100%;}
 </style>

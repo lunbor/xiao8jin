@@ -329,13 +329,13 @@
 	page {
 		height: auto;
 		min-height: 100%;
-		background-color: #f7f8fa;
+		background-color: #f2f2f2;
 	}
 
 	.uni-card.by-card {
 		border-radius: 12upx;
-		-webkit-box-shadow: 4upx 4upx 20upx 4upx rgba(123, 123, 123, 0.3);
-		box-shadow: 4upx 4upx 20upx 4upx rgba(123, 123, 123, 0.3);
+		-webkit-box-shadow: 4upx 4upx 20upx 4upx rgba(0, 37, 174, 0.2);
+		box-shadow: 4upx 4upx 20upx 4upx rgba(0, 37, 174, 0.2);
 	}
 
 	.uni-card.by-card .p15 {
@@ -349,6 +349,8 @@
 		font-weight: 600;
 		margin-right: 30upx;
 		text-align: justify;
+		font-size: 26upx;
+		line-height: 52upx;
 	}
 
 	.by-sdh text {
@@ -362,8 +364,9 @@
 	}
 
 	.hg50 .uni-list-cell-navigate {
-		line-height: 80upx;
+		/* line-height: 80upx; */
 		border-bottom: 2upx solid #ecedef;
+		padding: 20upx;
 	}
 
 	.hg50 .uni-list-cell-navigate.bb0 {
@@ -371,8 +374,11 @@
 	}
 
 	.by-button-submit {
-		background-color: #fd5950;
-		background: linear-gradient(left, #ff7575, #fd5950);
+		background-color: #32b0fd;
+		background: linear-gradient(left, #32b0fd, #097ede);
+		border-radius: 500px;
+		-webkit-box-shadow: 4upx 4upx 20upx 4upx rgba(50, 176, 253, 0.4);
+		box-shadow: 4upx 4upx 20upx 4upx rgba(50, 176, 253, 0.4);
 	}
 
 	.tip-text {
@@ -381,7 +387,7 @@
 
 	/* 遮罩层 */
 	.uni-mask {
-		background: rgba(0, 0, 0, 0.6);
+		background: rgba(0, 0, 0, 0.4);
 		position: fixed;
 		width: 100%;
 		height: 100%;
@@ -409,7 +415,10 @@
 		transform: translate(-50%, -50%);
 	}
 	
-	.tip_btn{color: #cdd1dd;}
+	.tip_btn{color: #a6a6a6;font-size: 24upx;line-height: 50upx;}
 	.tip_btn text{color: #fd5950;}
 	.font-max{font-size: 28upx; font-weight: 700;}
+	.uni-card{margin: 35upx 0;}
+	.uni-input{padding: 0 8upx;}
+	.uni-common-mt{margin-top: 16upx;}
 </style>

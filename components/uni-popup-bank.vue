@@ -64,11 +64,13 @@
 	}
 
 	.uni-popup-bottom {
-		left: 0;
+		left: 5%;
 		bottom: 0;
 		width: 100%;
 		padding: 0upx 0upx 0upx 0upx;
 		text-align: left;
+		width: 90%;
+		border-radius: 12upx;
 	}
 	
 	.uni-popup-bottom .title{ line-height: 100upx; height: 100upx; padding-left: 30upx; font-size: 32upx; font-weight: 500;}

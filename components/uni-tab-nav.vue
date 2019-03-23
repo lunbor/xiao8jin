@@ -1,7 +1,15 @@
 <template>
-	<view class="segmented-control">
-		<view v-for="(item, index) in values" class="segmented-control-item" :class="styleType" :key="index" :style="index === currentIndex ? activeStyle : itemStyle" @click="onClick(index)">
+	<!-- <view class="segmented-control">
+		<view  style="position: relative;" v-for="(item, index) in values" class="segmented-control-item" 
+		:class="styleType" :key="index" :style="index === currentIndex ? activeStyle : itemStyle" @click="onClick(index)">
 			{{item}}
+			<b class="tab_active"></b>
+		</view>
+	</view> -->
+	<view class="segmented-control">
+		<view  style="position: relative;" v-for="(item, index) in values" class="segmented-control-item" 
+		:class="styleType" :key="index"  @click="onClick(index)">
+		<text :style="index === currentIndex ? activeStyle : itemStyle">{{item}}</text>
 		</view>
 	</view>
 </template>
@@ -91,19 +99,22 @@
 </script>
 
 <style>
+	
 	.segmented-control {
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
 		width: 100%;
 		font-size: 28upx;
-		border-radius: 0upx;
+		/* border-radius: 0upx; */
 		box-sizing: border-box;
 		margin: 0 auto;
 		overflow: hidden;
-		border-bottom:2upx solid #EEEEEE;
-		padding: 0upx 20upx;
+		/* border-bottom:2upx solid #EEEEEE; */
+		padding: 0upx 20upx 0;
+		font-weight: 500;
 	}
+	
 
 	.segmented-control.button {
 		border: 2upx solid;
@@ -118,11 +129,12 @@
 	.segmented-control-item {
 		flex: 1;
 		text-align: center;
-		line-height: 80upx;
+		line-height: 90upx;
 		box-sizing: border-box;
 		font-size: 28upx;
 		font-weight: 500;
-	}
+	} 
+	.segmented-control-item text{padding-bottom: 10upx;}
 
 	.segmented-control-item.button {
 		border-left: 1upx solid;

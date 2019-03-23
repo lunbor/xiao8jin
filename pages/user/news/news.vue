@@ -144,6 +144,6 @@
 	.tip-yd{ background-color: #fe5950; border-radius: 50%; width: 16upx; height: 16upx;}
 	.uni-list-cell-navigate.uni-navigate-right:after{ font-size: 40upx;line-height: 50upx;}
 	
-	.no-list{ text-align: center; height: 260upx; padding-top: 50%;}
-	.no-list image{width: 185upx; height: 60upx;}
+	.no-list{ text-align: center; height:270upx; padding-top: 40%;}
+	.no-list image{width: 374upx; height: 270upx;}
 </style>

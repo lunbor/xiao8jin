@@ -1,7 +1,7 @@
 <template>
 	<view class="segmented-control">
-		<view v-for="(item, index) in values" class="segmented-control-item" :class="styleType" :key="index" :style="index === currentIndex ? activeStyle : itemStyle" @click="onClick(index)">
-			{{item}}
+		<view v-for="(item, index) in values" class="segmented-control-item" :class="styleType" :key="index"  @click="onClick(index)">
+			<text :style="index === currentIndex ? activeStyle : itemStyle">{{item}}</text>
 		</view>
 	</view>
 </template>
@@ -61,7 +61,7 @@
 						styleString = `color:#000;border-left:0;`;
 						break;
 					default:
-						styleString = `color:${this.activeColor};border-color:${this.activeColor};`;
+						styleString = `color:#fff;background:${this.activeColor};`;
 						break;
 				}
 				return styleString;
@@ -70,10 +70,10 @@
 				let styleString = '';
 				switch (this.styleType) {
 					case 'text':
-						styleString = `color:${this.activeColor};border-left:0;border-bottom-style:solid;`;
+						styleString = `color:#fff;background:${this.activeColor};`;
 						break;
 					default:
-						styleString = `color:#fff;border-color:${this.activeColor};background-color:${this.activeColor}`;
+						styleString = `color:#fff;background:${this.activeColor};`;
 						break;
 				}
 				return styleString;
@@ -90,19 +90,20 @@
 	}
 </script>
 
+
 <style>
 	.segmented-control {
-		display: flex;
-		flex-direction: row;
-		justify-content: center;
+		/* display: flex; */
+		/* flex-direction: row; */
+		/* justify-content: center; */
 		width: 100%;
-		font-size: 32upx;
-		border-radius: 0upx;
+		font-size: 28upx;
 		box-sizing: border-box;
 		margin: 0 auto;
 		overflow: hidden;
-		border-bottom:2upx solid #EEEEEE;
-		padding: 0upx 50upx;
+		/* border-bottom:2upx solid #EEEEEE; */
+		padding: 16upx 30upx 0;
+		/* font-weight: 600; */
 	}
 
 	.segmented-control.button {
@@ -116,13 +117,17 @@
 
 
 	.segmented-control-item {
-		flex: 1;
+		/* flex: 1; */
 		text-align: center;
-		line-height: 120upx;
+		/* line-height: 120upx; */
 		box-sizing: border-box;
-		font-size: 32upx;
-		font-weight: 500;
+		/* font-size: 32upx; */
+		/* font-weight: 600; */
+		width:160upx ;
+		float: left;
 	}
+	.segmented-control-item text{padding-bottom: 10upx;border-radius: 500px;display: inline-block;width: 160upx;
+	/* font-weight: 600; */font-size: 26upx;padding:6upx;} 
 
 	.segmented-control-item.button {
 		border-left: 1upx solid;

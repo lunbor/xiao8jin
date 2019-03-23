@@ -117,10 +117,10 @@
 
 	.list-item {
 		margin: 20upx 0;
-		height: 140upx;
-		line-height: 140upx;
+	/* 	height: 140upx;
+		line-height: 140upx; */
 		width: 100%;
-		border-bottom: 2upx solid #eee;
+		border-bottom: 1px solid #ECECEC;
 		text-align: center;
 	}
 	
@@ -128,16 +128,16 @@
 	.justify .left-text{ text-align: left;}
 	.justify .right-text{ text-align: right;}
 	
-	.log-title{font-size: 36upx; color: #333333;}
-	.log-tail{font-size: 28upx; color: #888888;}
+	.log-title{font-size: 28upx; color: #333333;}
+	.log-tail{font-size: 24upx; color: #888888;}
 	.log-time{font-size: 28upx; color: #888888;}
 	.log-money{font-size: 32upx; color: #ff3e31;font-weight: 600;}
-	.log-balance{font-size: 28upx; color: #666666;}
-	.log-status{font-size: 28upx; color: #44c055;}
+	.log-balance{font-size: 24upx; color: #999;}
+	.log-status{font-size: 24upx; color: #44c055;}
 	.log-status .log-icon{font-size: 38upx;}
 	.log-status.red{color: #ff3e31;}
 	.log-status.blue{color: rgb(134, 134, 255);}
 	
-	.no-list{ text-align: center; height: 260upx; padding-top: 50%;}
-	.no-list image{width: 185upx; height: 60upx;}
+	.no-list{ text-align: center; height:270upx; padding-top: 40%;}
+	.no-list image{width: 374upx; height: 270upx;}
 </style>

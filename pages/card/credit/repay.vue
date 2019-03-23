@@ -1,23 +1,26 @@
 <template>
 	<view>
-		<view class="uni-card uni-card-red md15" v-bind:style="{ background: card.color}">
-			<view class="uni-triplex-row pd15">
-				<view class="uni-triplex-left lf7">{{card.bank_name}}<text>{{card.credit_code}}</text></view>
-				<view class="uni-triplex-right rg3"><button class="mini-btn" type="primary" size="mini">信用卡</button></view>
-			</view>
-			<view class="uni-triplex-row linebg"></view>
-			<view class="uni-flex uni-row">
-				<view class="flex-item ls3">
-					<view class="ls3-row">￥<text>{{card.line_credit}}</text></view>
-					<view>额度</view>
+		<view class="uni-padding-wrap">
+			<view class="uni-card card_style">
+				<view class="card_bank">
+					
+					<text>{{card.bank_name}}</text>
+					<text class="card_num">{{card.credit_code}}</text>
+					<text class="bank_type">信用卡</text>
 				</view>
-				<view class="flex-item ls3">
-					<view class="ls3-row"><text>{{card.bill_time}}</text>日</view>
-					<view>账单日</view>
-				</view>
-				<view class="flex-item ls3">
-					<view class="ls3-row"><text>{{card.repay_time}}</text>日</view>
-					<view>还款日</view>
+				<view class="uni-flex uni-row card_main">
+					<view class="flex-item ls3">
+						<view class="ls3-row">¥<text>{{card.line_credit}}</text></view>
+						<view class="name">额度</view>
+					</view>
+					<view class="flex-item ls3">
+						<view class="ls3-row"><text>{{card.bill_time}}</text>日</view>
+						<view class="name">账单日</view>
+					</view>
+					<view class="flex-item ls3">
+						<view class="ls3-row"><text>{{card.repay_time}}</text>日</view>
+						<view class="name">还款日</view>
+					</view>
 				</view>
 			</view>
 		</view>
@@ -26,83 +29,90 @@
 			<uni-segmented-control :current="current" :values="items" v-on:clickItem="onClickItem" :styleType="styleType"
 			 :activeColor="activeColor"></uni-segmented-control>
 		</view>
-		<!--<view class="content pd15" v-if="current === 1">
+		
+		<view class="content s_case" v-if="current === 1">
 			<view class="repay-list">
-				<view class="uni-form-item uni-column">
-					<view class="title">还款金额</view>
-					<input class="uni-input" v-model="repay_money" type="digit" style="font-weight: 600;" placeholder-style="font-weight: normal; color:#d0d0d7;" placeholder="请输入要还款的金额,不低于1000元" />
+				<view class="uni-form-item  uni-flex uni-row">
+					<view class="title flex-item" style="width: 30%;">还款金额</view>
+					<view class="title flex-item" style="width: 70%;">
+						<input class="uni-input" v-model="repay_money" type="digit" style="font-weight: 600;" placeholder-style="font-weight: normal; color:#d0d0d7;" placeholder="请输入要还款的金额,不低于1000元" />
+					</view>
 				</view>
 			</view>
 			
+			
 			<view class="repay-list">
-				<view class="uni-form-item uni-column">
-					<view class="title">费率：{{card.dz_rate}}% + 代付费:{{card.dz_dfee}}元/笔</view>
+				<view class="uni-form-item  uni-flex uni-row">
+					<view class="title flex-item" style="width: 30%;">费率</view>
+					<view class="flex-item" style="width: 70%;">{{card.dz_rate}}% + 代付费:{{card.dz_dfee}}元/笔</view>
 				</view>
 			</view>
-			
 			<view class="repay-list">
 				<view class="uni-flex uni-row">
-					<view class="text" style="flex: 1;">
-						<view class="uni-form-item uni-column">
-							<view class="title">还款开始日期</view>
-							<picker mode="date" :value="start_time" :start="startDate" :end="endDate" @change="bindDateChange">
-								<view class="uni-input">{{start_time}}</view>
-							</picker>
-						</view>
+					<view class="uni-form-item  uni-flex uni-row">
+						<view class="title flex-item" style="width: 30%;">还款开始日期</view>
+						<picker class="flex-item" style="width: 70%; " mode="date" :value="start_time" :start="startDate" :end="endDate" @change="bindDateChange">
+							<view class="uni-input">{{start_time}}</view>
+						</picker>
 					</view>
-					<view class="text" style="flex: 1;">
-						<view class="uni-form-item uni-column">
-							<view class="title">还款结束日期</view>
-							<picker mode="date" :value="end_time" :start="startDate" :end="endDate" @change="bindDateChange_end">
+				</view>
+			</view>
+			<view class="repay-list">
+				<view class="uni-flex uni-row">
+						<view class="uni-form-item uni-flex uni-row">
+							<view class="title flex-item" style="width: 30%;">还款结束日期</view>
+							<picker class="flex-item" style="width: 70%; " mode="date" :value="end_time" :start="startDate" :end="endDate" @change="bindDateChange_end">
 								<view class="uni-input">{{end_time}}</view>
 							</picker>
 						</view>
-					</view>
 				</view>
 			</view>
-		</view>-->
-		<view class="content pd15" v-if="current === 0">
+		</view>
+		<view class="content s_case" v-if="current === 0">
 			<view class="repay-list">
-				<view class="uni-form-item uni-column">
-					<view class="title">还款金额</view>
-					<input class="uni-input" v-model="repay_money" type="digit" style="font-weight: 600;" placeholder-style="font-weight: normal; color:#d0d0d7;" placeholder="请输入要还款的金额,不低于1000元" />
+				<view class="uni-form-item  uni-flex uni-row">
+					<view class="title flex-item" style="width: 30%;">还款金额</view>
+					<view class="title flex-item" style="width: 70%;">
+						<input class="uni-input " v-model="repay_money" type="digit" style="font-weight: 600;color: #333;" placeholder-style="font-weight: normal; color:#d0d0d7;" placeholder="请输入要还款的金额,不低于1000元" />
+					</view>
+					
+				</view>
+			</view>
+			<view class="repay-list">
+				<view class="uni-form-item  uni-flex uni-row">
+					<view class="title flex-item" style="width: 30%;">费率</view>
+					<view class="flex-item" style="width: 70%;">{{card.rate}}% + 代付费:{{card.dfee}}元/笔</view>
 				</view>
 			</view>
 
 			<view class="repay-list">
-				<view class="uni-form-item uni-column">
-					<view class="title">费率：{{card.rate}}% + 代付费:{{card.dfee}}元/笔</view>
+				<view class="uni-flex uni-row">
+					<view class="uni-form-item  uni-flex uni-row">
+						<view class="title flex-item" style="width: 30%;">还款开始日期</view>
+						<picker class="flex-item" style="width: 70%; " mode="date" :value="start_time" :start="startDate" :end="endDate" @change="bindDateChange">
+							<view class="uni-input">{{start_time}}</view>
+						</picker>
+					</view>
 				</view>
 			</view>
-
 			<view class="repay-list">
 				<view class="uni-flex uni-row">
-					<view class="text" style="flex: 1;">
-						<view class="uni-form-item uni-column">
-							<view class="title">还款开始日期</view>
-							<picker mode="date" :value="start_time" :start="startDate" :end="endDate" @change="bindDateChange">
-								<view class="uni-input">{{start_time}}</view>
-							</picker>
-						</view>
-					</view>
-					<view class="text" style="flex: 1;">
-						<view class="uni-form-item uni-column">
-							<view class="title">还款结束日期</view>
-							<picker mode="date" :value="end_time" :start="startDate" :end="endDate" @change="bindDateChange_end">
+						<view class="uni-form-item uni-flex uni-row">
+							<view class="title flex-item" style="width: 30%;">还款结束日期</view>
+							<picker class="flex-item" style="width: 70%; " mode="date" :value="end_time" :start="startDate" :end="endDate" @change="bindDateChange_end">
 								<view class="uni-input">{{end_time}}</view>
 							</picker>
 						</view>
-					</view>
 				</view>
 			</view>
 			
 			<view class="repay-list">
-				<view class="uni-flex uni-row">
-					<view class="text" style="flex: 1; padding: 8upx 0upx 8upx 24upx;">
-						<view class="title">请选择每天还款次数</view>
-						<view class="tip-text-h">推荐每天1~2次</view>
+				<view class="uni-row">
+					<view class="text" style="flex: 1; padding: 8upx 0upx 8upx 0;">
+						<view class="title">请选择每天还款次数 <span  class="tip-text-h">(推荐每天1~2次)</span></view>
+					
 					</view>
-					<view class="text" style="flex: 1;padding: 8upx 0upx">
+					<view class="text" style="flex: 1;padding: 8upx 0upx 20upx">
 						<text class="repay_num" :class="repay_num==1?'active':''" @click="onClickNum(1)">1</text>
 						<text class="repay_num" :class="repay_num==2?'active':''" @click="onClickNum(2)">2</text>
 						<text class="repay_num" :class="repay_num==3?'active':''" @click="onClickNum(3)">3</text>
@@ -111,13 +121,7 @@
 			</view>
 		</view>
 		
-		<view class="content pd15" v-if="current === 1">
-			<view class="repay-list">
-				<view class="uni-form-item uni-column">
-					<view class="title">还款金额</view>
-					<input class="uni-input" v-model="repay_money" type="digit" style="font-weight: 600;" placeholder-style="font-weight: normal; color:#d0d0d7;" placeholder="请输入要还款的金额,不低于1000元" />
-				</view>
-			</view>
+		<view class="content s_case" v-if="current === 2">
 			<view class="repay-list">
 				<view class="uni-input-row">
 					<label>周期消费笔数</label>
@@ -140,32 +144,32 @@
 			</view>
 	
 			<view class="repay-list">
-				<view class="uni-form-item uni-column">
-					<view class="title">费率：{{card.jyk_rate}}% + 代付费:{{card.jyk_dfee}}元/笔</view>
+				<view class="uni-form-item  uni-flex uni-row">
+					<view class="title flex-item" style="width: 30%;">费率</view>
+					<view class="flex-item" style="width: 70%;">{{card.jyk_rate}}% + 代付费:{{card.jyk_dfee}}元/笔</view>
 				</view>
 			</view>
 			
 			<view class="repay-list">
 				<view class="uni-flex uni-row">
-					<view class="text" style="flex: 1;">
-						<view class="uni-form-item uni-column">
-							<view class="title">开始日期</view>
-							<picker mode="date" :value="start_time" :start="startDate" :end="endDate" @change="bindDateChange">
-								<view class="uni-input">{{start_time}}</view>
-							</picker>
-						</view>
-					</view>
-					<view class="text" style="flex: 1;">
-						<view class="uni-form-item uni-column">
-							<view class="title">结束日期</view>
-							<picker mode="date" :value="end_time" :start="startDate" :end="endDate" @change="bindDateChange_end">
-								<view class="uni-input">{{end_time}}</view>
-							</picker>
-						</view>
+					<view class="uni-form-item  uni-flex uni-row">
+						<view class="title flex-item" style="width: 30%;">还款开始日期</view>
+						<picker class="flex-item" style="width: 70%; " mode="date" :value="start_time" :start="startDate" :end="endDate" @change="bindDateChange">
+							<view class="uni-input">{{start_time}}</view>
+						</picker>
 					</view>
 				</view>
 			</view>
-			
+			<view class="repay-list">
+				<view class="uni-flex uni-row">
+						<view class="uni-form-item uni-flex uni-row">
+							<view class="title flex-item" style="width: 30%;">还款结束日期</view>
+							<picker class="flex-item" style="width: 70%; " mode="date" :value="end_time" :start="startDate" :end="endDate" @change="bindDateChange_end">
+								<view class="uni-input">{{end_time}}</view>
+							</picker>
+						</view>
+				</view>
+			</view>
 			<view class="repay-list">
 				<view class="uni-input-row">
 					<label>是否日期中自选</label>
@@ -205,7 +209,7 @@
 </template>
 
 <script>
-	import uniSegmentedControl from '../../../components/uni-segmented-control.vue';
+	import uniSegmentedControl from '../../../components/uni-tab-nav.vue';
 	import uniNumberBox from '../../../components/uni-number-box.vue'
 	export default {
 		components: {
@@ -218,11 +222,11 @@
 			return {
 				items: [
 					'本金还款',
-					//'空卡垫资',
+					'空卡垫资',
 					'精养卡',
 				],
 				current: 0,
-				activeColor: '#fe5950',
+				activeColor: '#5a91fe',
 				styleType: 'text',
 				credit_id: '',
 				card: [],
@@ -483,7 +487,7 @@
 	page {
 		height: auto;
 		min-height: 100%;
-		background-color: #f7f8fa;
+		background-color: #F2F2F2;
 	}
 
 	.content {
@@ -561,15 +565,13 @@
 		line-height: 90upx;
 	}
 
-	.mini-btn {
-		line-height: 55upx;
-		width: 160upx;
-		height: 55upx;
-		background-color: #fe5950 !important;
-		background: transparent !important;
-
+	.mini-btn{ /* line-height: 55upx ; */ width: 120upx; height: 40upx;/* background-color: #fe5950 !important; */ background: transparent !important;
+	padding: 0;
+	text-align: center;
+	line-height:42upx;
+	margin: 10upx 20upx;
+	
 	}
-
 	.mini-btn:after {
 		border: 5upx solid #FFFFFF;
 	}
@@ -615,16 +617,19 @@
 	}
 	.red-text{color:#fd5950;}
 	
-	.by-button-submit{
-		background-color:#fd5950;
-		background: linear-gradient(left, #ff7575, #fd5950);
+		.by-button-submit {
+		background-color: #32b0fd;
+		background: linear-gradient(left, #32b0fd, #097ede);
+		border-radius: 500px;
+		-webkit-box-shadow: 4upx 4upx 20upx 4upx rgba(50, 176, 253, 0.4);
+		box-shadow: 4upx 4upx 20upx 4upx rgba(50, 176, 253, 0.4);
 	}
-	.tip-text-h{ font-size: 26upx; color: #d0d0d7; line-height: 50upx;}
-	.repay_num{ display: inline-block; margin-right: 24upx; width: 80upx; height: 80upx;line-height: 80upx; border-radius: 50%; border: 2upx solid #e3e4e6; text-align: center; color: #576175; font-size: 32upx; font-weight: 500;}
-	.repay_num.active{background-color: #fe5950;color: #FFFFFF;border: 2upx solid #fe5950;}
+	.tip-text-h{ font-size: 24upx; color: #999; line-height: 50upx;}
+	.repay_num{ display: inline-block; margin-right: 24upx; width: 60upx; height: 60upx;line-height: 60upx; border-radius: 50%; border: 2upx solid #e3e4e6; text-align: center; color: #576175; font-size: 28upx; font-weight: 500;}
+	.repay_num.active{background-color: #ff0000;color: #FFFFFF;border: 2upx solid #ff0000;}
 	
 	.pay_date{ margin-bottom: 14upx; display: inline-block; margin-right: 14upx; width: 60upx; height: 60upx;line-height: 60upx; border-radius: 50%; border: 2upx solid #e3e4e6; text-align: center; color: #576175; font-size: 32upx; font-weight: 500;}
-	.pay_date.active{background-color: #fe5950;color: #FFFFFF;border: 2upx solid #fe5950;}
+	.pay_date.active{background-color: #ff0000;color: #FFFFFF;border: 2upx solid #ff0000;}
 	
 	
 	.help-filled{color: #fd5950; font-size: 32upx;}
@@ -660,4 +665,39 @@
 	}
 	.tip_btn text{color: #fd5950;}
 	.queren-btn{background:#fe5950; width: 200upx; height: 80upx; line-height: 80upx; font-size: 28upx; margin: 30upx auto; margin-bottom: 0upx;}
+	.s_case{margin: 0 30upx;border-radius: 12upx;
+			-webkit-box-shadow: 4upx 4upx 20upx 4upx rgba(0, 37, 174, 0.2);
+			box-shadow: 4upx 4upx 20upx 4upx rgba(0, 37, 174, 0.2);
+			padding: 0 20upx;
+			}
+		.s_case	.title{padding: 0;color: #999;font-size: 24upx;line-height: 50upx;}
+		.s_case	.uni-input{padding: 0;}
+		.s_case	.uni-form-item{padding: 8px 5px;}
+		.s_case	.uni-input-row uni-label{font-size: 12px;color: #999;}
+		.s_case	.uni-input-row{padding: 5upx 10upx;}
+		.s_case	.uni-numbox{height: 58upx;}
+		.card_style{
+			background: #FFFFFF;
+			border-radius: 14upx;
+			color: #333;
+			margin-top: 30upx;
+			position: relative;
+			border-radius: 12upx;
+			-webkit-box-shadow: 4upx 4upx 20upx 4upx rgba(0, 37, 174, 0.2);
+			box-shadow: 4upx 4upx 20upx 4upx rgba(0, 37, 174, 0.2);
+			text-align: left;
+			padding:4px 30upx;
+			}
+			.bank_type{font-size: 22upx;border: 1px solid #EEEEEE;color: #999999;border-radius: 6upx;line-height: 1;padding: 0 10upx;height: 30upx;line-height: 30upx;
+			margin-left: 12upx;margin-top: 8upx;}
+			.card_bank{padding: 10upx 0;border-bottom: 1px solid #ECECEC;overflow: hidden;width: 100%;}
+			.card_bank text{float: left;}
+			.card_bank_icon{width:32upx;height:32upx;margin-right: 10upx;float: left;margin-top: 8upx;}
+			.card_bank_info{padding: 20upx 0;color: #333;}
+			.card_bank_info .name{color: #999999;}
+			.card_bank_info .text{margin-right: 30upx;}
+			.card_num{font-size: 24upx;color: #666666;margin-top: 4upx;}
+			.card_main{font-size: 32upx;font-weight: 500;padding-top: 20upx;}
+			.card_main .name{font-size: 24upx;color: #999;margin-top: 10upx;}
+</style>
 </style>

@@ -1,255 +1,211 @@
 <template>
-	<view class="uni-common-pb">
-        <view class="uni-header-logo"  @click="goRepay()">
-			<image src="../../../static/home_btn_bnh.png"></image>
-		</view>
-		<view class="uni-flex uni-row by-home-icons">
-			<view class="flex-item ls4"  @click="goDetailPage('/pages/user/pos/pos')">
-				<image src="../../../static/home_tab_card.png"></image>
-				<view class="uni-title">刷卡收款</view>
-			</view>
-			<view class="flex-item ls4"  @click="goDetailPage('/pages/user/plan/plan')">
-				<image src="../../../static/home_tab_zhandan.png"></image>
-				<view class="uni-title">还款计划</view>
-			</view>
-			<view class="flex-item ls4"  @click="goDetailPage('/pages/user/invite/invite')">
-				<image src="../../../static/home_tab_share.png"></image>
-				<view class="uni-title">邀请好友</view>
-			</view>
-			<view class="flex-item ls4"  @click="goDetailPage('/pages/index/about/about')">
-				<image src="../../../static/home_tab_about.png"></image>
-				<view class="uni-title">关于我们</view>
-			</view>
-		</view>
-		<view class="uni-padding-wrap">
-			<view class="uni-card uni-card-red" v-for="(item, index) in cardList" :key="index">
-				<view class="uni-triplex-row pd15">
-					<view class="uni-triplex-left lf7">{{item.bank_name}}</view>
-					<view class="uni-triplex-right rg3"><button class="mini-btn" type="primary" size="mini" @click="goRepayInfo(item.credit_id)">查看</button></view>
-				</view>
-				<view class="uni-triplex-row linebg"></view>
-				<view class="uni-flex uni-row">
-					<view class="flex-item ls3">
-						<view class="ls3-row">￥<text>{{item.yes_repay_money}}</text></view>
-						<view>已还款</view>
-					</view>
-					<view class="flex-item ls3">
-						<view class="ls3-row">￥<text>{{item.no_repay_money}}</text></view>
-						<view>未还款</view>
-					</view>
-					<view class="flex-item ls3">
-						<view class="ls3-row"><text>{{item.repay_day}}</text>天还款</view>
-						<view>{{item.repay_date}}</view>
+	<view class="main">
+		<view class="main_case">
+			<view class="index_head box_show">
+				<view class="uni-flex uni-row index_head_top">
+			        <view class="flex-item index_logo" style="width: 80%;line-height: 1;" ><img src="../../../static/index_logo.png"></view>
+			        <view class="flex-item service" style="width: 20%;"><img src="../../../static/service.png"></view>
+			    </view>
+				<!-- 轮播动画 -->
+				<view class="banner_box">
+					<view class="page-section swiper">
+					<view class="page-section-spacing">
+						<swiper class="swiper" :indicator-dots="indicatorDots" :autoplay="autoplay" :interval="interval" 
+						:duration="duration" :circular="circular" :previous-margin="previousMargin" :next-margin="nextMargin"
+						:indicator-active-color="afterColor" :indicator-color="beforeColor">
+							<swiper-item>
+								<view class="swiper-item banner_case">
+									<img src="../../../static/banner1.png">
+								</view>
+							</swiper-item>
+							<swiper-item>
+								<view class="swiper-item banner_case">
+									<img src="../../../static/banner2.png">
+								</view>
+							</swiper-item>
+							<swiper-item>
+								<view class="swiper-item banner_case">
+									<img src="../../../static/banner3.png">
+								</view>
+							</swiper-item>
+						</swiper>
 					</view>
 				</view>
+				<!-- 轮播动画end -->
+				
+				
+				<view class="uni-flex uni-row operation_case">
+				    <view class="flex-item" @click="goDetailPage('/pages/user/pos/pos')">
+						<img src="../../../static/receivables.png" class="operation_icon">
+						<view>收款</view>
+					</view>
+				    <view class="flex-item middle" @click="goDetailPage('/pages/card/credit/repayment')" >
+						<img src="../../../static/repayment.png" class="operation_icon2">
+						<view>还款</view>
+					</view>
+				    <view class="flex-item" @click="goDetailPage('/pages/user/agent/invite')" >
+						<img src="../../../static/share.png" class="operation_icon">
+						<view>分享</view>
+					</view>
+				</view>
+				<view class="uni-flex uni-row news_flash">
+					<view class="flex-item news_flash_name" >
+						<img src="../../../static/news_flash.png" >
+					</view>
+					<view class="flex-item news_list">
+						<view class="news_list_info uni-ellipsis"><text class="news_list_name">分润</text>151****7359于12:13获得分润<text class="red">￥48.00</text>元</view>
+						<view class="news_list_info uni-ellipsis"><text class="news_list_name">收款</text>151****7359于12:13成功提现<text class="red">￥1888.00</text>元</view>
+					</view>
+					</view>
+				</view>	
+			</view>
+			<view class="team_case" @click="goDetailPage('/pages/user/agent/user')">
+				<img src="../../../static/team.png" class="team_name">
+				<view class="uni-flex uni-row team_list">
+					<view class="flex-item ">
+						<text class="team_title">总人数</text>
+						<view class="team_title">300</view>
+					</view>
+					<view class="flex-item">
+						<text class="team_title">直推人数</text>
+						<view class="team_title">120</view>
+					</view>
+					<view class="flex-item">
+						<text class="team_title">间推人数</text>
+						<view class="team_title">120</view>
+					</view>
+					<view class="flex-item">
+						<text class="team_title">月活跃人数</text>
+						<view class="team_title">120</view>
+					</view>
+				</view>
+			</view>
+			<view class="team_case" style="padding:20upx 30upx 0;">
+				<view class="uni-flex uni-row team_list">
+					<view class="flex-item handle_case" @click="goDetailPage('/pages/user/plan/plan')">
+						<img src="../../../static/plan.png">
+					</view>
+					<view class="flex-item handle_case">
+						<img src="../../../static/handle.png">
+					</view>
+				</view>
+			</view>
+			<view class="other_business">
+				<view class="business_case">
+					<img src="../../../static/dai.png" class='business_name'>
+					<view class="business_main"  @click="setMaskShow">
+						<view>贷款超市</view>
+						<text>贷款10万，当天放款。贷款1000-5000可秒过</text>
+					</view>
+				</view>
+				<view class="business_case"  @click="setMaskShow">
+					<img src="../../../static/ban.png" class='business_name'>
+					<view class="business_main">
+						<view>办信用卡市</view>
+						<text>大额用户卡，最高额度50万</text>
+					</view>
+				</view>
+				<view class="business_case">
+					<img src="../../../static/ling.png" class='business_name'>
+					<view class="business_main"  @click="setMaskShow">
+						<view>领取保险</view>
+						<text>安全保障，无忧养卡</text>
+					</view>
+				</view>
 			</view>
 		</view>
-		<view class="uni-padding-wrap by-mt-20">
-			<view class="page-section swiper">
-				<view class="page-section-spacing">
-					<swiper class="swiper" indicator-dots="true" :autoplay="autoplay" interval="2000" duration="500" indicator-color="#ffb8b8" indicator-active-color="#fe5950">
-						<swiper-item v-for="(item, index) in swiperList" :key="index">
-							<view class="swiper-item" @click="goWebPage(item.title,item.link_url)"><image :src="item.images"></image></view>
-						</swiper-item>
-					</swiper>
-				</view>
+		<view class="mask" v-show="maskShow" @click="setMaskShow">
+			<view class="tip_img">
+				<img src="../../../static/tip_img.png" alt="">
 			</view>
 		</view>
 		
-		<view class="uni-padding-wrap"><view class="textbx"><view class="uni-icon uni-icon-info-filled"></view> 账户安全可由PICC保险公司承保</view></view>
 	</view>
 </template>
 <script>
 	export default {
-		data() {
-			return {
-				autoplay: true,
-				swiperList: [],
-				cardList:[],
-			}
-		},
-		onLoad(e) {
-			if(e.shareId){
-				uni.setStorageSync('shareId', e.shareId);
-			}
-			
-			if(e.agentId){
-				uni.setStorageSync('agentId', e.agentId);
-			}
-				
-			if(e.qdId){
-				uni.setStorageSync('qdId', e.qdId);
-			}
-		    //uni.showLoading();
-			//uni.showToast({title:'加载中',icon:'loading'})
-			//uni.startPullDownRefresh();
-		},
-		onShow(){
-			this.getIndexData();
-		},
-		onReady(){
-			//setTimeout(function () {
-				//uni.hideLoading();
-			//}, 500);
-		},
-		onPullDownRefresh() {
-			this.getIndexData();
-			uni.stopPullDownRefresh();
-		},
-		onShareAppMessage() {
-			return {
-				title: this.webshareTitle,
-				path: '/pages/tabBar/index/index'
-			}
-		},
-		onNavigationBarButtonTap(e) {
+    data() {
+        return {
+            indicatorDots: true,
+            autoplay: true,
+            interval: 2000,
+            duration: 500,
+			circular:true,
+			previousMargin:16+'px',
+			nextMargin:16+'px',
+			beforeColor: "#dddddd",//指示点颜色
+			afterColor: "#5f9df1",//当前选中的指示点颜色
+			 maskShow: false,
+        }
+    },
+	methods: {
+		goDetailPage(url) {
 			const openid = this.$store.state.openid;
-			if(openid === null){
+			if (openid === null) {
 				uni.navigateTo({
 					url: '/pages/user/login/login'
 				})
-				return false;
+			} else {
+				uni.navigateTo({
+					url: url
+				})
 			}
-		
-			uni.navigateTo({
-				url: '/pages/user/news/news'
-			})
 		},
-		methods: {
-			goRepay() {
-				uni.switchTab({
-					url: '/pages/tabBar/card/card'
-				})
-			},
-			goRepayInfo(credit_id){
-				uni.navigateTo({
-					url: '/pages/card/credit/info?credit_id='+credit_id,
-				})
-			},
-			getIndexData(){
-				const openid = this.$store.state.openid;
-				const sessionKey = this.$store.state.sessionKey;
-				try {
-					this.$http.post(this.websiteUrl+'/api/api/getIndexData',{openid,sessionKey},(res) => {
-						if(res.data.code==1){
-							this.swiperList = res.data.result.banner;
-							this.cardList = res.data.result.cardRepay;
-						}else{
-							uni.showModal({
-								content:res.data.msg,
-								showCancel:false
-							})
-						}
-					});
-				} catch (e) {
-					uni.showModal({
-						content:'网络异常,请稍后重试...',
-						showCancel:false
-					})
-				}
-			},
-			goWebPage(title,url) {
-				uni.navigateTo({
-					url: '/pages/index/web-view/web-view?title='+title+'&url='+url
-				})
-			},
-			goDetailPage(url) {
-				const openid = this.$store.state.openid;
-				if(openid === null){
-					uni.navigateTo({
-						url: '/pages/user/login/login'
-					})
-				}else{
-					uni.navigateTo({
-						url: url
-					})
-				}
-				
-			}
-		}
+		 setMaskShow(){
+            this.maskShow = !this.maskShow;
+        }
 	}
+}
 </script>
 
 <style>
 	page{
 		height: auto;
 		min-height: 100%;
+		background-color: #F2F2F2;
 	}
-	.uni-icon-info-filled{color:#fe5950;font-size:26upx}
-	.uni-header-logo{
-		height: 568upx;
+	.box_show{
+		-webkit-box-shadow: 4upx 4upx 20upx 4upx rgba(36, 158, 242, 0.1);
+		box-shadow: 4upx 4upx 20upx 4upx rgba(36, 158, 242, 0.1);
 	}
-	.uni-header-logo image{
-		width: 100%;height: 568upx;
-	}
-	
-	.by-home-icons{ margin-top: 30upx;}
-	
-	.ls4 {
-		width: 25%;
-		height: 130upx;
-		text-align: center;
-	}
-	
-	.ls4 image {
-		width: 72upx;
-		height: 72upx;
-	}
-	
-	.uni-card-red{
-		background: linear-gradient(to right, #ff7575, #fe5950);
-		border-radius: 15upx;
-		color: #fff;
-		min-height: 260upx;
-		margin-top: 50upx;
-		overflow: hidden;
-	}
-	
-	.ls4 .uni-title{
-	    padding: 0upx;
-	}
-	
-	.uni-card .lf7{width: 74%; font-weight: 500;font-size: 32upx;}
-	.uni-card .rg3{width: 26%;}
-	
-	.mini-btn{ width: 160upx; height: 55upx;background-color: #fe5950 !important; background: transparent !important; 
-	
-	}
-	.mini-btn:after{border: 5upx solid #FFFFFF;}
-	.linebg{background: #EEEEEE; height: 2upx; line-height: 2upx;padding:0upx; width: 90%; margin: 0 auto;opacity:0.5;}
-	.pd15{ padding: 28upx 30upx;}
-	
-	.ls3{
-		width: 33.33%;
-		height: 140upx;
-		text-align: center;
-		margin-top: 15upx;
-	}
-	
-	.ls3-row text{ font-size: 36upx; font-weight: 500;}
-	
-	.swiper {
-		height: 220upx;
-		border-radius:15upx;
-	}
-	.swiper-item {
-		display: block;
-		height: 220upx;
-		line-height: 220upx;
-		text-align: center;
-		border-radius:15upx;
-		
-	}
-	.swiper-item image{width: 100%; height: 220upx;}
-	.by-mt-20{ margin-top: 50upx;}
-	
-	.textbx{
-		margin:15upx 10upx;
-		padding: 0 20upx;
-		height: 50upx;
-		line-height: 50upx;
-		text-align: center;
-		color: #777;
-		font-size: 26upx;
-	}
+	.index_head{background-color: #fff;}
+	.index_logo img{width: 217upx;height: 56upx;}
+	.service img{width: 44upx;height: 44upx;}
+	.service{text-align: right;}
+	.index_head_top{padding: 30upx 30upx 20upx;}
+	.operation_icon{width: 55upx;height: 61upx;}
+	.operation_icon2{width: 61upx;height: 61upx;}
+	.operation_case{padding: 24upx 30upx 34upx;}
+	.operation_case .flex-item{width: 32%;background-color: #fff;border-radius: 8upx;
+		-webkit-box-shadow: 4upx 4upx 20upx 4upx rgba(13, 43, 153, 0.15);
+		box-shadow: 4upx 4upx 20upx 4upx rgba(13, 43, 153, 0.15);text-align: center;padding: 20upx 0 4upx;font-size: 24upx;color: #0d2b99;
+		line-height: 1.3;
+		}
+		.middle{margin: 0 2%;}
+		.news_flash_name{width: 90upx;border-right: 1px solid #ececec;}
+		.news_flash_name img{width: 65upx;height: 78upx;}
+		.news_list{padding-left: 20upx;height: 100upx;width: 85%;}
+		.news_list .news_list_name{font-size: 22upx;color: #666;color: #00b38a;border:1px solid #00b38a;border-radius:6upx ;
+		padding: 0 4upx;margin-right: 6upx;}
+		.news_list_info{font-size: 26upx;color: #666;}
+		.news_list .red{color: red;font-weight: 600;}
+		.news_flash{height: 100upx;padding: 0 30upx;}
+		.team_case{background-color: #fff;padding: 20upx 30upx;margin-top: 20upx;}
+		.team_name{width: 200upx;height: 44upx;}
+		.team_list uni-view{flex:1}
+		.team_list uni-view{flex:1;font-size: 28upx;color: #333;text-align: center;}
+		.team_title{color: #999;font-size: 24upx;}
+		.handle_case img{width: 330upx;height: 170upx;}
+		.other_business{padding: 20upx 30upx 0;}
+		.business_case{padding-left: 40upx;position: relative;margin-bottom: 20upx;}
+		.business_main{background-color: #fff;border-radius: 12upx;padding: 16upx 60upx;font-size: 26upx;color: #333;font-weight: 500;}
+		.business_name{width: 80upx;height: 80upx;position: absolute;left: 0;top: 50%;margin-top: -40upx;}
+		.business_main text{font-size: 22upx;color: #999;margin-top: 24upx;}
+		.banner_case{width: 680upx;height: 340upx;}
+		.banner_box{padding-bottom: 20upx;}
+		.banner_case img{width: 100%;height: 100%;}
+		 .banner_box uni-swiper{height: 360upx;}
+		uni-swiper .uni-swiper-dots{bottom: 30px;}
+		.mask{width: 100%;height: 100%;background: rgba(0,0,0,0.6);position: fixed;left: 0;top:0;z-index: 2000;}
+		.tip_img img{width: 450upx;height: 410upx;position: absolute;left: 50%;top: 35%;margin-left:-225upx ;}
 </style>

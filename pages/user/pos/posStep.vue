@@ -29,7 +29,7 @@
 					<view class="hg50">
 						<view class="uni-list-cell-navigate uni-navigate-right bb0">
 							<view class="by-sdh">付款账户<text></text></view>
-							<input class="uni-input" @click="showBottomPopup" disabled="disabled"  v-model="credit_name"  placeholder="请选择付款账户" />
+							<input  @click="showBottomPopup" disabled="disabled"  v-model="credit_name"  placeholder="请选择付款账户" />
 						</view>
 					</view>
 				</view>
@@ -482,12 +482,12 @@
 	page {
 		height: auto;
 		min-height: 100%;
-		background-color: #f7f8fa;
+		background-color: #F2F2F2;
 	}
 	
 	.pos_bg{
-		background-color: #fd5950;
-		background: linear-gradient(top, #fd5950, #ff7575);
+		background-color: #32b0fd;
+		background: linear-gradient(to right, #32b0fd, #2f7bfe);
 		height: 160upx;
 		color: #FFFFFF;
 		 padding: 40upx 50upx;
@@ -501,11 +501,11 @@
 	
 	.pos_yhze_text text{font-size: 54upx;
 		font-weight: 500;}
-	
-	.uni-card.by-card {
+.uni-card.by-card {
 		border-radius: 12upx;
-		-webkit-box-shadow: 4upx 4upx 20upx 4upx rgba(123, 123, 123, 0.3);
-		box-shadow: 4upx 4upx 20upx 4upx rgba(123, 123, 123, 0.3);
+		-webkit-box-shadow: 4upx 4upx 20upx 4upx rgba(0, 37, 174, 0.2);
+		box-shadow: 4upx 4upx 20upx 4upx rgba(0, 37, 174, 0.2);
+		padding: 0 20upx;
 	}
 	
 	.uni-card.by-card .p15 {
@@ -513,12 +513,14 @@
 	}
 	
 	.by-sdh {
-		width: 120upx;
-		height: 52upx;
-		color: #576175;
-		font-weight: 600;
-		margin-right: 30upx;
-		text-align: justify;
+		    width: 60px;
+	height: 26px;
+	color: #576175;
+	font-weight: 600;
+	margin-right: 15px;
+	text-align: justify;
+	font-size: 26upx;
+	line-height: 26px;
 	}
 	
 	.by-sdh text {
@@ -540,15 +542,20 @@
 		border-bottom: 0upx;
 	}
 	
-	.by-button-submit{
-		background-color:#fd5950;
-		background: linear-gradient(left, #ff7575, #fd5950);
-	}
+	.by-button-submit {
+			background-color: #32b0fd;
+			background: linear-gradient(left, #32b0fd, #097ede);
+			border-radius: 500px;
+			-webkit-box-shadow: 4upx 4upx 20upx 4upx rgba(50, 176, 253, 0.4);
+			box-shadow: 4upx 4upx 20upx 4upx rgba(50, 176, 253, 0.4);
+		}
 	
 	.by-button-submit[disabled]{
 		background-color:#DDDDDD;
 		background: linear-gradient(left, #DDDDDD, #DDDDDD);
 		color: #b2b2bd;
+		-webkit-box-shadow: 4upx 4upx 20upx 4upx rgba(221, 221, 221, 0.4);
+		box-shadow: 4upx 4upx 20upx 4upx rgba(221, 221, 221, 0.4);
 	}
 	
 		/* 遮罩层 */
@@ -598,7 +605,7 @@
 	
 	.by-sdhrg{
 		color: #576175;
-		font-size: 24upx;font-weight: 700;font-weight: 500;
+		font-size: 24upx;
 	}
 	
 	.red-text{color: #fe5950;font-weight: 500;}
@@ -620,5 +627,10 @@
 		height: 0upx;
 		width: 100%;
 	}
+	.tip_btn{color: #a6a6a6;font-size: 24upx;line-height: 50upx;}
+	.tip_btn text{color: #fd5950;}
+	.uni-card{margin: 35upx 0;}
+	.uni-input{padding: 0 8upx;}
+	.uni-common-mt{margin-top: 16upx;}
 	
 </style>

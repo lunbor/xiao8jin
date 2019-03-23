@@ -2,13 +2,13 @@
 	<view>
 		<view class="uni-card uni-card-red md15" v-bind:style="{ background: card.color}">
 			<view class="uni-triplex-row pd15">
-				<view class="uni-triplex-left lf7">{{card.bank_name}}<text>{{card.credit_code}}</text></view>
-				<view class="uni-triplex-right rg3"><button class="mini-btn" type="primary" size="mini">信用卡</button></view>
+				<view class="uni-triplex-left lf7">{{card.bank_name}}<text>{{card.credit_code}}</text><button class="mini-btn" type="primary" size="mini">信用卡</button></view>
+				<!-- <view class="uni-triplex-right rg3"></view> -->
 			</view>
 			<view class="uni-triplex-row linebg"></view>
 			<view class="uni-flex uni-row">
 				<view class="flex-item ls3">
-					<view class="ls3-row">￥<text>{{card.line_credit}}</text></view>
+					<view class="ls3-row">¥<text>{{card.line_credit}}</text></view>
 					<view>额度</view>
 				</view>
 				<view class="flex-item ls3">
@@ -32,7 +32,7 @@
 								<view class="text log-time">{{item.chtime}}</view>
 							</view>
 							<view class="text right-text">
-								<view class="text log-money">￥{{item.money/100}}</view>
+								<view class="text log-money">¥{{item.money/100}}</view>
 								<view class="text log-balance" v-if="item.type==1">
 									<text v-if="item.mcc_p_name!=''">行业：{{item.mcc_p_name}}</text>
 								</view>
@@ -41,14 +41,14 @@
 					</view>
 				</view>
 				<view class="uni-card-content p15" v-if="repayTemp.current!=2">
-					<view class="repay_title">还款金额：￥<text>{{repayTemp.total/100}}</text></view>
+					<view class="repay_title">还款金额：¥<text>{{repayTemp.total/100}}</text></view>
 					<view class="uni-timeline" style="padding: 30upx 20upx;background-color: #fff;">
 						<view class="uni-timeline-item" :class="index==1?'uni-timeline-first-item':index==repayTemp.list.length-1?'uni-timeline-last-item':''" v-for="(item,index) in repayTemp.list" :key="index" v-if="item.type==2">
 							<view class="uni-timeline-item-keynode">{{item.chtime}}</view>
 							<view class="uni-timeline-item-divider"></view>
 							<view class="uni-timeline-item-content">
 								<view class="uni-flex uni-row">
-									<view class="text list-money">￥<text>{{item.money/100}}</text></view>
+									<view class="text list-money">¥<text>{{item.money/100}}</text></view>
 									<view class="text list-type" v-if="item.type==2">还款</view>
 									<view class="text list-type" v-else-if="item.type==1">消费</view>
 								</view>
@@ -62,23 +62,23 @@
 				<view class="uni-card-content p15">
 					<view class="uni-list-cell uni-collapse">
 						<view class="uni-list-cell-navigate uni-navigate-bottom repay-mx" :class="show ? 'uni-active' : ''">
-							<view class="text"><view class="uni-icon uni-icon-help-filled help-filled" @click="getTipZzj()"></view>周转金：<text v-if="repayTemp.current==1">￥{{(repayTemp.minMoney-repayTemp.maxExpen)/100}}</text><text v-else>￥{{repayTemp.minMoney/100}}</text></view>
+							<view class="text"><view class="uni-icon uni-icon-help-filled help-filled" @click="getTipZzj()"></view>预留金：<text v-if="repayTemp.current==1">¥{{(repayTemp.minMoney-repayTemp.maxExpen)/100}}</text><text v-else>¥{{repayTemp.minMoney/100}}</text></view>
 							<view class="uni-list-cell-left" @click="trigerCollapse()">明细</view>
 						</view>
-						<view class="uni-collapse-content" :class="show ? 'uni-active mt15' : ''">
+						<view class="uni-collapse-content" :class="show ? 'uni-active margin10' : ''">
 							<view class="uni-flex uni-row repay-fee" style="justify-content: space-between;">
 								<view class="text uni-list-cell-left">还款金额</view>
-								<view class="text uni-list-cell-left">￥{{repayTemp.total/100}}</view>
+								<view class="text uni-list-cell-left">¥{{repayTemp.total/100}}</view>
 							</view>
 							
 							<view class="uni-flex uni-row repay-fee" style="justify-content: space-between;">
 								<view class="text uni-list-cell-left">还款手续费</view>
-								<view class="text uni-list-cell-left">￥{{repayTemp.sMoney/100}}</view>
+								<view class="text uni-list-cell-left">¥{{repayTemp.sMoney/100}}</view>
 							</view>
 							
 							<view class="uni-flex uni-row repay-fee" style="justify-content: space-between;">
 								<view class="text uni-list-cell-left">还款次数费</view>
-								<view class="text uni-list-cell-left">￥{{repayTemp.payNum}}</view>
+								<view class="text uni-list-cell-left">¥{{repayTemp.payNum}}</view>
 							</view>
 						</view>
 					</view>
@@ -92,7 +92,7 @@
 					<view class="hg50" >
 						<view class="uni-input-row">
 							<label>提供垫资本金</label>
-							<text>￥{{repayTemp.maxExpen/100}}</text>
+							<text>¥{{repayTemp.maxExpen/100}}</text>
 						</view>
 					</view>
 				</view>
@@ -134,10 +134,10 @@
 			<view>
 				<view class="uni-card by-card">
 					<view class="uni-card-content pd15">
-						<view class="tip_btn"><text>*</text> 周转金:信用卡需要预留的额度;</view>
+						<view class="tip_btn"><text>*</text>预留金:信用卡需要预留的额度;</view>
 						<view class="tip_btn"><text>*</text> 平台收取的手续费=还款手续费+还款次数费;</view>
 						<view class="tip_btn"><text>*</text> 若中途还款失败，平台只收取已经交易成功部分的手续费;</view>
-						<view class="tip_btn"><text>*</text> 信用卡额度不足周转金金额，会导致还款计划失败;</view>
+						<view class="tip_btn"><text>*</text> 信用卡额度不足预留金金额，会导致还款计划失败;</view>
 						<!--<view class="tip_btn"><text>* 办理VIP年费会员并且积分达1000以上可享受平台垫资周转金服务;</text></view>
 						<view class="text"><button type='warn' class="queren-btn"  @click="goDetailPage('/pages/user/vip/vip')">立即办理</button></view>-->
 						
@@ -460,7 +460,7 @@
 	page {
 		height: auto;
 		min-height: 100%;
-		background-color: #f7f8fa;
+		background-color: #F2F2F2;
 	}
 	
 	.uni-card-red {
@@ -535,13 +535,17 @@
 		}
 	
 		.mini-btn {
-			line-height: 55upx;
-			width: 160upx;
-			height: 55upx;
-			background-color: #fe5950 !important;
+			/* line-height: 55upx; */
+			width: 120upx;
+			height: 40upx;
+			/* background-color: #fe5950 !important; */
 			background: transparent !important;
-	
+			text-align: center;
+			line-height:42upx;
+			margin: 10upx 20upx;
+			padding: 0;
 		}
+		
 	
 		.mini-btn:after {
 			border: 5upx solid #FFFFFF;
@@ -579,7 +583,7 @@
 			overflow: hidden;
 		}
 		.repay_title text{font-size: 40upx; font-weight: 500;}
-		.repay_title{ padding-left: 34upx; color: #FFFFFF; height: 115upx; line-height: 115upx; background-color: #dbc89f;}
+		.repay_title{ padding-left: 34upx; color: #FFFFFF;  line-height: 70upx; background-color: #dbc89f;}
 		
 		
 		.uni-timeline-item .uni-timeline-item-divider{background-color: #e7c896;}
@@ -590,23 +594,26 @@
 		.mt15 {
 			margin-top: 30upx;
 		}
-		.list-type{width: 180upx;text-align: right;color: #576175;font-size: 32upx; font-weight: 600;line-height: 80upx}
-		.repay-mx{height: 100upx; line-height: 100upx; color: #576175;font-weight: 600;}
+		.list-type{width: 180upx;text-align: right;color: #333;font-size: 32upx; /* font-weight: 600; */line-height: 80upx}
+		.repay-mx{height: 100upx; line-height: 100upx; color: #333;font-weight: 600;}
 		.repay-mx .text text{ font-size: 36upx; color: #fe4040;}
-		.uni-list-cell-navigate.uni-active{ background-color: #FFFFFF; border-bottom: 2upx solid #ecedef;}
-		.repay-fee{ height: 80upx; line-height: 80upx; color: #576175;font-weight: 600;}
+		.uni-list-cell-navigate.uni-active{ background-color: #FFFFFF; border-bottom: 2upx solid #ECECEC;}
+		.repay-fee{ height: 70upx; line-height: 70upx; color: #333;/* font-weight: 600; */}
 		
-		.by-button-submit{
-			background-color:#fd5950;
-			background: linear-gradient(left, #ff7575, #fd5950);
+			.by-button-submit {
+			background-color: #32b0fd;
+			background: linear-gradient(left, #32b0fd, #097ede);
+			border-radius: 500px;
+			-webkit-box-shadow: 4upx 4upx 20upx 4upx rgba(50, 176, 253, 0.4);
+			box-shadow: 4upx 4upx 20upx 4upx rgba(50, 176, 253, 0.4);
 		}
 		
 
 		.tip_btn text{color: #fd5950;}
 		
-		.help-filled{color: #fd5950; font-size: 32upx;}
-		.by-sdhp{ border-bottom: 2upx solid #dddddd;}
-		.dzfont {font-weight: 600;    color: #576175;}
+		.help-filled{color: #fd5950; font-size: 48upx;}
+		.by-sdhp{ border-bottom: 2upx solid #ECECEC;}
+		.dzfont {font-weight: 600;    color: #333;}
 		
 		/* 遮罩层 */
 		.uni-mask {
@@ -643,8 +650,8 @@
 		.by-sdh {
 			width: 120upx;
 			height: 52upx;
-			color: #576175;
-			font-weight: 600;
+			color: #333;
+			font-weight: 400;
 			margin-right: 30upx;
 			text-align: justify;
 		}
@@ -672,5 +679,7 @@
 		.log-time{font-size: 24upx; color: #888888;}
 		.log-money{font-size: 28upx; color: #ff3e31;font-weight: 600;}
 		.log-balance{font-size: 24upx; color: #666666;}
+		.uni-timeline{margin: 0;}
+		.margin10{margin: 20upx 0;}
 		
 </style>

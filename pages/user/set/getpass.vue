@@ -3,24 +3,24 @@
 		<view class="by-bg-title">验证码将发送至{{mobile}}</view>
 		<view class="uni-padding-wrap uni-common-pb">
 			<form @submit="formSubmit">
-				<view class="uni-form-item uni-column">
-					<view class="with-fun by-login-input">
-						<input class="uni-input" type="number" name="smsCode" placeholder="请填入验证码"  v-model="smsCode"/>
-						<view class="text by-dj-btn" :class="is_sms?'':'active'" @click="sendSMS">{{fsbtn}}</view>
+				<view class="uni-card by-card">
+					<view class="uni-form-item uni-column">
+						<view class="with-fun by-login-input">
+							<input class="uni-input" type="number" name="smsCode" placeholder="请填入验证码"  v-model="smsCode"/>
+							<view class="text by-dj-btn" :class="is_sms?'':'active'" @click="sendSMS">{{fsbtn}}</view>
+						</view>
 					</view>
-				</view>
-				
-				<view class="uni-form-item uni-column">
-					<view class="with-fun by-login-input">
-						<input class="uni-input" placeholder="请填写6~18位字符新密码" name="password" :password="showPassword" />
-						<view class="uni-icon uni-icon-eye" :class="[!showPassword ? 'uni-active' : '']" @click="changePassword"></view>
+					
+					<view class="uni-form-item uni-column">
+						<view class="with-fun by-login-input">
+							<input class="uni-input" placeholder="请填写6~18位字符新密码" name="password" :password="showPassword" />
+							<view class="uni-icon uni-icon-eye" :class="[!showPassword ? 'uni-active' : '']" @click="changePassword"></view>
+						</view>
 					</view>
 				</view>
 				<view class="uni-btn-v">
-					<button formType="submit" :loading="loading" type="warn">修改密码</button>
+						<button class="modify_btn" formType="submit" :loading="loading" type="warn">修改密码</button>
 				</view>
-				
-
 			</form>
 		</view>
 	</view>
@@ -212,18 +212,36 @@
 	page{
 		height: auto;
 		min-height: 100%;
-		background-color: #FFFFFF;
+		background-color: #F2F2F2;
 		color: #989898;
 	}
-	.by-bg-title{background-color: #f4f4f4;color: #9b9b9b; height: 90upx; line-height: 90upx;  padding-left: 56upx;}
-	.by-dj-btn{ color: #666666; border: 2upx #d7d5d5 solid; padding: 14upx 20upx;height: 30upx; line-height: 30upx; border-radius: 12upx; margin-top: 10upx; margin-right: 15upx;}
+	.by-bg-title{/* background-color: #f4f4f4; */color: #333; height: 120upx; line-height: 120upx;  padding-left: 56upx;}
+	.by-dj-btn{ color: #666666; border: 2upx #d7d5d5 solid; padding: 14upx 20upx;height: 30upx; line-height: 30upx; border-radius: 500px; 
+	margin-top: 20upx; margin-right: 15upx;font-size: 26upx;}
 	.by-dj-btn.active{order: 2upx #f7f8fa solid;color:#d7d5d5;}
 	
 	.uni-btn-v  button{ background-color: #ff4444;}
 	
-	.with-fun.by-login-input{ border-bottom: 2upx #dddddd solid; height: 110upx; line-height: 110upx; font-size: 32upx;}
-	.by-login-input .uni-input{height: 60upx; line-height: 60upx;font-size: 32upx;}
+	.with-fun.by-login-input{ border-bottom: 2upx #ececec solid; height: 98upx; line-height: 98upx; font-size: 28upx;}
+	.by-login-input .uni-input{height: 60upx; line-height: 60upx;font-size: 28upx;}
 	.by-login-input input{height: 60upx; line-height: 60upx;font-size: 32upx;}
 	.clause{ margin-top: 127upx; text-align: center; color: #999999; font-weight: 500;}
 	.clause text{ color: #fe5950;}
+	
+	.uni-card{
+			border-radius: 12upx;
+			-webkit-box-shadow: 4upx 4upx 20upx 4upx rgba(0, 37, 174, 0.2);
+			box-shadow: 4upx 4upx 20upx 4upx rgba(0, 37, 174, 0.2);
+			margin: 0;
+			padding: 0 20upx;
+		}
+		.modify_btn{
+			background-color: #32b0fd;
+			background: linear-gradient(left, #32b0fd, #097ede);
+			border-radius: 500px;
+			-webkit-box-shadow: 4upx 4upx 20upx 4upx rgba(50, 176, 253, 0.4);
+			box-shadow: 4upx 4upx 20upx 4upx rgba(50, 176, 253, 0.4);
+			margin-top: 50upx;
+		}
+		.uni-form-item{padding: 0;}
 </style>

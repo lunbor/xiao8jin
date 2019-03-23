@@ -117,8 +117,8 @@
 
 	.list-item {
 		margin: 20upx 0;
-		height: 140upx;
-		line-height: 140upx;
+		/* height: 140upx; */
+		/* line-height: 140upx; */
 		width: 100%;
 		border-bottom: 2upx solid #eee;
 		text-align: center;

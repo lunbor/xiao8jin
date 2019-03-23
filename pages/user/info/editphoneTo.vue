@@ -189,18 +189,23 @@
 	page {
 		height: auto;
 		min-height: 100%;
-		background-color: #f7f8fa;
+		background-color: #F2F2F2;
 	}
-	.by-bg-title{background-color: #2e2e2e; color: #FFFFFF; height: 90upx; line-height: 90upx;  padding-left: 30upx;}
+	.by-bg-title{color: #333; height: 90upx; line-height: 90upx;  padding-left: 34upx;}
 	.uni-card.by-card {
 		border-radius: 12upx;
-		-webkit-box-shadow: 4upx 4upx 20upx 4upx rgba(123, 123, 123, 0.3);
-		box-shadow: 4upx 4upx 20upx 4upx rgba(123, 123, 123, 0.3);
+		-webkit-box-shadow: 4upx 4upx 20upx 4upx rgba(0, 37, 174, 0.2);
+		box-shadow: 4upx 4upx 20upx 4upx rgba(0, 37, 174, 0.2);
 	}
-	.by-dj-btn{ color: #666666; border: 2upx #d7d5d5 solid; padding: 14upx 20upx;height: 30upx; line-height: 30upx; border-radius: 12upx; margin-top: 10upx; margin-right: 15upx;}
+	.by-dj-btn{ color: #666666; border: 2upx #d7d5d5 solid; padding: 14upx 20upx;height: 30upx; line-height: 30upx; border-radius: 500px; 
+	margin-top: 10upx; margin-right: 15upx;font-size: 24upx;}
 	.by-dj-btn.active{order: 2upx #f7f8fa solid;color:#d7d5d5;}
-	.by-button-submit{
-		background-color:#fd5950;
-		background: linear-gradient(left, #ff7575, #fd5950);
+	.by-button-submit {
+		background-color: #32b0fd;
+		background: linear-gradient(left, #32b0fd, #097ede);
+		border-radius: 500px;
+		-webkit-box-shadow: 4upx 4upx 20upx 4upx rgba(50, 176, 253, 0.4);
+		box-shadow: 4upx 4upx 20upx 4upx rgba(50, 176, 253, 0.4);
+		margin-top: 60upx;
 	}
 </style>

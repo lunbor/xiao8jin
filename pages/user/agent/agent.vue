@@ -7,7 +7,7 @@
 					<view class="agent_total_profit_text">{{agent.z_money}}</view>
 				</view>
 				<view class="by-flex">
-					<view class="agent_cash" @click="showMiddlePopup"><view class="uni-icon uni-icon-help fz28"></view> 提现规则</view>
+					<view class="agent_cash" ><view class="uni-icon uni-icon-help fz28"></view> 提现规则</view>
 				</view>	
 			</view>
 			<view class="uni-triplex-row linebg"></view>

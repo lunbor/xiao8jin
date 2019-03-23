@@ -52,7 +52,7 @@
 	page {
 		height: auto;
 		min-height: 100%;
-		background-color: #f7f8fa;
+		background-color: #F2F2F2;
 	}
 
 	.by-editphone {
@@ -71,7 +71,10 @@
 	}
 
 	.by-button-submit {
-		background-color: #fd5950;
-		background: linear-gradient(left, #ff7575, #fd5950);
+		background-color: #32b0fd;
+		background: linear-gradient(left, #32b0fd, #097ede);
+		border-radius: 500px;
+		-webkit-box-shadow: 4upx 4upx 20upx 4upx rgba(50, 176, 253, 0.4);
+		box-shadow: 4upx 4upx 20upx 4upx rgba(50, 176, 253, 0.4);
 	}
 </style>

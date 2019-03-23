@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<view class="agent_syph_bg" style="background-image: url(../../../static/agent_syph_bg.png); background-repeat: no-repeat; background-size: 100% 100%;">
+		<!-- <view class="agent_syph_bg" style="background-image: url(../../../static/agent_syph_bg.png); background-repeat: no-repeat; background-size: 100% 100%;">
 			<view class="syph-top">
 				<view class="uni-flex uni-row">
 					<view class="by-flex text-c" v-for="(item,index) in list" :key="index" v-if="index<3" :class="'top-'+(index+1)">
@@ -13,7 +13,7 @@
 				</view>
 				
 			</view>
-		</view>
+		</view> -->
 
 		
 		<view class="syph-list-bg" v-for="(item,index) in list" :key="index" v-if="index>2" style="background-image: url(../../../static/agent_syph_list_bg.png); background-repeat: no-repeat; background-size: 100% 100%;">

@@ -9,13 +9,6 @@
 						</view>
 					</view>
 					<view class="hg50">
-						<view @click="goDetailPage('/pages/user/info/realname')" class="uni-list-cell-navigate uni-navigate-right">
-							实名认证
-							<text class="uni-list-cell-left by-sdh" v-if="userInfo.is_validate===0">去认证</text>
-							<text class="uni-list-cell-left by-sdh" v-if="userInfo.is_validate===1">{{userInfo.realname}}</text>
-						</view>
-					</view>
-					<view class="hg50">
 						<view @click="goDetailPage('/pages/index/about/about')" class="uni-list-cell-navigate uni-navigate-right">
 							关于我们
 						</view>
@@ -27,8 +20,8 @@
 						</view>
 					</view>
 					<!-- #endif -->
-					<view class="hg50">
-						<view @tap="makePhoneCall" class="uni-list-cell-navigate uni-navigate-right bb0">
+					<view class="hg50" >
+						<view @tap="makePhoneCall" class="uni-list-cell-navigate uni-navigate-right bb0" style="border-bottom: 0;">
 							客服电话
 							<text class="uni-list-cell-left by-sdh">{{userInfo.telphone}}</text>
 						</view>
@@ -172,34 +165,33 @@
 	page {
 		height: auto;
 		min-height: 100%;
-		background-color: #f7f8fa;
+		background-color: #F2F2F2;
 	}
 
 	.hg50 {
-		height: 120upx;
+		height: 98upx;
 		color: #576175;
-		font-size: 34upx;
-		font-weight: 600;
+		font-size:24upx;
+
+		padding: 0 20upx;
 	}
 
 	.hg50 .uni-navigate-right:after {
-		font-size: 32upx;
+		font-size: 28upx;
 	}
 
 	.hg50 .uni-navigate-right {
-		line-height: 80upx;
-		border-bottom: 1upx solid #ecedef;
+	
+		border-bottom: 2upx solid #ececec;
 	}
+	.uni-list-cell-navigate
 
-	.hg50 .uni-navigate-right.bb0 {
-		border-bottom: 0upx;
-	}
 
-	.uni-card.by-card {
-		border-radius: 12upx;
-		-webkit-box-shadow: 4upx 4upx 20upx 4upx rgba(123, 123, 123, 0.3);
-		box-shadow: 4upx 4upx 20upx 4upx rgba(123, 123, 123, 0.3);
-	}
+	.uni-card{
+			border-radius: 12upx;
+			-webkit-box-shadow: 4upx 4upx 20upx 4upx rgba(0, 37, 174, 0.2);
+			box-shadow: 4upx 4upx 20upx 4upx rgba(0, 37, 174, 0.2);
+		}
 
 	.by-mt-30 {
 		margin-top: 40upx;
@@ -210,8 +202,12 @@
 		font-weight: normal;
 	}
 	
-	.by-button-submit{
-		background-color:#fd5950;
-		background: linear-gradient(left, #ff7575, #fd5950);
+		.by-button-submit {
+		background-color: #32b0fd;
+		background: linear-gradient(left, #32b0fd, #097ede);
+		border-radius: 500px;
+		-webkit-box-shadow: 4upx 4upx 20upx 4upx rgba(50, 176, 253, 0.4);
+		box-shadow: 4upx 4upx 20upx 4upx rgba(50, 176, 253, 0.4);
+		margin-top: 50upx;
 	}
 </style>
