@@ -1,0 +1,13 @@
+
+      !(function(){
+        var uniAppViewReadyCallback = function(){
+          setCssToHead(["body{ height: auto; min-height: 100%; background-color: #F2F2F2; color: #989898; }\n.",[1],"by-bg-title{ color: #333; height: ",[0,120],"; line-height: ",[0,120],"; padding-left: ",[0,56],";}\n.",[1],"by-dj-btn{ color: #666666; border: ",[0,2]," #d7d5d5 solid; padding: ",[0,14]," ",[0,20],";height: ",[0,30],"; line-height: ",[0,30],"; border-radius: 500px; margin-top: ",[0,20],"; margin-right: ",[0,15],";font-size: ",[0,26],";}\n.",[1],"by-dj-btn.",[1],"active{-webkit-box-ordinal-group: 3;-webkit-order: ",[0,2]," #f7f8fa solid;-ms-flex-order: ",[0,2]," #f7f8fa solid;order: ",[0,2]," #f7f8fa solid;color:#d7d5d5;}\n.",[1],"uni-btn-v .",[1],"_button{ background-color: #ff4444;}\n.",[1],"with-fun.",[1],"by-login-input{ border-bottom: ",[0,2]," #ececec solid; height: ",[0,98],"; line-height: ",[0,98],"; font-size: ",[0,28],";}\n.",[1],"by-login-input .",[1],"uni-input{height: ",[0,60],"; line-height: ",[0,60],";font-size: ",[0,28],";}\n.",[1],"by-login-input .",[1],"_input{height: ",[0,60],"; line-height: ",[0,60],";font-size: ",[0,32],";}\n.",[1],"clause{ margin-top: ",[0,127],"; text-align: center; color: #999999; font-weight: 500;}\n.",[1],"clause wx-text{ color: #fe5950;}\n.",[1],"uni-card{ border-radius: ",[0,12],"; -webkit-box-shadow: ",[0,4]," ",[0,4]," ",[0,20]," ",[0,4]," rgba(0, 37, 174, 0.2); box-shadow: ",[0,4]," ",[0,4]," ",[0,20]," ",[0,4]," rgba(0, 37, 174, 0.2); margin: 0; padding: 0 ",[0,20],"; }\n.",[1],"modify_btn{ background-color: #32b0fd; background: -webkit-gradient(linear, left top, right top, from(#32b0fd), to(#097ede)); background: -o-linear-gradient(left, #32b0fd, #097ede); background: linear-gradient(left, #32b0fd, #097ede); border-radius: 500px; -webkit-box-shadow: ",[0,4]," ",[0,4]," ",[0,20]," ",[0,4]," rgba(50, 176, 253, 0.4); box-shadow: ",[0,4]," ",[0,4]," ",[0,20]," ",[0,4]," rgba(50, 176, 253, 0.4); margin-top: ",[0,50],"; }\n.",[1],"uni-form-item{padding: 0;}\n",],undefined,{path:"./pages/user/set/getpass.wxss"})();
+document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/user/set/getpass.wxml') } }));
+        }
+        if(window.__uniAppViewReady__){
+          uniAppViewReadyCallback()
+        }else{
+          document.addEventListener('uniAppViewReady',uniAppViewReadyCallback)
+        }
+      })();
+      

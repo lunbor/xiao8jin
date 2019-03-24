@@ -1,0 +1,51 @@
+
+page{
+	height: auto;
+	min-height: 100%;
+	background-color: #F2F2F2;
+}
+.box_show{
+	-webkit-box-shadow: 4rpx 4rpx 20rpx 4rpx rgba(36, 158, 242, 0.1);
+	box-shadow: 4rpx 4rpx 20rpx 4rpx rgba(36, 158, 242, 0.1);
+}
+.index_head{background-color: #fff;}
+.index_logo ._img{width: 217rpx;height: 56rpx;}
+.service ._img{width: 44rpx;height: 44rpx;}
+.service{text-align: right;}
+.index_head_top{padding: 30rpx 30rpx 20rpx;}
+.operation_icon{width: 55rpx;height: 61rpx;}
+.operation_icon2{width: 61rpx;height: 61rpx;}
+.operation_case{padding: 24rpx 30rpx 34rpx;}
+.operation_case .flex-item{width: 32%;background-color: #fff;border-radius: 8rpx;
+	-webkit-box-shadow: 4rpx 4rpx 20rpx 4rpx rgba(13, 43, 153, 0.15);
+	box-shadow: 4rpx 4rpx 20rpx 4rpx rgba(13, 43, 153, 0.15);text-align: center;padding: 20rpx 0 4rpx;font-size: 24rpx;color: #0d2b99;
+	line-height: 1.3;
+}
+.middle{margin: 0 2%;}
+.news_flash_name{width: 90rpx;border-right: 1px solid #ececec;}
+.news_flash_name ._img{width: 65rpx;height: 78rpx;}
+.news_list{padding-left: 20rpx;height: 100rpx;width: 85%;}
+.news_list .news_list_name{font-size: 22rpx;color: #666;color: #00b38a;border:1px solid #00b38a;border-radius:6rpx;
+	padding: 0 4rpx;margin-right: 6rpx;}
+.news_list_info{font-size: 26rpx;color: #666;}
+.news_list .red{color: red;font-weight: 600;}
+.news_flash{height: 100rpx;padding: 0 30rpx;}
+.team_case{background-color: #fff;padding: 20rpx 30rpx;margin-top: 20rpx;}
+.team_name{width: 200rpx;height: 44rpx;}
+.team_list uni-view{-webkit-box-flex:1;-webkit-flex:1;-ms-flex:1;flex:1}
+.team_list uni-view{-webkit-box-flex:1;-webkit-flex:1;-ms-flex:1;flex:1;font-size: 28rpx;color: #333;text-align: center;}
+.team_title{color: #999;font-size: 24rpx;}
+.handle_case ._img{width: 330rpx;height: 170rpx;}
+.other_business{padding: 20rpx 30rpx 0;}
+.business_case{padding-left: 40rpx;position: relative;margin-bottom: 20rpx;}
+.business_main{background-color: #fff;border-radius: 12rpx;padding: 16rpx 60rpx;font-size: 26rpx;color: #333;font-weight: 500;}
+.business_name{width: 80rpx;height: 80rpx;position: absolute;left: 0;top: 50%;margin-top: -40rpx;}
+.business_main text{font-size: 22rpx;color: #999;margin-top: 24rpx;}
+.banner_case{width: 680rpx;height: 340rpx;}
+.banner_box{padding-bottom: 20rpx;}
+.banner_case ._img{width: 100%;height: 100%;}
+.banner_box uni-swiper{height: 360rpx;}
+uni-swiper .uni-swiper-dots{bottom: 30px;}
+.mask{width: 100%;height: 100%;background: rgba(0,0,0,0.6);position: fixed;left: 0;top:0;z-index: 2000;}
+.tip_img ._img{width: 450rpx;height: 410rpx;position: absolute;left: 50%;top: 35%;margin-left:-225rpx;}
+

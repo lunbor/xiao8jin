@@ -1,0 +1,106 @@
+{
+  "pages": [
+    "pages/tabBar/index/index",
+    "pages/tabBar/card/card",
+    "pages/tabBar/user/user",
+    "pages/tabBar/extension/extension",
+    "pages/tabBar/ranking/ranking",
+    "pages/index/web-view/web-view",
+    "pages/index/about/about",
+    "pages/user/login/login",
+    "pages/user/info/info",
+    "pages/user/info/editname",
+    "pages/user/info/editphone",
+    "pages/user/info/editphoneTo",
+    "pages/user/info/editPhoneToyz",
+    "pages/user/vip/vip",
+    "pages/user/info/realname",
+    "pages/user/account/account",
+    "pages/user/account/accountDetail",
+    "pages/user/invite/invite",
+    "pages/user/im-chat/im-chat",
+    "pages/user/set/set",
+    "pages/user/set/getpass",
+    "pages/user/login/reg",
+    "pages/user/login/getpass",
+    "pages/card/credit/add",
+    "pages/card/bank/add",
+    "pages/user/pos/pos",
+    "pages/user/pos/posStep",
+    "pages/card/credit/info",
+    "pages/card/credit/repay",
+    "pages/card/credit/repayment",
+    "pages/card/credit/repayStep",
+    "pages/card/credit/repayInfo",
+    "pages/card/credit/repayDetail",
+    "pages/card/credit/edit",
+    "pages/user/plan/plan",
+    "pages/user/news/news",
+    "pages/user/news/newsInfo",
+    "pages/card/web-view/web-view",
+    "platforms/app-plus/feedback/feedback",
+    "pages/user/agent/agent",
+    "pages/user/agent/buy",
+    "pages/user/agent/user",
+    "pages/user/agent/service",
+    "pages/user/agent/cooperation",
+    "pages/user/agent/money",
+    "pages/user/agent/cashLog",
+    "pages/user/agent/card",
+    "pages/user/agent/invite",
+    "pages/user/agent/jyph",
+    "pages/user/agent/tdph",
+    "pages/user/agent/cash"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "海豚",
+    "navigationBarBackgroundColor": "#ffffff",
+    "backgroundColor": "#ffffff",
+    "titleSize": "20px"
+  },
+  "usingComponents": {},
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#75a3fc",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/tabBar/index/index",
+        "iconPath": "static/index.png",
+        "selectedIconPath": "static/indexHL.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/tabBar/card/card",
+        "iconPath": "static/card.png",
+        "selectedIconPath": "static/cardHL.png",
+        "text": "还款"
+      },
+      {
+        "pagePath": "pages/tabBar/extension/extension",
+        "iconPath": "static/tg.png",
+        "selectedIconPath": "static/tg.png"
+      },
+      {
+        "pagePath": "pages/tabBar/ranking/ranking",
+        "iconPath": "static/rank.png",
+        "selectedIconPath": "static/rankHL.png",
+        "text": "排行榜"
+      },
+      {
+        "pagePath": "pages/tabBar/user/user",
+        "iconPath": "static/user.png",
+        "selectedIconPath": "static/userHL.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "splashscreen": {
+    "alwaysShowBeforeRender": true,
+    "autoclose": false
+  },
+  "appname": "小8金管家"
+}

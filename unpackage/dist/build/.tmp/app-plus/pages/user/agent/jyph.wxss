@@ -1,0 +1,62 @@
+
+page {
+	height: auto;
+	min-height: 100%;
+	background-color: #f76045;
+}
+.agent_user_bg{
+	height: 569rpx;
+	width: 100%;
+	color: #FFFFFF;
+	line-height: 569rpx;
+}
+.syph-top{height: 359rpx; margin-top: 0rpx; padding-top: 210rpx; padding-left: 20rpx; padding-right: 20rpx;}
+.syph-list-bg{height: 130rpx;
+	width: 100%;
+	color: #353535;
+	line-height: 130rpx;}
+.syph-list{height: 130rpx;}
+.syph-list-b-bg{height: 45rpx;
+	width: 100%;
+	color: #FFFFFF;
+	line-height: 45rpx;}
+.syph-list-b{height: 45rpx;}
+.by-flex{
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	    -ms-flex: 1;
+	        flex: 1;
+}
+.text-r{
+	text-align: right;
+}
+.text-l{
+	text-align: left;
+}
+.text-c{
+	text-align:center;
+}
+.top-1{padding-top: 50rpx; text-align: center;}
+.top-1 .head-pic{ margin: 0 auto; border-radius:50%; height: 125rpx; width: 125rpx; overflow: hidden;margin-top: 20rpx;}
+.top-1 .head-pic image{ width: 125rpx; height: 125rpx;}
+.top-1 .ph-name{ font-size: 24rpx; line-height: 70rpx; color: #333333;}
+.top-1 .ph-sy{font-size: 32rpx; line-height: 50rpx; color: #353535;}
+.top-2{padding-top: 28rpx; text-align: center;}
+.top-2 .head-pic{ margin: 0 auto; border-radius:50%; height: 145rpx; width: 145rpx; overflow: hidden;margin-top: 20rpx;}
+.top-2 .head-pic image{ width: 145rpx; height: 145rpx;}
+.top-2 .ph-name{ font-size: 24rpx; line-height: 70rpx; color: #646464;}
+.top-2 .ph-sy{font-size: 32rpx; line-height: 50rpx; color: #fe0e00;}
+.top-3{padding-top: 50rpx; text-align: center;}
+.top-3 .head-pic{ margin: 0 auto; border-radius:50%; height: 125rpx; width: 125rpx; overflow: hidden;margin-top: 20rpx;}
+.top-3 .head-pic image{ width: 125rpx; height: 125rpx;}
+.top-3 .ph-name{ font-size: 24rpx; line-height: 70rpx; color: #333333;}
+.top-3 .ph-sy{font-size: 32rpx; line-height: 50rpx; color: #353535;}
+.syph-list .head-pic{ margin: 0 auto; border-radius:50%; height: 90rpx; width: 90rpx; overflow: hidden;margin-top: 20rpx;}
+.syph-list .head-pic image{ width: 90rpx; height: 90rpx;}
+.syph-list .xuhao{ line-height: 140rpx; width: 80rpx; font-size: 40rpx; color: #939393;}
+.syph-list .touxiang{ width: 90rpx;  margin-right: 20rpx;}
+.syph-list .nickname{margin-top: 20rpx; color: #5b5b5b;}
+.syph-list .money{ margin-right: 20rpx;margin-top: 20rpx; color: #000000;}
+.fzhsy-jh{color: #979797; font-size: 24rpx;}
+.fzhsy-jdh{color: #979797; font-size: 24rpx;}
+

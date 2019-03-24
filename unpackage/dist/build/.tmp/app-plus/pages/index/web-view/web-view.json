@@ -1,0 +1,13 @@
+{
+  "navigationBarTitleText": "",
+  "enablePullDownRefresh": true,
+  "titleNView": {
+    "buttons": [
+      {
+        "text": "首页",
+        "fontSize": "32upx",
+        "color": "#ffffff"
+      }
+    ]
+  }
+}

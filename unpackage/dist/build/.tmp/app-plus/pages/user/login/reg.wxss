@@ -1,0 +1,32 @@
+
+page{
+	height: auto;
+	min-height: 100%;
+	background-color: #FFFFFF;
+	color: #989898;
+}
+.by-dj-btn{ color: #666666; border: 2rpx #d7d5d5 solid; padding: 14rpx 20rpx;height: 30rpx; line-height: 30rpx; border-radius: 500px; margin-top: 10rpx; 
+margin-right: 15rpx;font-size: 26rpx;}
+.by-dj-btn.active{-webkit-box-ordinal-group: 3;-webkit-order: 2rpx #f7f8fa solid;-ms-flex-order: 2rpx #f7f8fa solid;order: 2rpx #f7f8fa solid;color:#d7d5d5;}
+.uni-login-logo{ text-align: center; height: 390rpx; vertical-align: middle;
+}
+.uni-login-logo image{ width: 320rpx; height: 320rpx; margin: 0 auto; margin-top: 87rpx;}
+.uni-btn-v  ._button{ background-color: #ff4444;}
+.with-fun.by-login-input{ border-bottom: 2rpx #ececec solid; height: 98rpx; line-height: 98rpx; font-size: 28rpx;}
+.by-login-input .uni-input{height: 60rpx; line-height: 60rpx;font-size: 28rpx;}
+.by-login-input ._input{height: 60rpx; line-height: 60rpx;font-size: 28rpx;}
+.clause{ margin-top: 40rpx; text-align: center; color: #999999; font-weight: 500;font-size: 24rpx;}
+.clause text{ color: #fe5950;}
+.login_btn {
+	background-color: #32b0fd;
+	background: -webkit-gradient(linear, left top, right top, from(#32b0fd), to(#097ede));
+	background: -o-linear-gradient(left, #32b0fd, #097ede);
+	background: linear-gradient(left, #32b0fd, #097ede);
+	border-radius: 500px;
+	-webkit-box-shadow: 4rpx 4rpx 20rpx 4rpx rgba(50, 176, 253, 0.4);
+	box-shadow: 4rpx 4rpx 20rpx 4rpx rgba(50, 176, 253, 0.4);
+}
+.icon_size{width: 36rpx;height: 36rpx;margin-top: 30rpx;}
+.bg_img{width: 100%;height: 264rpx;position: absolute;bottom: 0;left: 0;}
+.bg_img_case{position: fixed;top:0;left: 0;height: 100%;width: 100%;}
+

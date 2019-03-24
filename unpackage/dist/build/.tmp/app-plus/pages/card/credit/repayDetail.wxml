@@ -1,0 +1,2 @@
+<import src="./repayDetail.vue.wxml" />
+    <template is="cf393da0" data="{{ ...$root['0'], $root }}"/>

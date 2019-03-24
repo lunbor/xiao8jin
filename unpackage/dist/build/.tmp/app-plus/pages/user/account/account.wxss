@@ -1,0 +1,33 @@
+
+page {
+		height: auto;
+		min-height: 100%;
+		background-color: #FFFFFF;
+}
+.list-view {
+		padding:10rpx 0;
+}
+.list-item {
+		margin: 20rpx 0;
+		/* height: 180upx; */
+		/* line-height: 180upx; */
+		width: 100%;
+		border-bottom: 1px solid #ECECEC;
+		text-align: center;
+		padding-bottom: 10rpx;
+}
+.justify{-webkit-box-pack: justify;-webkit-justify-content: space-between;-ms-flex-pack: justify;justify-content: space-between;}
+.justify .left-text{ text-align: left;}
+.justify .right-text{ text-align: right;}
+.log-title{font-size: 28rpx; color: #333333;}
+.log-tail{font-size: 24rpx; color: #888888;}
+.log-time{font-size: 24rpx; color: #888888;}
+.log-money{font-size: 30rpx; color: #ff3e31;font-weight: 600;}
+.log-balance{font-size: 24rpx; color: #666666;}
+.log-status{font-size: 24rpx; color: #44c055;}
+.log-status .log-icon{font-size: 32rpx;}
+.log-status.red{color: #ff3e31;}
+.log-status.blue{color: rgb(134, 134, 255);}
+.no-list{ text-align: center; height:270rpx; padding-top: 40%;}
+.no-list image{width: 374rpx; height: 270rpx;}
+

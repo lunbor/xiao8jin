@@ -1,0 +1,68 @@
+
+page {
+	height: auto;
+	min-height: 100%;
+	background-color: #F2F2F2;
+}
+.info-top-bg {
+	width: 100%;
+	height: 213rpx;
+	padding-top: 50rpx;
+}
+.info-head-pic {
+	margin: 0 auto;
+	border-radius: 50%;
+	/* height: 107upx;
+	width: 107upx; */
+	/*background: #fecccc; opacity: 0.8;*/
+	overflow: hidden;
+}
+.info-head-pic image {
+	height: 100rpx;
+	width: 100rpx;
+	float: right;
+}
+.info-head-bj-btn {
+	width: 120rpx;
+	margin: 0 auto;
+}
+.info-head-bj-btn image {
+	height: 42rpx;
+	width: 122rpx;
+	margin-top: 20rpx;
+}
+.hg50 {
+	height: 98rpx;
+	color: #576175;
+	font-size: 28rpx;
+	/* font-weight: 600; */
+	color: #999;
+	padding: 0 20rpx;
+}
+.hg50 text{color: #333;}
+.hg50 .uni-navigate-right:after {
+	font-size: 28rpx;
+}
+.hg50 .uni-navigate-right {
+	/* line-height: 80upx; */
+	border-bottom: 1px solid #ecedef;
+}
+
+/* .hg50 .uni-navigate-right.bb0 {
+	border-bottom: 0upx;
+} */
+.uni-card.by-card {
+	border-radius: 12rpx;
+	-webkit-box-shadow: 4rpx 4rpx 20rpx 4rpx rgba(0, 37, 174, 0.2);
+	box-shadow: 4rpx 4rpx 20rpx 4rpx rgba(0, 37, 174, 0.2);
+}
+.by-mt-30 {
+	margin-top: 40rpx;
+}
+.by-sdh {
+	font-size: 26rpx;
+	font-weight: normal;
+}
+.name_info{color: #999;font-size: 24rpx;}
+.my_head{color: #999;}
+

@@ -1,0 +1,16 @@
+{
+  "navigationBarTitleText": "还款",
+  "enablePullDownRefresh": true,
+  "navigationStyle": "custom",
+  "titleNView": {
+    "titleView": false,
+    "buttons": [
+      {
+        "text": "",
+        "fontSrc": "/static/uni.ttf",
+        "fontSize": "32px",
+        "color": "#ffffff"
+      }
+    ]
+  }
+}

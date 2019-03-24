@@ -1,0 +1,23 @@
+
+page {
+	height: auto;
+	min-height: 100%;
+	background-color: #F2F2F2;
+}
+.hg50 {
+	color: #576175;
+	font-size:24rpx;
+	padding: 0 20rpx;
+}
+.hg50 .uni-navigate-right:after {
+	font-size: 28rpx;
+}
+.uni-list-cell-navigate{border-bottom: 2rpx solid #ececec;}
+.uni-card{
+		border-radius: 12rpx;
+		-webkit-box-shadow: 4rpx 4rpx 20rpx 4rpx rgba(0, 37, 174, 0.2);
+		box-shadow: 4rpx 4rpx 20rpx 4rpx rgba(0, 37, 174, 0.2);
+}
+
+
+

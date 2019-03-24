@@ -1,0 +1,30 @@
+
+page {
+	height: auto;
+	min-height: 100%;
+	background-color: #f2f2f2;
+}
+.rank_top{
+	background: url(../../static/img/rank_banner.161e48b2.png) no-repeat;background-size: 100% 100%;
+	height: 428rpx;
+	width: 100%;
+	color: #FFFFFF;
+}
+.rank_head{height:88rpx;line-height: 88rpx;}
+.rank_banner{width: 100%;}
+.rank_banner uni-image{width: 100%;height: 300rpx;}
+.rank_case{padding: 0 20rpx;position: relative;top: -60rpx;}
+.rank_box{background-color: #fff;border-radius: 12rpx;padding: 16rpx;}
+.my_header{width: 140rpx;height: 140rpx;padding: 10rpx;border-radius: 500px;overflow: hidden;background-color: #fff;position: absolute;left: 50%;margin-left: -70rpx;top: -70rpx;}
+.my_header ._img{width: 140rpx;height: 140rpx;border-radius: 500px;}
+.my_name{font-size: 26rpx;color: #333;text-align: center;margin-top: 70rpx;}
+.rank_num{font-size: 22rpx;color: #999;text-align: center;}
+.rank_num text{font-size: 28rpx;color: #ff5e5e;font-weight: 500;}
+.rank_list {border-bottom: 1px solid #ECECEC;padding: 20rpx 16rpx;}
+.rank_icon{width: 46rpx;height: 54rpx;float: left;margin-top: 20rpx;}
+.rank_headed{width: 88rpx;height: 88rpx;float: left;margin-left: 12rpx;border-radius: 500px;}
+.user_info{font-size: 24rpx;color: #333;float: left;margin-left: 12rpx;}
+.user_money{font-size: 30rpx;font-weight: 600;color: #ffa13c;text-align: right;}
+.text_style{font-size: 22rpx;color: #999;font-weight: 400;}
+.number_case{width: 46rpx;float: left;margin-top: 20rpx;text-align: center;color: #999;}
+

@@ -3,12 +3,12 @@
 		<view class="my_team" v-if="no_list==1">
 			<view class="my_team_info">
 				<view class="uni-flex uni-row">
-					<view class="flex-item name">团队总人数：<text>{{agentUserCount}}人</text></view>
-					<view class="flex-item name">直推：<text>12人</text></view>
+					<view class="flex-item name">团队总人数：<text>{{agentUserCount.usrecount}}人</text></view>
+					<view class="flex-item name">直推：<text>{{agentUserCount.directCount}}人</text></view>
 				</view>
 				<view class="uni-flex uni-row">
-					<view class="flex-item name">间推：<text>8人</text></view>
-					<view class="flex-item name">当月活跃人数：<text>20人</text></view>
+					<view class="flex-item name">间推：<text>{{agentUserCount.indirect}}人</text></view>
+					<view class="flex-item name">当月活跃人数：<text>{{agentUserCount.active}}人</text></view>
 				</view>
 			</view>
 			
@@ -22,13 +22,13 @@
 						</view>
 						<view class="flex-item my_team_listInfo" >
 							<view class="uni-flex uni-row">
-								<view class="flex-item w40">用户名：巴啦啦</view>
-								<view class="flex-item w30">等级：vip</view>
-								<view class="flex-item w30">关系：直推</view>
+								<view class="flex-item w40">用户名：{{item.nickname}}</view>
+								<view class="flex-item w30">等级：{{item.group_name}}</view>
+								<view class="flex-item w30">关系：{{item.is_active}}</view>
 							</view>
 							<view class="uni-flex uni-row">
-								<view class="flex-item w40">电话:{{item.nickname}}</view>
-								<view class="flex-item w60">TA的团队：68人</view>
+								<view class="flex-item w40">电话:{{item.mobile}}</view>
+								<!--<view class="flex-item w60">TA的团队：68人</view>-->
 							</view>
 						</view>
 					</view>

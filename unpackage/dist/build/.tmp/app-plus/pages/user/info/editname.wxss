@@ -1,0 +1,21 @@
+
+page {
+		height: auto;
+		min-height: 100%;
+		background-color: #f7f8fa;
+}
+.uni-card.by-card {
+		border-radius: 12rpx;
+		-webkit-box-shadow: 4rpx 4rpx 20rpx 4rpx rgba(0, 37, 174, 0.2);
+		box-shadow: 4rpx 4rpx 20rpx 4rpx rgba(0, 37, 174, 0.2);
+}
+.by-button-submit {
+		background-color: #32b0fd;
+		background: -webkit-gradient(linear, left top, right top, from(#32b0fd), to(#097ede));
+		background: -o-linear-gradient(left, #32b0fd, #097ede);
+		background: linear-gradient(left, #32b0fd, #097ede);
+		border-radius: 500px;
+		-webkit-box-shadow: 4rpx 4rpx 20rpx 4rpx rgba(50, 176, 253, 0.4);
+		box-shadow: 4rpx 4rpx 20rpx 4rpx rgba(50, 176, 253, 0.4);
+}
+

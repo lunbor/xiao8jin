@@ -1,1 +1,0 @@
-<import src="/pages/card/credit/repayStep.vue.wxml" /><template is="5bed5002" data="{{ ...$root['0'], $root }}"/>

@@ -1,0 +1,32 @@
+
+page {
+	height: auto;
+	min-height: 100%;
+	background-color: #FFFFFF;
+}
+.list-view {
+	padding:10rpx 0;
+}
+.list-item {
+	margin: 20rpx 0;
+	/* height: 140upx; */
+	/* line-height: 140upx; */
+	width: 100%;
+	border-bottom: 2rpx solid #eee;
+	text-align: center;
+}
+.justify{-webkit-box-pack: justify;-webkit-justify-content: space-between;-ms-flex-pack: justify;justify-content: space-between;}
+.justify .left-text{ text-align: left;}
+.justify .right-text{ text-align: right;}
+.log-title{font-size: 36rpx; color: #333333;}
+.log-tail{font-size: 28rpx; color: #888888;}
+.log-time{font-size: 28rpx; color: #888888;}
+.log-money{font-size: 32rpx; color: #ff3e31;font-weight: 600;}
+.log-balance{font-size: 28rpx; color: #666666;}
+.log-status{font-size: 28rpx; color: #44c055;}
+.log-status .log-icon{font-size: 38rpx;}
+.log-status.red{color: #ff3e31;}
+.log-status.blue{color: rgb(134, 134, 255);}
+.no-list{ text-align: center; height: 260rpx; padding-top: 50%;}
+.no-list image{width: 185rpx; height: 60rpx;}
+

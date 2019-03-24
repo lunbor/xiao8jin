@@ -11,8 +11,8 @@
 					<view class="rank_case">
 				<view class="rank_box">
 					<view class="my_header"><img src="../../../static/head.png" alt=""></view>
-					<view class="my_name">罗哈哈</view>
-					<view class="rank_num">目前排名：<text>第38名</text></view>
+					<view class="my_name"><!-- 罗哈哈 --></view>
+					<view class="rank_num"><!-- 目前排名：<text>第38名</text> --></view>
 					<view>
 						<uni-segmented-control :current="current" :values="items" v-on:clickItem="onClickItem" :styleType="styleType"
 						:activeColor="activeColor"></uni-segmented-control>
@@ -126,8 +126,6 @@
 						</view>
 					</view>
 				</view>
-				
-				
 			</view>
 				
 		</view>
@@ -135,8 +133,8 @@
 					<view class="rank_case">
 				<view class="rank_box">
 					<view class="my_header"><img src="../../../static/head.png" alt=""></view>
-					<view class="my_name">罗哈哈的团队</view>
-					<view class="rank_num">目前排名：<text>第12名</text></view>
+					<view class="my_name"><!-- 罗哈哈的团队 --></view>
+					<view class="rank_num"><!-- 目前排名：<text>第12名</text> --></view>
 					<view>
 						<uni-segmented-control :current="currentTeam" :values="items" v-on:clickItem="onClickItemTeam" :styleType="styleType"
 						:activeColor="activeColor"></uni-segmented-control>
@@ -177,12 +175,12 @@
 							</view>
 						</view>
 					</view>
-					<view class="content" v-if="currentTeam===1">
+					<!-- <view class="content" v-if="currentTeam===1">
 						周榜
 					</view>
 					<view class="content" v-if="currentTeam===2">
-						月榜
-					</view>
+						总榜
+					</view> -->
 				</view>
 				
 				
@@ -198,9 +196,9 @@
 		data() {
 			return {
 				items: [
-					'日榜',
-					'周榜',
-					'月榜'
+					//'日榜',
+					//'周榜',
+					//'总榜'
 				],
 				current: 0,
 				activeColor: '#2f7bfe',
@@ -219,6 +217,7 @@
 		},
 		onLoad() {
 			this.getAgentSyph();
+			this.getAgentTdph();
 		},
 		methods: {
 			onClickItem(index) {
@@ -278,8 +277,6 @@
 				}
 				
 			}
-			
-			
 		},
 		components: {
 			uniSegmentedControl

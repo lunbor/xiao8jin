@@ -11,8 +11,8 @@
 						</view>
 						<view class="text head-center">
 							<!-- vip等级 -->
-							<view class="text head-nickname clearfix"><text style="float: left;">{{userInfo.nickname}}</text> <img class="vip_icon" src="../../../static/vip2.png" alt=""></view>
-							<view class="text head-phone">15178717598</view>
+							<view class="text head-nickname clearfix"><text style="float: left;">{{userInfo.nickname}}</text> <!--<img class="vip_icon" src="../../../static/vip2.png" alt="">--> &emsp;{{agent.group_name}}</view>
+							<view class="text head-phone">{{userInfo.account}}</view>
 						</view>
 					</view>
 				</view>
@@ -32,7 +32,7 @@
 				</view>
                 <view class="flex-item w40">
 					<view class="info_name">昨日收益(元)</view>
-					<view class="info_number_td">588.00</view>
+					<view class="info_number_td">{{agent.yestoday_money}}</view>
 				</view>
 				<view class="vip_btn"   @click="goDetailPage('/pages/user/agent/buy')"><image src="../../../static/vip_btn.png" class="vip_btnImg"></image></view>
             </view>
@@ -57,7 +57,7 @@
 			 		<view class="user_list" >
 			 			<view class="uni-list-cell-navigate  bb0">
 			 				<image src="../../../static/icon1.png" class="icon_img"></image>
-			 				<view class="title">推荐人 <text class="right_txt">15789856952</text></view>
+			 				<view class="title">推荐人 <text class="right_txt">{{userInfo.recommender}}</text></view>
 			 			</view>
 			 		</view>
 					<view class="user_list" >

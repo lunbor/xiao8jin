@@ -93,7 +93,7 @@
             },
             "icons" : {
                 "ios" : {
-                    "appstore" : "E:/wwwfile/xiao8jin/yjtp.png",
+                    "appstore" : "C:/Users/Administrator/Desktop/小8金管家/APP源码/static/login-logo.png",
                     "ipad" : {
                         "app" : "unpackage/res/icons/76x76.png",
                         "app@2x" : "unpackage/res/icons/152x152.png",
@@ -128,26 +128,26 @@
             "splashscreen" : {
                 "ios" : {
                     "iphone" : {
-                        "retina55" : "E:/wwwfile/xiao8jin/启动页.png",
-                        "retina47l" : "E:/wwwfile/xiao8jin/启动页.png",
-                        "retina47" : "E:/wwwfile/xiao8jin/启动页.png",
-                        "retina40l" : "E:/wwwfile/xiao8jin/启动页.png",
-                        "retina35" : "E:/wwwfile/xiao8jin/启动页.png",
-                        "retina40" : "E:/wwwfile/xiao8jin/启动页.png",
-                        "retina55l" : "E:/wwwfile/xiao8jin/启动页.png",
-                        "iphonexl" : "E:/wwwfile/xiao8jin/启动页.png",
-                        "iphonex" : "E:/wwwfile/xiao8jin/启动页.png",
-                        "landscape-896h@3x" : "E:/wwwfile/xiao8jin/启动页.png",
+                        "retina55" : "",
+                        "retina47l" : "",
+                        "retina47" : "",
+                        "retina40l" : "",
+                        "retina35" : "",
+                        "retina40" : "",
+                        "retina55l" : "",
+                        "iphonexl" : "",
+                        "iphonex" : "",
+                        "landscape-896h@3x" : "",
                         "protrait-896h@3x" : "E:/123/新建文件夹/启动页.png",
-                        "landscape-896h@2x" : "E:/wwwfile/xiao8jin/启动页.png",
-                        "portrait-896h@2x" : "E:/wwwfile/xiao8jin/启动页.png",
-                        "portrait-896h@3x" : "E:/wwwfile/xiao8jin/启动页.png"
+                        "landscape-896h@2x" : "",
+                        "portrait-896h@2x" : "",
+                        "portrait-896h@3x" : ""
                     }
                 },
                 "android" : {
-                    "xxhdpi" : "E:/wwwfile/xiao8jin/启动页.png",
-                    "xhdpi" : "E:/wwwfile/xiao8jin/启动页.png",
-                    "hdpi" : "E:/wwwfile/xiao8jin/启动页.png"
+                    "xxhdpi" : "",
+                    "xhdpi" : "",
+                    "hdpi" : ""
                 }
             }
         },

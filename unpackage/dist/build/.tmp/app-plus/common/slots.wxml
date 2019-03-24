@@ -1,0 +1,33 @@
+<import src="/components/uni-segmented-control.vue.wxml" />
+<import src="/components/uni-popup.vue.wxml" />
+<import src="/components/qrcode/qrcode.vue.wxml" />
+<import src="/components/uni-popup-bank.vue.wxml" />
+<import src="/components/mpvue-picker/mpvuePicker.vue.wxml" />
+<import src="/components/uni-tab-nav.vue.wxml" />
+<import src="/components/uni-load-more.vue.wxml" />
+<import src="/components/im-chat/messageshow.vue.wxml" />
+<import src="/components/im-chat/chatinput.vue.wxml" />
+<import src="/components/mpvue-citypicker/mpvueCityPicker.vue.wxml" />
+<import src="/components/uni-number-box.vue.wxml" />
+<import src="/common/slots.wxml" />
+
+<template name="6583159d-default-6583159d-2"><view class="_view 6583159d uni-common-mt uni-helllo-text uni-center" style="text-align: left;"><rich-text nodes="{{tipcontent}}" class="_rich-text 6583159d"></rich-text></view></template>
+
+<template name="706d4c7e-default-706d4c7e-1"><view class="_view 706d4c7e uni-common-mt uni-helllo-text uni-center" style="text-align: left;"><rich-text nodes="{{tipcontent}}" class="_rich-text 706d4c7e"></rich-text></view></template>
+
+<template name="3d91522e-default-3d91522e-1"><view class="_view 3d91522e uni-common-mt uni-helllo-text uni-center" style="text-align: left;"><rich-text nodes="{{tipcontent}}" class="_rich-text 3d91522e"></rich-text></view></template>
+
+<template name="a23d656c-default-a23d656c-1"><view class="_view a23d656c uni-center uni-padding-wrap"><view class="_view a23d656c uni-btn-v uni-common-mt" wx:if="{{providerList.length > 0}}"><block wx:key="index" key="{{index}}" wx:for="{{providerList}}" wx:for-index="index" wx:for-item="value"><button type="primary" wx:if="{{value}}" disabled="{{shareType === 5 && value.name !== '分享到微信好友'}}" bindtap="handleProxy" data-eventid="{{'a23d656c-0-'+index}}" data-comkey="{{$k}}" class="_button a23d656c">{{value.name}}</button></block><block><button type="primary" bindtap="handleProxy" data-eventid="{{'a23d656c-1'}}" data-comkey="{{$k}}" class="_button a23d656c">复制分享链接</button></block></view></view></template>
+
+<template name="3b657b12-default-3b657b12-3"><view class="_view 3b657b12 uni-center"><radio-group class="_radio-group 3b657b12 uni-list" bindchange="handleProxy" data-eventid="{{'3b657b12-4'}}" data-comkey="{{$k}}"><label class="_label 3b657b12 uni-list-cell uni-list-cell-pd" wx:key="index" key="{{index}}" wx:for="{{radioItems}}" wx:for-index="index" wx:for-item="item"><view class="_view 3b657b12"><label class="_label 3b657b12 label-2-text" for="{{item.name}}"><text class="_text 3b657b12">{{item.value}}</text></label></view><view class="_view 3b657b12"><radio id="{{item.name}}" value="{{item.name}}" checked="{{item.checked}}" class="_radio 3b657b12" /></view></label></radio-group><view class="_view 3b657b12 add-card-btn uni-flex uni-row" style="justify-content: center;" bindtap="handleProxy" data-eventid="{{'3b657b12-5'}}" data-comkey="{{$k}}"><view class="_view 3b657b12 flex-item uni-icon uni-icon-plusempty"></view><view class="_view 3b657b12 flex-item add-title">添加新的信用卡</view></view></view></template>
+
+<template name="f81c6294-default-f81c6294-1"><view class="_view f81c6294 uni-common-mt uni-helllo-text uni-center" style="text-align: left;"><rich-text nodes="{{tipcontent}}" class="_rich-text f81c6294"></rich-text></view></template>
+
+<template name="bd34d446-default-bd34d446-1"><view class="_view bd34d446 uni-common-mt uni-helllo-text uni-center" style="text-align: left;"><rich-text nodes="{{tipcontent}}" class="_rich-text bd34d446"></rich-text></view></template>
+
+<template name="0d2a2e58-default-0d2a2e58-1"><view class="_view 0d2a2e58 uni-center"><radio-group class="_radio-group 0d2a2e58 uni-list" bindchange="handleProxy" data-eventid="{{'0d2a2e58-4'}}" data-comkey="{{$k}}"><label class="_label 0d2a2e58 uni-list-cell uni-list-cell-pd" wx:key="index" key="{{index}}" wx:for="{{radioItems}}" wx:for-index="index" wx:for-item="item"><view class="_view 0d2a2e58"><label class="_label 0d2a2e58 label-2-text" for="{{item.name}}"><text class="_text 0d2a2e58">{{item.value}}</text></label></view><view class="_view 0d2a2e58"><radio id="{{item.name}}" value="{{item.name}}" checked="{{item.checked}}" class="_radio 0d2a2e58" /></view></label></radio-group><view class="_view 0d2a2e58 add-card-btn uni-flex uni-row" style="justify-content: center;" bindtap="handleProxy" data-eventid="{{'0d2a2e58-5'}}" data-comkey="{{$k}}"><view class="_view 0d2a2e58 flex-item add-title">添加新的储蓄卡</view></view></view></template>
+
+<template name="0d2a2e58-default-0d2a2e58-3"><view class="_view 0d2a2e58 uni-center"><radio-group class="_radio-group 0d2a2e58 uni-list" bindchange="handleProxy" data-eventid="{{'0d2a2e58-7'}}" data-comkey="{{$k}}"><label class="_label 0d2a2e58 uni-list-cell uni-list-cell-pd" wx:key="index" key="{{index}}" wx:for="{{aisleItems}}" wx:for-index="index" wx:for-item="item"><view class="_view 0d2a2e58"><label class="_label 0d2a2e58 label-2-text" for="{{item.name}}"><text class="_text 0d2a2e58">{{item.value}}</text></label></view><view class="_view 0d2a2e58"><radio id="{{item.name}}" value="{{item.name}}" checked="{{item.checked}}" class="_radio 0d2a2e58" /></view></label></radio-group><view class="_view 0d2a2e58 add-card-btn uni-flex uni-row" style="justify-content: center;"><view class="_view 0d2a2e58 flex-item add-title">更多支付通道,敬请期待</view></view></view></template>
+
+<template name="0589d9c0-default-0589d9c0-1"><view class="_view 0589d9c0 uni-center"><radio-group class="_radio-group 0589d9c0 uni-list" bindchange="handleProxy" data-eventid="{{'0589d9c0-5'}}" data-comkey="{{$k}}"><label class="_label 0589d9c0 uni-list-cell uni-list-cell-pd" wx:key="index" key="{{index}}" wx:for="{{radioItems}}" wx:for-index="index" wx:for-item="item"><view class="_view 0589d9c0"><label class="_label 0589d9c0 label-2-text" for="{{item.name}}"><text class="_text 0589d9c0">{{item.value}}</text></label></view><view class="_view 0589d9c0"><radio id="{{item.name}}" value="{{item.name}}" checked="{{item.checked}}" class="_radio 0589d9c0" /></view></label></radio-group><view class="_view 0589d9c0 add-card-btn uni-flex uni-row" style="justify-content: center;" bindtap="handleProxy" data-eventid="{{'0589d9c0-6'}}" data-comkey="{{$k}}"><view class="_view 0589d9c0 flex-item uni-icon uni-icon-plusempty"></view><view class="_view 0589d9c0 flex-item add-title">添加新的信用卡</view></view></view></template>
+

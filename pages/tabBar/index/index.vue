@@ -52,9 +52,8 @@
 					<view class="flex-item news_flash_name" >
 						<img src="../../../static/news_flash.png" >
 					</view>
-					<view class="flex-item news_list">
-						<view class="news_list_info uni-ellipsis"><text class="news_list_name">分润</text>151****7359于12:13获得分润<text class="red">￥48.00</text>元</view>
-						<view class="news_list_info uni-ellipsis"><text class="news_list_name">收款</text>151****7359于12:13成功提现<text class="red">￥1888.00</text>元</view>
+					<view class="flex-item news_list" v-for="(item, index) in messageData" :key="index">
+						<view class="news_list_info uni-ellipsis">{{item.nickname}}于{{item.time}}获得收益<text class="red">￥{{item.money}}</text>元</view>
 					</view>
 					</view>
 				</view>	
@@ -64,19 +63,19 @@
 				<view class="uni-flex uni-row team_list">
 					<view class="flex-item ">
 						<text class="team_title">总人数</text>
-						<view class="team_title">300</view>
+						<view class="team_title">{{myTeamInfo.usrecount}}</view>
 					</view>
 					<view class="flex-item">
 						<text class="team_title">直推人数</text>
-						<view class="team_title">120</view>
+						<view class="team_title">{{myTeamInfo.directCount}}</view>
 					</view>
 					<view class="flex-item">
 						<text class="team_title">间推人数</text>
-						<view class="team_title">120</view>
+						<view class="team_title">{{myTeamInfo.indirect}}</view>
 					</view>
 					<view class="flex-item">
 						<text class="team_title">月活跃人数</text>
-						<view class="team_title">120</view>
+						<view class="team_title">{{myTeamInfo.active}}</view>
 					</view>
 				</view>
 			</view>
@@ -135,9 +134,15 @@
 			nextMargin:16+'px',
 			beforeColor: "#dddddd",//指示点颜色
 			afterColor: "#5f9df1",//当前选中的指示点颜色
-			 maskShow: false,
-        }
+			maskShow: false,
+			messageData:[],
+			myTeamInfo:{}
+        }		
     },
+	onShow(){
+		this.getMessageData();
+		this.getMyTeamInfo();
+	},
 	methods: {
 		goDetailPage(url) {
 			const openid = this.$store.state.openid;
@@ -150,10 +155,59 @@
 					url: url
 				})
 			}
-		},
+		},		
 		 setMaskShow(){
             this.maskShow = !this.maskShow;
-        }
+        },
+		getMyTeamInfo() {
+			const openid = this.$store.state.openid;
+			const sessionKey = this.$store.state.sessionKey;
+			if(openid == null){
+				return;
+			}
+			try {
+				this.$http.post(this.websiteUrl+'/api/agent/getMyAgentTeam',{openid,sessionKey},(res) => {
+					if(res.data.code==1){
+						this.myTeamInfo = res.data.result;
+					}else{
+						uni.showModal({
+							content:res.data.msg,
+							showCancel:false
+						})
+					}
+				});
+			} catch (e) {
+				uni.showModal({
+					content:'网络异常,请稍后重试...',
+					showCancel:false
+				})
+			}
+		},
+		getMessageData()
+		{
+			const openid = this.$store.state.openid;
+			const sessionKey = this.$store.state.sessionKey;
+			if(openid == null){
+				return;
+			}
+			try {
+				this.$http.post(this.websiteUrl+'/api/message/getAccountLogList',{openid,sessionKey},(res) => {
+					if(res.data.code==1){
+						this.messageData = res.data.result.list;
+					}else{
+						uni.showModal({
+							content:res.data.msg,
+							showCancel:false
+						})
+					}
+				});
+			} catch (e) {
+				uni.showModal({
+					content:'网络异常,请稍后重试...',
+					showCancel:false
+				})
+			}
+		}
 	}
 }
 </script>

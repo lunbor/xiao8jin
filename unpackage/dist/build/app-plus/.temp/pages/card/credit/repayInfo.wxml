@@ -1,1 +1,0 @@
-<import src="/pages/card/credit/repayInfo.vue.wxml" /><template is="f102163e" data="{{ ...$root['0'], $root }}"/>

@@ -1,0 +1,13 @@
+
+      !(function(){
+        var uniAppViewReadyCallback = function(){
+          setCssToHead(["body { height: auto; min-height: 100%; background-color: #f7f8fa; }\n.",[1],"agent_bg{ background-color: #fd5950; background: -webkit-gradient(linear, left top, left bottom, from(#fd5950), to(#ff7575)); background: -o-linear-gradient(top, #fd5950, #ff7575); background: linear-gradient(top, #fd5950, #ff7575); height: ",[0,240],"; color: #FFFFFF; padding: ",[0,30]," ",[0,50],"; }\n.",[1],"agent_total_profit{ font-size: ",[0,28],"; }\n.",[1],"agent_total_profit_text{ font-size: ",[0,54],"; }\n.",[1],"agent_cash{ font-size: ",[0,28],"; text-align: right; }\n.",[1],"fz28{ font-size: ",[0,32],"; margin-right: ",[0,12],"; }\n.",[1],"linebg { background: #EEEEEE; height: ",[0,4],"; line-height: ",[0,4],"; padding: ",[0,0],"; width: 100%; margin: 0 auto; opacity: 0.5; }\n.",[1],"by-flex{ -webkit-box-flex: 1; -webkit-flex: 1; -ms-flex: 1; flex: 1; }\n.",[1],"text-r{ text-align: right; }\n.",[1],"text-c{ text-align:center; }\n.",[1],"agent_num{ margin-top: ",[0,18],";color: #fe5950; font-weight: 600;margin-bottom: ",[0,10],";}\n.",[1],"agent_text{ margin-bottom: ",[0,18],";}\n.",[1],"mini-btn{ line-height: ",[0,55],"; width: ",[0,130],"; height: ",[0,55],";background-color: #fe5950 !important; background: transparent !important; }\n.",[1],"mini-btn:after{border: ",[0,5]," solid #FFFFFF;}\n.",[1],"contentbg{ background-color: #FFFFFF;}\n.",[1],"hg50{ height: ",[0,90],"; color: #576175;font-size: ",[0,32],"; font-weight: 500; }\n.",[1],"hg50 .",[1],"uni-navigate-right:after{ font-size: ",[0,42],";}\n.",[1],"hg50 .",[1],"uni-navigate-right{ line-height: ",[0,50],";border-bottom: ",[0,1]," solid #ecedef;-webkit-justify-content:flex-start}\n.",[1],"hg50 .",[1],"uni-navigate-right wx-image{ width: ",[0,40],"; height: ",[0,40],"; margin-right: ",[0,20],";}\n.",[1],"hg50 .",[1],"uni-navigate-right.",[1],"bb0{border-bottom: ",[0,0],";}\n.",[1],"by-sdh { font-size: ",[0,26],"; font-weight: normal; margin-left: 48%; color: #06a2fc; }\n",],undefined,{path:"./pages/user/agent/agent.wxss"})();
+document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/user/agent/agent.wxml') } }));
+        }
+        if(window.__uniAppViewReady__){
+          uniAppViewReadyCallback()
+        }else{
+          document.addEventListener('uniAppViewReady',uniAppViewReadyCallback)
+        }
+      })();
+      
