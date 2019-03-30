@@ -14,7 +14,7 @@
 			
 			<view class="my_team_lists">
 				<view class="my_team_list uni-list-cell-navigate uni-navigate-right" v-for="(item,index) in list" :key="index" >
-					<view class="uni-flex uni-row" style="width: 100%;">
+					<view class="uni-flex uni-row" style="width: 100%;" @click="getAgentUserData(item.id)">
 						<view class="flex-item" style="width: 80upx;">
 							<view class="head-pic">
 								<image :src="item.head_img?item.head_img:'../../../static/head-no-pic.png'"></image>
@@ -53,6 +53,7 @@
 				agentUserCount:'0',
 				page: 1,
 				is_load: 0,
+				uid:'',
 				no_list: 0,
 				loadingType: 0,
 				contentText: {
@@ -83,18 +84,31 @@
 		onShow() {
 		},
 		methods: {
-			getAgentUserData(){
+			getAgentUserData(userid){
 				const openid = this.$store.state.openid;
 				const sessionKey = this.$store.state.sessionKey;
+				if(!userid) {
+					this.page = this.page;
+				}
+				else {
+					if(userid == this.uid) {
+						this.page = this.page;
+					}
+					else {
+						this.page = 1;
+					}
+					
+				}
 				const page = this.page;
 				try {
-					this.$http.post(this.websiteUrl+'/api/agent/getAgentUserData',{openid,sessionKey,page},(res) => {
+					this.$http.post(this.websiteUrl+'/api/agent/getAgentUserData',{openid,sessionKey,page,userid},(res) => {
 						if(res.data.code==1){
-							if(res.data.result.list.length>=1){
+							if(res.data.result.list.length>=1){								
 								this.list = this.list.concat(res.data.result.list);
 								this.agentUserCount = res.data.result.agentUserCount;
 								this.loadingType = 0;
 								this.page = this.page + 1;
+								this.uid = userid;				
 								this.is_load = 1;
 								this.no_list = 1;
 							}else{

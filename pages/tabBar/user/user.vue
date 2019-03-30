@@ -63,7 +63,7 @@
 					<view class="user_list" >
 						<view class="uni-list-cell-navigate uni-navigate-right bb0" @click="goDetailPage('/pages/user/info/realname')">
 							<image src="../../../static/icon2.png" class="icon_img"></image>
-							<view class="title">实名认证<text class="right_txt_sm">已实名</text></view>
+							<view class="title">实名认证<text class="right_txt_sm">{{userInfo.validate_info}}</text></view>
 						</view>
 					</view>
 					<view class="user_list" @click="goDetailPage('/pages/user/agent/user')">
@@ -122,6 +122,10 @@
 					message:"0",
 					invite:"0",
 					repay_num:"0",
+					z_money:"0",
+					yestoday_money:"0",
+					money:"0",
+					
 				},
 				navlist:[{
 					title:"交易明细",
@@ -234,10 +238,10 @@
 							this.agent = res.data.result.agent;
 							// this.tipcontent = res.data.result.article.content.replace(/\\/g, "").replace(/<img/g, "<img style=\"display:none;\"");
 						}else{
-							uni.showModal({
+							/* uni.showModal({
 								content:res.data.msg,
 								showCancel:false
-							})
+							}) */
 						}
 					});
 				} catch (e) {
