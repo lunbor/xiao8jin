@@ -8,7 +8,7 @@
 
 		</view>
 		<view class="content" v-if="currentTop===0">
-					<view class="rank_case">
+				<view class="rank_case">
 				<view class="rank_box">
 					<view class="my_header"><img src="../../../static/head.png" alt=""></view>
 					<view class="my_name"><!-- 罗哈哈 --></view>
@@ -21,7 +21,9 @@
 						<view class="rank_list" v-for="(item,index) in list" :key="index" v-if="index<3">
 							<view class="uni-flex uni-row">
 								<view class="flex-item" style="width: 65%;">
-									<img src="../../../static/rank1.png" class="rank_icon">
+									<view class="number_case" style="font-size: 42upx;color: #e4393c;font-weight: 900;margin-top: 10upx;">
+										{{index+1}}
+									</view>
 									<image :src="item.head_img?item.head_img:'../../../static/head-no-pic.png'" class="rank_headed"></image>
 									<view class="user_info">
 										<view>{{item.nickname}}</view>
@@ -143,7 +145,9 @@
 						<view class="rank_list" v-for="(item,index) in listTeam" :key="index" v-if="index<3">
 							<view class="uni-flex uni-row">
 								<view class="flex-item" style="width: 65%;">
-									<img src="../../../static/rank1.png" class="rank_icon">
+									<view class="number_case" style="font-size: 42upx;color: #e4393c;font-weight: 900;margin-top: 10upx;">
+										{{index+1}}
+									</view>
 									<image :src="item.head_img?item.head_img:'../../../static/head-no-pic.png'" class="rank_headed"></image>
 									<view class="user_info">
 										<view>{{item.nickname}}</view>
@@ -307,10 +311,11 @@
 	.rank_num{font-size: 22upx;color: #999;text-align: center;}
 	.rank_num text{font-size: 28upx;color: #ff5e5e;font-weight: 500;}
 	.rank_list {border-bottom: 1px solid #ECECEC;padding: 20upx 16upx ;}
-	.rank_icon{width: 46upx;height: 54upx;float: left;margin-top: 20upx;}
+	.rank_icon{width: 46upx;height: 54upx;position: absolute;top: -16px;left: 22px;z-index: 100;}
 	.rank_headed{width: 88upx;height: 88upx;float: left;margin-left: 12upx;border-radius: 500px;}
 	.user_info{font-size: 24upx;color: #333;float: left;margin-left: 12upx;}
 	.user_money{font-size: 30upx;font-weight: 600;color: #ffa13c;text-align: right;}
 	.text_style{font-size: 22upx;color: #999;font-weight: 400;}
 	.number_case{width: 46upx;float: left;margin-top: 20upx;text-align: center;color: #999;}
 </style>
+

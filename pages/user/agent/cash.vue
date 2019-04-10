@@ -48,9 +48,7 @@
 				<button type="warn" class="by-button-submit" :disabled="disabled" :loading="loading" @click="addCash">提 交</button>
 			</view>
 			
-			<view class="uni-common-mt tip_btn">
-				<text>*</text> 提交成功后，请等待平台审核。
-			</view>
+		
 		</form>
 		
 	</view>

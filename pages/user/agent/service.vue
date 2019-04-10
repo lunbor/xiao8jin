@@ -12,13 +12,13 @@
 						<view class="hg50" >
 						<view @tap="makePhoneCall" class="uni-list-cell-navigate  " >
 							微信
-							<text class="uni-list-cell-left by-sdh">123456</text>
+							<text class="uni-list-cell-left by-sdh">{{userInfo.telphone}}</text>
 						</view>
 					</view>
 					<view class="hg50" >
 						<view @tap="makePhoneCall" class="uni-list-cell-navigate " style="border-bottom: 0;">
 							QQ
-							<text class="uni-list-cell-left by-sdh">123456</text>
+							<text class="uni-list-cell-left by-sdh">813709743</text>
 						</view>
 					</view>
 				

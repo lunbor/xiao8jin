@@ -22,13 +22,13 @@
 						</view>
 						<view class="flex-item my_team_listInfo" >
 							<view class="uni-flex uni-row">
-								<view class="flex-item w40">用户名：{{item.nickname}}</view>
+								<view class="flex-item w45">用户名：{{item.nickname}}</view>
 								<view class="flex-item w30">等级：{{item.group_name}}</view>
-								<view class="flex-item w30">关系：{{item.is_active}}</view>
+								<view class="flex-item w25">关系：{{item.is_active}}</view>
 							</view>
 							<view class="uni-flex uni-row">
-								<view class="flex-item w40">电话:{{item.mobile}}</view>
-								<!--<view class="flex-item w60">TA的团队：68人</view>-->
+								<view class="flex-item w45">电话:{{item.mobile}}</view>
+								<!--<view class="flex-item w55">TA的团队：68人</view>-->
 							</view>
 						</view>
 					</view>
@@ -157,11 +157,13 @@
 	.my_team_list{padding: 30upx 0 0upx 0;}
 	.my_team_listInfo{border-bottom: 1px solid #ECECEC;flex:1 ;padding-bottom: 10upx;color: #666;}
 	.my_team_listInfo .flex-item{font-size: 22upx;line-height: 2;}
-	.my_team_listInfo .w40{width: 40%;}
-	.my_team_listInfo .w30{width: 30%;}
+	.my_team_listInfo .w40{width: 45%;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;}
+	.my_team_listInfo .w30{width: 30%;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;}
+	.my_team_listInfo .w25{width: 25%;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;}
+	.my_team_listInfo .w55{width: 55%;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;}
 	.my_team_list .uni-list-cell-navigate.uni-navigate-right:after{right: 10upx;}
 	.head-pic{ border-radius:50%; height: 60upx; width: 60upx; overflow: hidden;;margin-top: 12upx;}
 	.head-pic image{ width: 60upx; height: 60upx;}
 	.no-list{ text-align: center; height: 260upx; padding-top: 50%;}
-	.no-list image{width: 185upx; height: 60upx;}
+	.no-list image{width: 370upx; height: 260upx;}
 </style>

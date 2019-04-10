@@ -21,7 +21,7 @@ page {
 .rank_num{font-size: 22rpx;color: #999;text-align: center;}
 .rank_num text{font-size: 28rpx;color: #ff5e5e;font-weight: 500;}
 .rank_list {border-bottom: 1px solid #ECECEC;padding: 20rpx 16rpx;}
-.rank_icon{width: 46rpx;height: 54rpx;float: left;margin-top: 20rpx;}
+.rank_icon{width: 46rpx;height: 54rpx;position: absolute;top: -16px;left: 22px;z-index: 100;}
 .rank_headed{width: 88rpx;height: 88rpx;float: left;margin-left: 12rpx;border-radius: 500px;}
 .user_info{font-size: 24rpx;color: #333;float: left;margin-left: 12rpx;}
 .user_money{font-size: 30rpx;font-weight: 600;color: #ffa13c;text-align: right;}

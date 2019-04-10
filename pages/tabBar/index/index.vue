@@ -4,7 +4,7 @@
 			<view class="index_head box_show">
 				<view class="uni-flex uni-row index_head_top">
 			        <view class="flex-item index_logo" style="width: 80%;line-height: 1;" ><img src="../../../static/index_logo.png"></view>
-			        <view class="flex-item service" style="width: 20%;"><img src="../../../static/service.png"></view>
+			        <view class="flex-item service" style="width: 20%;" @click="goDetailPage('/pages/user/agent/service')"><img src="../../../static/service.png"></view>
 			    </view>
 				<!-- 轮播动画 -->
 				<view class="banner_box">
@@ -43,41 +43,22 @@
 						<img src="../../../static/repayment.png" class="operation_icon2">
 						<view>还款</view>
 					</view>
-				    <view class="flex-item" @click="goDetailPage('/pages/user/agent/invite')" >
-						<img src="../../../static/share.png" class="operation_icon">
-						<view>分享</view>
+				    <view class="flex-item" @click="goDetailPage('/pages/user/agent/user')" >
+						<img src="../../../static/my_team.png" class="operation_icon">
+						<view>我的团队</view>
 					</view>
 				</view>
 				<view class="uni-flex uni-row news_flash">
 					<view class="flex-item news_flash_name" >
 						<img src="../../../static/news_flash.png" >
 					</view>
-					<view class="flex-item news_list" v-for="(item, index) in messageData" :key="index">
-						<view class="news_list_info uni-ellipsis">{{item.nickname}}于{{item.time}}获得收益<text class="red">￥{{item.money}}</text>元</view>
+					<view class="flex-item news_list">
+						<view class="news_gun">
+							<view class="<strong>news_list_info</strong> uni-ellipsis" v-for="(item, index) in messageData" :key="index">{{item.nickname}}于{{item.time}}获得收益<text class="red">￥{{item.money}}</text>元</view>
+						</view>
 					</view>
 					</view>
 				</view>	
-			</view>
-			<view class="team_case" @click="goDetailPage('/pages/user/agent/user')">
-				<img src="../../../static/team.png" class="team_name">
-				<view class="uni-flex uni-row team_list">
-					<view class="flex-item ">
-						<text class="team_title">总人数</text>
-						<view class="team_title">{{myTeamInfo.usrecount}}</view>
-					</view>
-					<view class="flex-item">
-						<text class="team_title">直推人数</text>
-						<view class="team_title">{{myTeamInfo.directCount}}</view>
-					</view>
-					<view class="flex-item">
-						<text class="team_title">间推人数</text>
-						<view class="team_title">{{myTeamInfo.indirect}}</view>
-					</view>
-					<view class="flex-item">
-						<text class="team_title">月活跃人数</text>
-						<view class="team_title">{{myTeamInfo.active}}</view>
-					</view>
-				</view>
 			</view>
 			<view class="team_case" style="padding:20upx 30upx 0;">
 				<view class="uni-flex uni-row team_list">
@@ -187,9 +168,9 @@
 		{
 			const openid = this.$store.state.openid;
 			const sessionKey = this.$store.state.sessionKey;
-			if(openid == null){
+			/* if(openid == null){
 				return;
-			}
+			} */
 			try {
 				this.$http.post(this.websiteUrl+'/api/message/getAccountLogList',{openid,sessionKey},(res) => {
 					if(res.data.code==1){
@@ -238,10 +219,10 @@
 		.middle{margin: 0 2%;}
 		.news_flash_name{width: 90upx;border-right: 1px solid #ececec;}
 		.news_flash_name img{width: 65upx;height: 78upx;}
-		.news_list{padding-left: 20upx;height: 100upx;width: 85%;}
+		.news_list{padding-left: 20upx;height: 100upx;width: 85%; height: 100upx;white-space: nowrap; overflow: hidden;color: #666;}
 		.news_list .news_list_name{font-size: 22upx;color: #666;color: #00b38a;border:1px solid #00b38a;border-radius:6upx ;
 		padding: 0 4upx;margin-right: 6upx;}
-		.news_list_info{font-size: 26upx;color: #666;}
+		.news_list_info{font-size: 26upx;color: #666;line-height: 50upx;}
 		.news_list .red{color: red;font-weight: 600;}
 		.news_flash{height: 100upx;padding: 0 30upx;}
 		.team_case{background-color: #fff;padding: 20upx 30upx;margin-top: 20upx;}
@@ -262,4 +243,31 @@
 		uni-swiper .uni-swiper-dots{bottom: 30px;}
 		.mask{width: 100%;height: 100%;background: rgba(0,0,0,0.6);position: fixed;left: 0;top:0;z-index: 2000;}
 		.tip_img img{width: 450upx;height: 410upx;position: absolute;left: 50%;top: 35%;margin-left:-225upx ;}
+		.news_gun{animation: myMove 10s linear infinite;animation-fill-mode: forwards;} 
+		  /*文字停顿滚动*/
+		@keyframes myMove {
+		    0% {
+		        transform: translateY(0);
+		    }
+		   
+		    20% {
+		        transform: translateY(-30px);
+		    }
+		 
+		    40% {
+		        transform: translateY(-60px);
+		    }
+		 
+		    60% {
+		        transform: translateY(-90px);
+		    }
+		 
+		    80% {
+		        transform: translateY(-120px);
+		    }
+		  
+		    100% {
+		        transform: translateY(-150px);
+		    }
+		}
 </style>

@@ -2,14 +2,10 @@
 	<view>
 		<view class="card_title">
 			<view class="card_title_name">还款</view>
-			<view>
-				<uni-segmented-control :current="current" :values="items" v-on:clickItem="onClickItem" :styleType="styleType"
-				 :activeColor="activeColor"></uni-segmented-control>
-			</view>
 		</view>
 	
 		<view class="content">
-			<view v-show="current === 0" class="uni-padding-wrap" style="width: 100%;">
+			<view class="uni-padding-wrap" style="width: 100%;">
 				<view class="card_addCase">
 					 <view class="uni-flex uni-row">
 				        <view class="flex-item" style="width: 80%;padding-left: 30upx;">
@@ -29,7 +25,6 @@
 						</view>
 					</view>
 					
-				
 					<view class="uni-card card_style" v-for="(item, index) in creditCard" :key="index">
 						<view class="card_bank"><text>{{item.bank_name}}</text><text class="card_num">{{item.credit_code}}</text></view>
 						<view class="uni-flex uni-row card_main">
@@ -53,48 +48,7 @@
 				</view>
 				
 			</view>
-			<view v-show="current === 1" class="uni-padding-wrap" style="width: 100%;">
-				<view class="card_addCase">
-					 <view class="uni-flex uni-row">
-				        <view class="flex-item" style="width: 80%;padding-left: 30upx;">
-							<img class="card_icon" src="../../../static/card_icon.png">
-							<text class="card_name">储蓄卡管理</text>
-						</view>
-				        <view class="flex-item" style="width: 20%; padding-right: 30upx;" @click="goDetailPage('/pages/card/bank/add')"><img style="float: right;" class="card_icon" src="../../../static/add_btn.png"></view>
-				    </view>
-				</view>
-				<view class="uni-padding-wrap" style="margin-top: 110upx;">
-					<view class="card-no-add" v-if="bankCard.length==0">
-						<image src="../../../static/card-no-add.png"></image>
-						<view  class="add_card">你现在什么都不绑定，一般情况下是不能还款的，<br>二般情况下你获得了大红包我们也不能咔嚓一下打到你的账户</view>
-						<view class="add-card-btn uni-flex uni-row" style="justify-content: center;" @click="goDetailPage('/pages/card/bank/add')">
-							<view class="flex-item"></view>
-							<view class="flex-item add-title">添加新的储蓄卡</view>
-						</view>
-					</view>
-				
-					<view class="uni-card card_style" v-for="(item, index) in bankCard" :key="index">
-						<view class="card_bank"><text>{{item.bank_name}}</text><text class="bank_type">储蓄卡</text></view>
-						
-						<!-- <view class="uni-triplex-row linebg"></view> -->
-						<view class="card_bank_info">
-							<view class="card_bank_main ">
-								<view style="margin-bottom: 20upx;"><text class="name">持卡人：</text>{{item.name}}</view>
-								<view class="uni-flex uni-row">
-									<text class="name">卡号：</text>
-									<view class="text">***</view>
-									<view class="text">****</view>
-									<view class="text">****</view>
-									<view class="text lhg50">{{item.bank_code}}</view>
-								</view>
-							</view>
-						
-							<view class="untying_btn"  @click="delBank(item.bankcard_id)"><text>解除绑定</text></view>
-						</view>
-					</view>
-				</view>
-				
-			</view>
+
 		</view>
 		
 		<!-- 居中 -->
@@ -111,15 +65,8 @@
 	export default {
 		data() {
 			return {
-				items: [
-					'信用卡',
-					'储蓄卡',
-				],
-				current: 0,
-				activeColor:'#5a91fe',
-				styleType: 'text',
 				creditCard: [],
-				bankCard: [],
+				// bankCard: [],
 				Loop:'',
 				popType: 'middle',
 				tiptitle: '提示',
@@ -389,7 +336,7 @@
 		justify-content: center;
 		align-items: center;
 		text-align: center;	
-		margin-top: 190upx;
+		margin-top:100upx;
 	}
 	.content .card-no-add {
 		margin-top: 140upx;
@@ -487,12 +434,11 @@
 		.card_bank{padding: 10upx 0;border-bottom: 1px solid #ECECEC;overflow: hidden;}
 		.card_bank text{float: left;}
 		.card_bank_icon{width:32upx;height:32upx;margin-right: 10upx;float: left;margin-top: 8upx;}
-		.card_bank_info{color: #333;}
+		.card_bank_info{padding: 20upx 0;color: #333;}
 		.card_bank_info .name{color: #999999;}
 		.card_bank_info .text{margin-right: 30upx;}
-		.untying_btn{border-top:1px solid #ECECEC;color: #ff8f0b;text-align: center;font-weight: 600;padding: 8upx 0;}
-		.card_bank_main{padding: 12upx;}
-		/* .untying_btn text{width: 100upx;height:100upx;background-color: rgba(255,161,60,1);border-radius: 500px;display: inline-block;} */
+		.untying_btn{width: 100upx;height: 100upx;background-color: rgba(255,161,60,0.2);border-radius: 500px;color: #FFFFFF;text-align: center;padding: 16upx;float: right;}
+		.untying_btn text{width: 100upx;height:100upx;background-color: rgba(255,161,60,1);border-radius: 500px;display: inline-block;}
 		.card_num{font-size: 24upx;color: #666666;margin-top: 4upx;}
 		.card_main{font-size: 32upx;font-weight: 500;padding-top: 20upx;}
 		.card_main .name{font-size: 24upx;color: #999;margin-top: 10upx;}

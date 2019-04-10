@@ -1,6 +1,6 @@
 {
     "name" : "小8金管家",
-    "appid" : "__UNI__0BF16AF",
+    "appid" : "__UNI__H5B973291",
     "description" : "信用卡一族至爱。资金即时结算，代还、周转必备APP。",
     "versionName" : "1.0.0",
     "versionCode" : "100",
@@ -93,7 +93,7 @@
             },
             "icons" : {
                 "ios" : {
-                    "appstore" : "C:/Users/Administrator/Desktop/小8金管家/APP源码/static/login-logo.png",
+                    "appstore" : "C:/Users/Administrator/Desktop/58ced3d653e4b27db606a7b3f3776bbe.png",
                     "ipad" : {
                         "app" : "unpackage/res/icons/76x76.png",
                         "app@2x" : "unpackage/res/icons/152x152.png",

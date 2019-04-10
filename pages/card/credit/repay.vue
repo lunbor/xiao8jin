@@ -30,7 +30,7 @@
 			 :activeColor="activeColor"></uni-segmented-control>
 		</view>
 		
-		<view class="content s_case" v-if="current === 1">
+		<!-- <view class="content s_case" v-if="current === 1">
 			<view class="repay-list">
 				<view class="uni-form-item  uni-flex uni-row">
 					<view class="title flex-item" style="width: 30%;">还款金额</view>
@@ -67,7 +67,7 @@
 						</view>
 				</view>
 			</view>
-		</view>
+		</view> -->
 		<view class="content s_case" v-if="current === 0">
 			<view class="repay-list">
 				<view class="uni-form-item  uni-flex uni-row">
@@ -121,7 +121,7 @@
 			</view>
 		</view>
 		
-		<view class="content s_case" v-if="current === 2">
+		<view class="content s_case" v-if="current === 1">
 			<view class="repay-list">
 				<view class="uni-input-row">
 					<label>周期消费笔数</label>
@@ -222,7 +222,7 @@
 			return {
 				items: [
 					'本金还款',
-					'空卡垫资',
+					//'空卡垫资',
 					'精养卡',
 				],
 				current: 0,

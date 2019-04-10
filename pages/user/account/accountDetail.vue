@@ -39,7 +39,7 @@
 		</view>
 		
 		<view class="uni-common-mt uni-padding-wrap uni-common-mb">
-			<button type="warn" disabled="true">
+			<button class="btn" disabled="true">
 				<text>{{accountDetail.dsc}}</text>
 			</button>
 		</view>
@@ -117,13 +117,20 @@
 
 		.content{ background-color: #f7f8fa;}
 		.contentbg{ background-color: #FFFFFF;}
-		.list-item .font-sg{ line-height: 80upx; font-weight: 500;font-size: 28upx;}
-		
+		.list-item .font-sg{ line-height: 80upx; font-weight: 500;font-size: 28upx;color: #999;}
+		.list-item .font-sg text{color:#333;margin-left: 10upx;;}
 		.red-text{ color:#fd5950;}
 		.repay-fee{ height: 100upx; line-height: 100upx; color: #576175;font-weight: 600;border-bottom: 2upx solid #ecedef;}
 		.repay-fee .uni-list-cell-left{ height: 100upx; line-height: 100upx;}
 		.by-button-submit{
 			background-color:#fd5950;
 			background: linear-gradient(left, #ff7575, #fd5950);
+		}
+		.btn {
+			background-color: #32b0fd;
+			background: linear-gradient(left, #32b0fd, #097ede);
+			border-radius: 500px;
+			-webkit-box-shadow: 4upx 4upx 20upx 4upx rgba(50, 176, 253, 0.4);
+			box-shadow: 4upx 4upx 20upx 4upx rgba(50, 176, 253, 0.4);
 		}
 </style>

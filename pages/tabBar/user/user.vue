@@ -11,8 +11,14 @@
 						</view>
 						<view class="text head-center">
 							<!-- vip等级 -->
-							<view class="text head-nickname clearfix"><text style="float: left;">{{userInfo.nickname}}</text> <!--<img class="vip_icon" src="../../../static/vip2.png" alt="">--> &emsp;{{agent.group_name}}</view>
+							<!-- <view class="text head-nickname clearfix"><text style="float: left;">{{userInfo.nickname}}</text>
+							 &emsp;{{agent.group_name}}</view> -->
+							 <view class="text head-nickname clearfix">
+							 	<text style="float: left;">{{userInfo.nickname}}</text> 
+							 	<view class="vip_icon">{{agent.group_name}}</view>
+							 </view>
 							<view class="text head-phone">{{userInfo.account}}</view>
+							
 						</view>
 					</view>
 				</view>
@@ -50,7 +56,7 @@
 			</view>
 		</view>
 
-		<view class="uni-padding-wrap" style="margin-top: 90upx;">
+		<view class="uni-padding-wrap" style="margin-top: 78upx;">
 		
 			 <view class="uni-card by-card user_card">
 			 	<view class="uni-card-content">
@@ -85,20 +91,6 @@
 				</view>
 			</view>
 		</view>
-		<!-- <view class="user-center-icon">
-			<view class="uni-flex uni-row">
-				<view class="text uni-row-plan uni-triplex-row" @click="goDetailPage('/pages/user/plan/plan')">
-					<view class="text plan-title uni-triplex-left">我的计划<view class="text plan-btn">查看</view></view>
-					<view class="text plan-num uni-triplex-right">({{userInfo.repay_num}})</view>
-				</view>
-				<view class="text uni-row-pd"></view>
-				<view class="text uni-row-vip uni-triplex-row" @click="goDetailPage('/pages/user/agent/agent')">
-					<view class="text vip-title uni-triplex-left">推广中心<view class="text vip-btn">查看</view></view>
-					<view class="text vip-num uni-triplex-right"><image src="../../../static/user_agent.png"></image></view>
-				</view>
-			</view>
-		</view> -->
-		
 	</view>
 </template>
 <script>
@@ -136,7 +128,7 @@
 					path:"/pages/user/agent/money",
 					imgSrc:'../../../static/icon5.png',
 				},{
-					title:"我的银行卡",
+					title:"我的结算卡",
 						path:"/pages/user/agent/card",
 					imgSrc:'../../../static/icon6.png',
 				},{
@@ -322,7 +314,7 @@
 			clear:both;
 			height:0;
 			}
-	.money_case{color: #fff;padding: 30upx 34upx;position: relative;}
+	.money_case{color: #fff;padding: 30upx 34upx;position: relative;height: 100upx;}
 	.info_name,.info_number{font-size: 26upx;}
 	.info_number{font-size: 42upx;font-weight: 600;line-height: 60upx;}
 	.info_number_td{font-size: 36upx;line-height: 60upx;font-weight: 500;}
@@ -339,5 +331,7 @@
 	.right_txt{float: right;color: #999;}
 	.right_txt_sm{padding-right: 60upx;float: right;color: #999;line-height: 46upx;}
 	.agent_cash{font-size: 24upx;text-align: right;color: #fff;line-height: 100upx;}
+	.vip_icon{width: 100upx;height: 36upx;float: left;margin-left: 20upx;background: url(../../../static/vip2.png) no-repeat center;background-size: 100% 100%;font-size: 14upx;
+	text-align: center;line-height: 36upx;font-weight: 600;padding-left: 10px;}
 </style>
 

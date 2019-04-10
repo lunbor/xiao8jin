@@ -12,7 +12,7 @@ Vue.prototype.$store = store
 Vue.prototype.$http = http;
 
 //Vue.prototype.websiteUrl = 'http://www.dolphin123.com'
-//Vue.prototype.websiteUrl = 'http://www.guanjia.com'
+// Vue.prototype.websiteUrl = 'http://www.guanjia.com'
 Vue.prototype.websiteUrl = 'http://h6.serve.dolphin123.com'
 
 //Vue.prototype.shareUrl = 'http://h5.dolphin123.com'

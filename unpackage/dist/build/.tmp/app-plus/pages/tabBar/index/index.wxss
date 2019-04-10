@@ -24,10 +24,10 @@ page{
 .middle{margin: 0 2%;}
 .news_flash_name{width: 90rpx;border-right: 1px solid #ececec;}
 .news_flash_name ._img{width: 65rpx;height: 78rpx;}
-.news_list{padding-left: 20rpx;height: 100rpx;width: 85%;}
+.news_list{padding-left: 20rpx;height: 100rpx;width: 85%; height: 100rpx;white-space: nowrap; overflow: hidden;color: #666;}
 .news_list .news_list_name{font-size: 22rpx;color: #666;color: #00b38a;border:1px solid #00b38a;border-radius:6rpx;
 	padding: 0 4rpx;margin-right: 6rpx;}
-.news_list_info{font-size: 26rpx;color: #666;}
+.news_list_info{font-size: 26rpx;color: #666;line-height: 50rpx;}
 .news_list .red{color: red;font-weight: 600;}
 .news_flash{height: 100rpx;padding: 0 30rpx;}
 .team_case{background-color: #fff;padding: 20rpx 30rpx;margin-top: 20rpx;}
@@ -48,4 +48,58 @@ page{
 uni-swiper .uni-swiper-dots{bottom: 30px;}
 .mask{width: 100%;height: 100%;background: rgba(0,0,0,0.6);position: fixed;left: 0;top:0;z-index: 2000;}
 .tip_img ._img{width: 450rpx;height: 410rpx;position: absolute;left: 50%;top: 35%;margin-left:-225rpx;}
+.news_gun{-webkit-animation: myMove 10s linear infinite;animation: myMove 10s linear infinite;-webkit-animation-fill-mode: forwards;animation-fill-mode: forwards;}
+/*文字停顿滚动*/
+@-webkit-keyframes myMove {
+0% {
+	        -webkit-transform: translateY(0);
+	                transform: translateY(0);
+}
+20% {
+	        -webkit-transform: translateY(-30px);
+	                transform: translateY(-30px);
+}
+40% {
+	        -webkit-transform: translateY(-60px);
+	                transform: translateY(-60px);
+}
+60% {
+	        -webkit-transform: translateY(-90px);
+	                transform: translateY(-90px);
+}
+80% {
+	        -webkit-transform: translateY(-120px);
+	                transform: translateY(-120px);
+}
+100% {
+	        -webkit-transform: translateY(-150px);
+	                transform: translateY(-150px);
+}
+}
+@keyframes myMove {
+0% {
+	        -webkit-transform: translateY(0);
+	                transform: translateY(0);
+}
+20% {
+	        -webkit-transform: translateY(-30px);
+	                transform: translateY(-30px);
+}
+40% {
+	        -webkit-transform: translateY(-60px);
+	                transform: translateY(-60px);
+}
+60% {
+	        -webkit-transform: translateY(-90px);
+	                transform: translateY(-90px);
+}
+80% {
+	        -webkit-transform: translateY(-120px);
+	                transform: translateY(-120px);
+}
+100% {
+	        -webkit-transform: translateY(-150px);
+	                transform: translateY(-150px);
+}
+}
 
