@@ -26,29 +26,6 @@
 				<view class="no-list" v-if="planInfo.creditCard.length==0">
 					<image src="../../../static/no-list.png"></image>
 				</view>
-				
-				<!-- <view class="uni-card uni-card-red md15" v-for="(card, index) in planInfo.creditCard" :key="index" v-bind:style="{ background: card.color}">
-					<view class="uni-triplex-row pd15">
-						<view class="uni-triplex-left lf7">{{card.bank_name}}<text>{{card.credit_code}}</text></view>
-						<view class="uni-triplex-right rg3" @click="goTorepay(card.credit_id)"><button class="mini-btn" type="primary" size="mini">查看</button></view>
-					</view>
-					<view class="uni-triplex-row linebg"></view>
-					<view class="uni-flex uni-row">
-						<view class="flex-item ls3">
-							<view class="ls3-row">¥<text>{{card.line_credit}}</text></view>
-							<view>额度</view>
-						</view>
-						<view class="flex-item ls3">
-							<view class="ls3-row"><text>{{card.bill_time}}</text>日</view>
-							<view>账单日</view>
-						</view>
-						<view class="flex-item ls3">
-							<view class="ls3-row"><text>{{card.repay_time}}</text>日</view>
-							<view>还款日</view>
-						</view>
-					</view>
-				</view>
-				 -->
 				<view class="uni-card card_style md15" v-for="(card, index) in planInfo.creditCard" :key="index" >
 						<view class="card_bank"><img class="card_bank_icon" src="../../../static/hx.png"><text>{{card.bank_name}}</text><text class="card_num">{{card.credit_code}}</text></view>
 						<view class="uni-flex uni-row card_main">
@@ -415,4 +392,6 @@
 		.card_num{font-size: 24upx;color: #666666;margin-top: 4upx;}
 		.card_main{font-size: 32upx;font-weight: 500;padding-top: 20upx;}
 		.card_main .name{font-size: 24upx;color: #999;margin-top: 10upx;}
+		.no-list{ text-align: center; height:270upx; padding-top: 15%;}
+		.no-list image{width: 374upx; height: 270upx;}
 </style>

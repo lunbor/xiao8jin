@@ -3,35 +3,52 @@
 		<view class="extension_title">分享二维码</view>
         <view class="uni-padding-wrap">
             <view class="page-section swiper">
-                <view class="page-section-spacing">
+                <view class="page-section-spacing">					
                     <swiper class="swiper"  :interval="interval" 
 					:duration="duration" :previousMargin="previousMargin"  :circular="circular">
                         <swiper-item>
                             <view class="swiper-item share_banner">
 								<img src="../../../static/share1.png" >
-								<view class="code"><img  src="../../../static/code.png" class="code_img"></view>
+								<view class="code">
+									<view class="qscode">
+										<qrcode :val="qrval" :size="qrsize" ref="qrcode"></qrcode>
+									</view>
+									<img  src="../../../static/code.png" class="code_img" />									
+								</view>
 							</view>
                         </swiper-item>
                         <swiper-item>
                             <view class="swiper-item share_banner">
 								<img src="../../../static/share2.png">
-								<view class="code2"><img  src="../../../static/code.png" class="code_img"></view>
+								<view class="code2">
+									<view class="qscode">
+										<qrcode :val="qrval" :size="qrsize" ref="qrcode"></qrcode>
+									</view>
+									<img  src="../../../static/code.png" class="code_img" />									
+								</view>
 							</view>
                         </swiper-item>
                         <swiper-item>
                             <view class="swiper-item share_banner">
-								<img src="../../../static/share3.png">
-								<view class="code3"><img  src="../../../static/code.png" class="code_img"></view>
+								<img src="../../../static/share3.png" />
+								<view class="code3">
+									<view class="qscode">
+										<qrcode :val="qrval" :size="qrsize" ref="qrcode"></qrcode>
+									</view>
+									<img  src="../../../static/code.png" class="code_img">
+								</view>
 							</view>
                         </swiper-item>
                     </swiper>
                 </view>
             </view>
         </view>
+		
 		<view class="share_btn">
-			<button class="btn" @click="setMaskShow">立即分享</button>
+			<button class="btn">保存图片</button>
 		</view>
-		<view class="mask" v-show="maskShow" >
+		
+		<!-- <view class="mask" v-show="maskShow" >
 			<view class="share_case">
 				<view class="share_caseTitle">分享到</view>
 				<view class="uni-flex uni-row share_icon">
@@ -54,10 +71,11 @@
 				</view>
 				<view class="share_caseNo"><a href="javascript:;" @click="setMaskShow">取消</a></view>
 			</view>
-		</view>
+		</view> -->
     </view>
 </template>
 <script>
+	import qrcode from '../../../components/qrcode/qrcode.vue';
 	export default {
     data() {
         return {
@@ -67,13 +85,52 @@
 			previousMargin:140+'upx',
 			// nextMmargin:140+'upx',
 			circular:true,
-			maskShow: false,
+			qrval: '',
+			qrsize: 100,
+			// maskShow: false,
         }
     },
+	onShow(){
+		this.getInviteData();
+	},
 	methods: {
-		setMaskShow(){
-		    this.maskShow = !this.maskShow;
+		creatQrcode(){
+			this.$refs.qrcode.creatQrcode();
 		},
+		getInviteData(){
+		    const openid = this.$store.state.openid;
+		    const sessionKey = this.$store.state.sessionKey;
+		    try {
+		    	this.$http.post(this.websiteUrl+'/api/agent/getInviteData',{openid,sessionKey},(res) => {
+		    		if(res.data.code==1){
+		    			this.qrval = res.data.result.shareUrl;
+		    			this.href = res.data.result.shareUrl;
+		    			this.shareImg = res.data.result.shareImg;
+		    			this.image = res.data.result.shareImg;
+		    			//console.log(this.qrval)
+		    			if(res.data.result.is_code == 1){
+		    				setTimeout(()=>{
+		    					this.creatQrcode();
+		    				}, 500);
+		    			}
+		    			
+		    		}else{
+		    			uni.showModal({
+		    				content:res.data.msg,
+		    				showCancel:false
+		    			})
+		    		}
+		    	});
+		    } catch (e) {
+		    	uni.showModal({
+		    		content:'网络异常,请稍后重试...',
+		    		showCancel:false
+		    	})
+		    }
+		},
+	},
+	components: {
+		qrcode
 	}
 }
 </script>
@@ -84,8 +141,11 @@
 		min-height: 100%;
 		background-color: #FFFFFF;
 	}
+	.qscode {
+		padding-top: 560upx; height: 200upx;z-index: auto;
+	}
 	.extension_title{height: 88upx;line-height: 88upx;text-align: center;color: #FFFFFF;font-size: 32upx;
-	margin-bottom: 60upx;font-weight: 600;}
+	margin-bottom: 20upx;font-weight: 600;}
 	.extension_case{background:url(../../../static/extension_bg.png)no-repeat;background-size: 100% 100%;width: 100%;
 	height: 870upx;}
 	.share_banner{position: relative;}

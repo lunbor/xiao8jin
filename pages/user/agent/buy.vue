@@ -2,7 +2,6 @@
 	<view class="content">
 		<view class="vip_bg">
 			<view class="head-pic">
-				<!-- <image :src="vipInfo.head_img?vipInfo.head_img:'../../../static/head-no-pic.png'"></image> -->
 				<img src="../../../static/head-no-pic.png">
 			</view>
 			<view class="vip_user">
@@ -13,50 +12,62 @@
 		<view class="postage">
 			<view class="vip_title">特权资费</view>
 			<view class="uni-flex uni-row">
-				<view class="text vip-money" v-for="(item, index) in vipInfo.vipmoney" :key="index" :class="vipMoney==index?'active':''" @click="onClickNum(index,item.id)">
+				<view class="text vip-money" v-for="(item, index) in vipInfo.vipmoney" :key="index" :class="index==0?'active':''" 
+				@click="onClickNum(index,item.id)" >
 					<view class="vip-money-title">{{item.title}}</view>
 					<view class="vip-money-val">¥<text>{{item.val}}</text></view>
-					<view class="vip-money-yj"><s>¥10000</s></view>
+					<view class="vip-money-yj"><s>¥398</s></view>
 					<view class="vip_icon"  v-if="index==0">限时特惠</view>
-					<view class="vip_icon" v-if="index==1">推荐</view>
-					<view class="vip_icon" v-if="index==2">尊享</view>
+					<!-- <view class="vip_icon" v-if="index==1">推荐</view>
+					<view class="vip_icon" v-if="index==2">尊享</view> -->
 				</view>
+				
 			</view>
 		</view>	
 
 		<view class="vip_info">
 			<view class="tq-title"></view>
 			<view class="tq-center">
-				<!-- <rich-text :nodes="vipInfo.agenttq"></rich-text> -->
 				<view class="uni-flex uni-row vip_info_case">
-					<view class="flex-item vip_info_name">免费</view>
+					<view class="flex-item vip_info_name">
+						免费
+						<view class="tip_text">(免费使用)</view>
+					</view>
 					<view class="flex-item vip_info_main">
-						<view>还款手续费:本金：<text>0.78%</text>、空卡：<text>1.05%</text></view>
-						<view>直推分润:本金还款万5，空卡还款万13</view>
+						<view>还款手续费:本金：<text>78/万</text>、空卡：<text>120/万</text></view>
 					</view>
 				</view>
 				<view class="uni-flex uni-row vip_info_case">
-					<view class="flex-item vip_info_name" style="padding-top: 50upx;">vip</view>
+					<view class="flex-item vip_info_name">
+						vip
+						<view class="tip_text">终生298元</view>
+					</view>
 					<view class="flex-item vip_info_main">
-						<view>还款手续费:本金：<text>0.63%</text>、空卡：<text>0.8%</text></view>
-						<view>直推分润:本金还款万5，空卡还款万13, 刷卡分润万4</view>
-						<view>间推分润:本金还款5万，空卡还款万12</view>
+						<view>还款手续费:本金：<text>68/万</text>、空卡：<text>100/万</text></view>
+						<view>流水分润:本金还款10/万，空卡还款20/万, 刷卡分润5/万</view>
+						<view>级差奖励40%</view>
 					</view>
 				</view>
 				<view class="uni-flex uni-row vip_info_case">
-					<view class="flex-item vip_info_name" style="padding-top: 50upx;">小咖</view>
+					<view class="flex-item vip_info_name">
+						小咖
+						<view class="tip_text">直推10名vip</view>
+					</view>
 					<view class="flex-item vip_info_main">
-						<view>还款手续费:本金：<text>0.58%</text>、空卡：<text>0.65%</text></view>
-						<view>直推分润:本金还款15万，空卡还款万30，刷卡分润万4</view>
-						<view>间推分润:本金还款万5-10，空卡还款万10-17</view>
+						<view>还款手续费:本金：<text>63/万</text>、空卡：<text>95/万</text></view>
+						<view>流水分润:本金还款15/万，空卡还款万25/万，刷卡分润10/万</view>
+						<view>级差奖励60%</view>
 					</view>
 				</view>
 				<view class="uni-flex uni-row vip_info_case" style="border-bottom: none;">
-					<view class="flex-item vip_info_name" style="padding-top: 50upx;">大咖</view>
+					<view class="flex-item vip_info_name" >
+						大咖
+						<view class="tip_text">直推5名小咖</view>
+					</view>
 					<view class="flex-item vip_info_main">
-						<view>还款手续费:本金：<text>0.58%</text>、空卡：<text>0.65%</text></view>
-						<view>直推分润:本金还款15万，空卡还款万30，刷卡分润万4</view>
-						<view>间推分润:本金还款万5-10，空卡还款万10-17</view>
+						<view>还款手续费:本金：<text>58/万</text>、空卡：<text>90/万</text></view>
+						<view>流水分润:本金还款20/万，空卡还款30/万，刷卡分润15/万</view>
+						<view>级差奖励73%</view>
 					</view>
 				</view>
 			</view>
@@ -387,26 +398,28 @@
 		border: 2upx solid #DDDDDD;
 		border-radius: 12upx;
 		height: 180upx;
-		padding: 30upx 0 20upx;
+		padding: 20upx 0 20upx;
 		text-align: center;
 		background-color: #FFFFFF;
 		width: 31%;
 		position: relative;
+		display: none;
 	}
 	.vip-money:nth-child(2){margin: 0 3.5%;}
 	.vip-money.active{
 		border: 2upx solid #ebc58c;
 		background-color: #fffaf2;
+		display: block;
 	}
 	.vip_icon{width: 120upx;height: 34upx;background: url(../../../static/vip_icon.png) no-repeat;background-size: 100% 100%;position: absolute;top: -20upx;left: 0;color: #eacc9b;
 	font-size: 22upx;text-align: center;line-height: 34upx;}
-	.vip-money-title{color: #8d8c8a;font-size: 32upx; font-weight:900; }
+	.vip-money-title{color: #8d8c8a;font-size: 46upx; font-weight:900; line-height: 1;}
 	.vip-money-val{color: #a57459;font-size: 32upx; font-weight: 900;}
 	.vip-money-val text{font-size: 48upx;}
 	.vip-money-gqval{color: #c0c0c0;font-size: 28upx; font-weight: normal;text-decoration:line-through;}
 	.vip-money.active .vip-money-title{color: #8d8c8a; }
 	.vip-money.active .vip-money-gqval{color: #969696;}
-	.vip-money-yj{font-size: 400;font-size: 24upx;color: #ababab;}
+	.vip-money-yj{font-size: 400;font-size: 30upx;color: #888;line-height: 1;}
 	.vip_title img{height: 136upx;width: 100%;}	
 	.tq-title{background: url(../../../static/vip_info.png) no-repeat;background-size: 100% 100%;height: 136upx;}
 	.vip_info{margin:0 30upx}
@@ -477,4 +490,6 @@
 		line-height: 100upx;
 		
 	}
+	.tip_text{font-size:22upx;color: #999;}
+	.show{display: block;}
 </style>

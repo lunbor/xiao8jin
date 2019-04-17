@@ -2,7 +2,7 @@
 	<view>
 		<view class="user-top-bg" style="background: url(../../../static/user_top_bg.png) no-repeat;background-size: 100% 100%;">
 			 <view class="uni-flex uni-row">
-                <view class="flex-item" style="width: 60%;">
+                <view class="flex-item" style="width:85%;">
 					<view class="uni-flex uni-row uni-padding-wrap user_top" @click="goDetailPage('/pages/user/info/info')">
 						<view class="text">
 							<view class="head-pic">
@@ -22,9 +22,9 @@
 						</view>
 					</view>
 				</view>
-				 <view class="flex-item" style="width: 30%;">
+				<!-- <view class="flex-item" style="width: 30%;">
 					<view class="agent_cash" ><view class="uni-icon uni-icon-help fz28"></view> 提现规则</view>
-				</view>
+				</view> -->
                 <view class="flex-item">
 					<view class="text head-bottom-news" @click="goDetailPage('/pages/user/news/news')">
 						<image src="../../../static/news.png" class="news_img"></image>
@@ -331,7 +331,7 @@
 	.right_txt{float: right;color: #999;}
 	.right_txt_sm{padding-right: 60upx;float: right;color: #999;line-height: 46upx;}
 	.agent_cash{font-size: 24upx;text-align: right;color: #fff;line-height: 100upx;}
-	.vip_icon{width: 100upx;height: 36upx;float: left;margin-left: 20upx;background: url(../../../static/vip2.png) no-repeat center;background-size: 100% 100%;font-size: 14upx;
+	.vip_icon{width: 100upx;height: 36upx;float: left;margin-left: 20upx;background: url(../../../static/vip2.png) no-repeat center;background-size: 100% 100%;font-size: 22upx;
 	text-align: center;line-height: 36upx;font-weight: 600;padding-left: 10px;}
 </style>
 
